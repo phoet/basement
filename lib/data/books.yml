@@ -1,0 +1,85 @@
+--- 
+- !ruby/struct:ApplicationController::Book 
+  :asin: 006135323X
+  :title: Predictably Irrational
+- !ruby/struct:ApplicationController::Book 
+  :asin: "0321125215"
+  :title: Domain-Driven Design
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898644766"
+  :title: SOA in der Praxis
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898644472"
+  :title: Hibernate
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0321356683
+  :title: Effective Java
+- !ruby/struct:ApplicationController::Book 
+  :asin: 020161622X
+  :title: The Pragmatic Programmer
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898644650"
+  :title: Spring
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1590597664"
+  :title: Beginning Ruby
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0321349601
+  :title: Java Concurrency in Practice
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898643395"
+  :title: eXtreme Programming
+- !ruby/struct:ApplicationController::Book 
+  :asin: 032133678X
+  :title: Java Puzzlers
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0596007124
+  :title: Head First Design Patterns
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1847193072"
+  :title: Tapestry 5
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3446415351"
+  :title: "Ruby on Rails f\xC3\xBCr JEE-Experten"
+- !ruby/struct:ApplicationController::Book 
+  :asin: 097873923X
+  :title: Textmate
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898644782"
+  :title: Scrum
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0321246683
+  :title: Unix for Mac OS X 10.4 Tiger
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0596516177
+  :title: The Ruby Programming Language
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0596527756
+  :title: Java Generics and Collections
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0974514055
+  :title: Programming Ruby
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1933988355"
+  :title: jQuery in Action
+- !ruby/struct:ApplicationController::Book 
+  :asin: "3898644294"
+  :title: "EJB 3.0 f\xC3\xBCr Umsteiger"
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0132350882
+  :title: Clean Code
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1934356190"
+  :title: Programming Cocoa with Ruby
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1934356514"
+  :title: "Beginning Mac Programming: Develop with Objective-C and Cocoa"
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0321503619
+  :title: Cocoa Programming for Mac OS X
+- !ruby/struct:ApplicationController::Book 
+  :asin: 0596523009
+  :title: Ruby Best Practices
+- !ruby/struct:ApplicationController::Book 
+  :asin: "0321566157"
+  :title: "Programming in Objective-C 2.0"

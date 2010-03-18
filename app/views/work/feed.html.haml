@@ -1,0 +1,32 @@
+.post
+	.post_body= render :partial => "shared/quote", :locals => { :author =>'Gerhart Hauptmann', :text => 'Sobald man in einer Sache Meister geworden ist, soll man in einer neuen Schüler werden.' }
+
+#feed
+	- @more_array.each_with_index do |feed, i|
+		%h1
+			%a{:href => feed.url, :title => feed.title}= feed.title
+			
+		.archive_separator
+		
+		-@feed_array[i][0..3].each do |item|
+			.archive_post
+				.comment_gravatar.left.min
+					%img{:title => item.title, :alt => item.title, :src => rss_icon, :height => "18", :width => "18"}
+					
+				.archive_post_title
+					.header
+						%h3
+							%a{:href =>item.link, :title => item.title}= trim_to(item.title, 50)
+						.clearer &nbsp;
+						
+					.archive_post_title
+						%p=item.text
+						.clearer &nbsp;
+						.post_meta
+							=format_date_string(item.date)
+							%a{:href=>item.link, :title=>item.title} &#187; direkt zum Artikel
+					
+			.archive_separator
+			.clearer &nbsp;
+			
+	= render :partial => 'shared/more', :locals => {:name => 'News-Feeds'}

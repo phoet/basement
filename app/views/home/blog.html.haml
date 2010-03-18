@@ -1,0 +1,29 @@
+.post
+	.post_body= render :partial=>"shared/quote", :locals=>{ :author =>'Kindermund', :text=>'Hallo liebes Tagebuch ...' }
+	
+	#blog
+		- @more_array.each do |t|
+			.post_title
+				%h2
+					%a{:href=>t.url, :title=>h(t.title)}=h(t.title)
+			.post_date
+				= "Erstellt am #{t.published} von "
+				%a{:href=>t.author_url, :title=>t.author_name}=t.author_name
+			.post_body= t.content
+			%div &nbsp;
+			.clearer &nbsp;
+			.post_meta
+				Tags:
+				- if t.tags.nil?
+					="-"
+				- else
+					- t.tags.each do |tag|
+						%a{:href=>"http://uschisblogg.blogspot.com/search/label/#{tag}", :title=>"#{tag}"}= tag
+				|
+				- if t.comment_count == 0
+					keine Kommentare
+				- else
+					%a{:href=>t.comment_link, :title=>"#{t.comment_count} Kommentare"}= "#{t.comment_count} Kommentare"
+			%div &nbsp;
+		
+		= render :partial=>'shared/more', :locals=>{:name=>'Einträge'}

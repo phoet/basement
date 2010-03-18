@@ -1,0 +1,7 @@
+.box
+	.box_title=link_to('Tagebuch', {:controller=>'home', :action=>'blog'}, {:title=>'Tagebuch'})
+	.box_content
+		%ul
+			-posts[0..4].each() do |post|
+				%li
+					%a{:href=>post.url, :title=>h(post.title)}=h(post.title)

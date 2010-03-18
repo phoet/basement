@@ -1,0 +1,95 @@
+.post
+	.post_body= render :partial => "shared/quote", :locals => { :author =>'Wilhelm Busch', :text => 'Ist der Ruf erst ruiniert, lebt es sich ganz ungeniert.' }
+
+=render :partial => 'document', :locals => {:href => "/lebenslauf_stichpunkte.pdf", :title => 'Lebenslauf in Stichpunkten'}
+=render :partial => 'document', :locals => {:href => "/lebenslauf_tabellarisch.pdf", :title => 'tabellarischer Lebenslauf'}
+
+.post
+	.post_title
+		%h1 in Stichpunkten
+	.post_body
+		%dl
+			%dt Visitenkarte
+			%dd 
+				Name: 
+				%strong Peter Schröder
+			%dd
+				Anschrift: 
+				%strong Schanzenstr. 85, 20357 Hamburg
+			%dd
+				Geburtstag: 
+				%strong 27. August 1980
+			%dd 
+				Telefon: 
+				%strong +49 178 1391035
+			%dd
+				E-Mail: 
+				%strong phoetmail (at) googlemail (punkt) com
+			
+			%dt Ausbildung
+			%dd Allgemeine Hochschulreife mit Vollabitur im Juli 2000
+			%dd Diplom (FH) in Informatik im Juli 2005
+			
+			%dt Berufserfahrung
+			%dd Praktika als Software-Entwickler unter anderem bei der wquadrat GmbH in Kiel, der GfeH mbH in Hamburg und der Anybet GmbH in Hamburg
+			%dd Entwickler für Online-Games bei der e-sport GmbH in Hamburg
+			%dd Web-Entwickler bei der freenet.de AG in Hamburg
+			%dd Software-Entwickler bei der blau Mobilfunk GmbH in Hamburg
+			
+			%dt Paradigma
+			%dd Agile Software-Entwicklung und Design
+			%dd Testgetriebene Entwicklung
+			%dd Serviceorientierte Architektur
+			
+			%dt Akronym
+			%dd DRY, KISS, YAGNI, SRP
+			%dd SOA, DDD, TDD, IoC
+
+	.post_title
+		%h1 Tabellarisch
+	.post_body
+		%dl
+			%dt Schule und Studium
+			%dd 
+				%strong 1987-1991
+				Grundschule Gettorf
+			%dd
+				%strong 1991-2000
+				Gymnasium Kronshagen
+			%dd
+				%strong Juli 2000
+				Allgemeine Hochschulreife (Abitur)
+			%dd
+				%strong 2000-2001
+				Zivildienst am Studentenwerk S-H
+			%dd
+				%strong 2001-2005
+				Studium der Medieninformatik FH-Flensburg
+			%dd
+				%strong Juli 2005
+				Diplom Informatiker (FH)
+	
+			%dt Praktika
+			%dd 
+				%strong Sommer 2003
+				Praxissemester und befristete Tätigkeit als PHP-Entwickler bei der wquadrat Medien GmbH in Kiel
+			%dd
+				%strong 2004-2005
+				Praxissemester und anschließende Diplomarbeit als Java-Entwickler bei der GfeH mbH in Hamburg
+			%dd
+				%strong Sommer 2006
+				Praktikum als J2EE-Entwickler bei der ANYBET GmbH in Hamburg
+	
+			%dt Berufserfahrung
+			%dd
+				%strong Juli-Dezember 2005
+				Projektarbeit mit Befristung als Java-Entwickler bei der wquadrat Medien GmbH in Kiel/Hamburg
+			%dd
+				%strong Januar-Mai 2006
+				Projektarbeit als PHP-Entwickler für Browsergames bei der e-sport GmbH (Bigpoint GmbH) in Hamburg
+			%dd
+				%strong 2006-2007
+				Java-Web-Entwickler bei der Freenet.de AG
+			%dd
+				%strong	 seit September 2007
+				J2EE-Entwickler bei der blau Mobilfunk GmbH

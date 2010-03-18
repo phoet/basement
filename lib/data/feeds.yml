@@ -1,0 +1,61 @@
+--- 
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: "#nofail"
+  :site: http://blog.nofail.de/
+  :url: http://blog.nofail.de/feed/
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: Ruby Best Practices
+  :site: http://blog.rubybestpractices.com/
+  :url: http://blog.rubybestpractices.com/feed.xml
+- !ruby/struct:ApplicationController::Feed 
+  :type: :atom
+  :title: Tapestry Central
+  :site: http://tapestryjava.blogspot.com/
+  :url: http://tapestryjava.blogspot.com/feeds/posts/default?alt=rss
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rdf
+  :title: InfoQ Personalized
+  :site: http://www.infoq.com
+  :url: http://www.infoq.com/rss/rss.action?token=f06z1uy0BdJ7sb3ULseq7WdWsovASFG5
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: The Daily WTF
+  :site: http://thedailywtf.com/
+  :url: http://syndication.thedailywtf.com/TheDailyWtf
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: Java Specialists' Newsletter
+  :site: http://www.javaspecialists.eu
+  :url: http://www.javaspecialists.eu/archive/tjsn.rss
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: Agile Software Development
+  :site: http://www.agile-software-development.com/
+  :url: http://www.blogger.com/feeds/5210159427493949178/posts/default?alt=rss
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: AppleTipps
+  :site: http://www.appletipps.de
+  :url: http://www.appletipps.com/feed/rss/
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: A New Mac Tip Every Day
+  :site: http://www.tips4mac.info
+  :url: http://www.tips4mac.info/?feed=rss2
+- !ruby/struct:ApplicationController::Feed 
+  :type: :rss
+  :title: "MacRumors : Mac News and Rumors"
+  :site: http://www.macrumors.com
+  :url: http://www.macrumors.com/macrumors.xml
+- !ruby/struct:ApplicationController::Feed 
+  :type: :atom
+  :title: Headius
+  :site: http://blog.headius.com/
+  :url: http://blog.headius.com/feeds/posts/default
+- !ruby/struct:ApplicationController::Feed 
+  :type: :atom
+  :title: The Red Gem of Programming
+  :site: http://vgoff.blogspot.com/
+  :url: http://www.blogger.com/feeds/2949792777916502048/posts/default

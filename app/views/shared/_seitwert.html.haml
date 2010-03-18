@@ -1,0 +1,13 @@
+- unless @seitwert.nil?
+	.left
+		%a{:href => "http://www.alexa.com", :title => "Alexa"} Alexa
+		=": #{@seitwert.alexa} |"
+		%a{:href => "http://www.google.de", :title => "Google"} Google
+		=": #{@seitwert.google} |"
+		%a{:href => "http://www.yahoo.de", :title => "Yahoo"} Yahoo
+		=": #{@seitwert.yahoo} |"
+		="Social: #{@seitwert.social} |"
+		="Technical: #{@seitwert.technical}"
+		&#187;
+		%a{:href => "http://www.seitwert.de", :title => "Seitwert"} Seitwert
+		=": #{@seitwert.seitwert}"

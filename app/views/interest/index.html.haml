@@ -1,0 +1,36 @@
+.post
+	.post_body
+		= render :partial => "shared/quote", :locals => { :author =>'Peter Schröder', :text => 'Ich bin nicht neugierig, ich will nur alles wissen!' }
+		
+		%h3 So bin ich zu erreichen:
+		
+		%dl
+			%dt Telefon
+			%dd 
+				Privat: 
+				%strong +49 178 1391035
+			%dd 
+				Beruflich: 
+				%strong +49 40 288071-70
+
+			%dt E-Mail
+			%dd 
+				Privat: 
+				%strong phoetmail (at) googlemail (punkt) com
+			%dd 
+				Beruflich: 
+				%strong ps (at) blau (punkt) de
+	
+			%dt Social-Media
+			%dd 
+				%a{:href => "http://twitter.com/phoet", :title => "Twitter"} Twitter
+			%dd 
+				%a{:href => "http://www.facebook.com/peter.schroeder.uschi", :title => "facebook"} facebook
+			%dd 
+				%a{:href => "https://www.xing.com/profile/peter_schroeder2", :title => "XING"} XING
+			%dd 
+				%a{:href => "http://www.linkedin.com/in/phoet", :title => "LinkedIn"} LinkedIn
+			%dd 
+				%a{:href => "http://github.com/phoet", :title => "GitHub"} GitHub
+			%dd 
+				%a{:href => "http://workingwithrails.com/person/17645-peter-schr-der", :title => "workingwithrails"} workingwithrails

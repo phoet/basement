@@ -1,0 +1,54 @@
+.post
+	.post_body
+		= render :partial=>"shared/quote", :locals=>{ :author=>@cite.author, :text=>@cite.text }
+		%p
+			Was möchte ein Besucher auf der Startseite meiner Webseite sehen?
+			Ich weiß es nicht genau, aber wenn Du einen Vorschlag hast, dann kannst Du
+			mich gerne 
+			=link_to('kontaktieren.', :controller=>'interest')
+		%p
+			Auf jeden Fall gibt es hier für Dich die Möglichkeit, mehr über mich zu erfahren:
+		%ul
+			%li
+				Einträge aus meinem
+				=link_to('Tagebuch', :action=>'blog')
+			%li
+				Allerlei 
+				=link_to('Fotos', :action=>'gallery')
+				aus meiner Freizeit
+			%li
+				Anregungen zur 
+				=link_to('Weiterbildung', :controller=>'work')
+			%li
+				Zahlreiche Möglichkeiten mich zu 
+				=link_to('kontaktieren', :controller=>'interest')
+			%li
+				Meinen 
+				=link_to('Lebenslauf', :controller=>'interest', :action=>'curriculum')
+			%li
+				=link_to('Arbeitsproben', :controller=>'interest', :action=>'employer' )
+				aus meinem beruflichen Werdegang
+
+-unless @more_array.empty?
+	#index.post
+		.post_title
+			%h2
+				%a{:href=>"http://twitter.com/phoet/friends", :title=>"Was machen meine Freunde gerade?"} Was machen meine Freunde gerade?
+		.comment_list
+			-@more_array.each do |friend|
+				.comment.alt
+					.comment_gravatar.left
+						%img{:alt=>friend.name, :title=>friend.name, :src=>friend.thumbnail, :height=>32, :width=>32}
+					.comment_author.left
+						%a{:href=>"http://twitter.com/#{friend.screen_name}"}="#{friend.name}, "
+						%a{:href=>"http://twitter.com/#{friend.screen_name}/followers"}="#{friend.friends_count} Verfolger"
+						.comment_date
+							-if friend.has_status?
+								=format_date_string(friend.status_created)
+					.clearer &nbsp;
+					.comment_body
+						%p
+							-if friend.has_status?
+								=links_4_twitter(h(friend.status_text))
+		
+		= render :partial=>'shared/more', :locals=>{:name=>'Freunde'}

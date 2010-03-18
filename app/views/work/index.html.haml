@@ -1,0 +1,129 @@
+.post
+	.post_body= render :partial=>"shared/quote", :locals=>{ :author=>'Johann Wolfgang von Goethe', :text=>'Mit dem Wissen wächst der Zweifel' }
+	.post_body
+		%p
+		Ich bin der Meinung, dass man nur durch die stetige Erweiterung seines Wissens 
+		qualitativ hochwertige Software erstellen kann. Deshalb versuche ich fortwährend
+		meine eigenen Fähigkeiten zu reflektieren, Schwächen zu erkennen und diese auszumerzen.
+		%p
+			Aus diesem Grund lese ich regelmäßig
+			=link_to('Fachbücher', :action => 'bookshelf')
+			, halte mich mit
+			=link_to('News-Feeds', :action => 'feed')
+			auf dem Laufenden oder besuche 
+			%a{:href=>"#roundtable", :title=>"Stammtische"} Stammtische
+			und nehme an
+			%a{:href=>"#course", :title=>"Online-Kurse"} Online-Kursen
+			teil.
+
+.post
+	%a{:id=>"roundtable"}
+	.div{:class=>"post_title"}
+		%h2 Stammtische
+	.post_date
+	
+	.archive_post
+
+
+		.comment_gravatar.left
+			%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/rug.png", :height=>"32", :width=>"32"}
+		.archive_post_title
+			%h3
+				%a{:href=>"http://www.rubyonrails-ug.de", :title=>"Rails Usergroup Deutschland"} Rails User Group Deutschland
+			.post_date Jeden 2. Mittwoch des Monats um 19:00
+		.clearer &nbsp;
+		%p
+			Die 
+			%a{:href=>"http://www.rubyonrails-ug.de/wiki/hamburgsync", :title=>"hamburgsync"} Hamburger Rails User Group
+			trifft sich regelmäßig am 2. Mittwoch jeden Monats um 19:00 Uhr.
+		%p
+			Diese Gruppe wurde vor einiger Zeit wieder ins Leben gerufen, wobei die 
+			%a{:href=>"http://mindmatters.de/", :title=>"Mindmatters"} Firma Mindmatters
+			großen Anteil daran hatte. Vielen Dank Jan Krutisch für den Einsatz!
+		%p
+			%a{:href=>"http://www.rubyonrails-ug.de/wiki/hamburgsync", :title=>"hamburgsync"}Das Nächste Treffen 
+			wird wohl am 10.03.2010 bei
+			%a{:href=>'http://blaumobilfunk.de', :title=>'blau Mobilfunk GmbH'} blau
+			statt finden.
+
+			.comment_gravatar.left
+				%img{:title=>"Extreme Programming Usergroup", :alt=>"Extreme Programming Usergroup", :src=>"/images/xpug.gif", :height=>"32", :width=>"32"}
+			.archive_post_title
+				%h3
+					%a{:href=>"http://de.dir.groups.yahoo.com/group/xpug-hh/", :title=>"Extreme Programming Usergroup"} Extreme Programming Usergroup Hamburg
+				.post_date Treffen in regelmäßigen Abständen
+			.clearer &nbsp;
+			%p
+				Nach dem letzten Treffen der 
+				%a{:href=>"http://de.dir.groups.yahoo.com/group/xpug-hh/", :title=>"Extreme Programming Usergroup"} Hamburger XP Usergroup
+				beim "Extreme-Glühwein-Drinking" im 
+				%a{:href=>'http://www.abaton-bistro.de/', :title=>'Abaton-Bistro'} Abaton-Bistro,
+				findet das nächste Zusammenkommen wohl erst im neuen Jahrzehnt stattfinden.
+			%p
+				Im letzten Jahr konnten wir bereits ein Treffen der Gruppe in unseren Räumlichkeiten bei 
+				%a{:href=>'http://blaumobilfunk.de', :title=>'blau Mobilfunk GmbH'} blau
+				veranstalten. 
+				Wir hatten einen wirklich produktiven Abend mit vielen Teilnehmern und konnten diesen bei ein paar Bierchen 
+				aus unserem IT-Bierkühlschrank auf unserer Büro-Couch gemütlich ausklingen lassen.
+
+		.comment_gravatar.left
+			%img{:title=>"Scrum Usergroup", :alt=>"Scrum Usergroup", :src=>"/images/sug.png", :height=>"32", :width=>"32"}
+		.archive_post_title
+			%h3
+				%a{:href=>"https://www.xing.com/net/sug-hh", :title=>"Scrum User Group Hamburg"} Scrum User Group Hamburg
+			.post_date Treffen in regelmäßigen Abständen
+		.clearer &nbsp;
+		%p
+			Der dritte "Scrumtisch" fand am 
+			%a{:href=>"https://www.xing.com/events/nachster-scrumtisch-hamburg-391027"} 29. Oktober mal wieder ohne mich
+			statt. Hoffentlich schaffe ich es das nächste mal endlich hin!
+
+		.comment_gravatar.left
+			%img{:title=>"Java Usergroup", :alt=>"Java Usergroup", :src=>"/images/jug.gif", :height=>"32", :width=>"32"}
+		.archive_post_title
+			%h3
+				%a{:href=>"http://www.jughh.org/", :title=>"Java User Group Hamburg"} Java User Group Hamburg
+			.post_date Treffen in regelmäßigen Abständen
+		.clearer &nbsp;
+		%p Diese Gruppe bringt professionelle Entwickler, Studenten, Manager, Anfänger und Enthusiasten zum Thema Java in der Region Hamburg zusammen.
+		%p Dahinter steckt die Idee Wissen, Ideen und Gedanken auszutauschen, Vorträge zu halten, zu kollaborieren, Probleme zu diskutieren, Meinungen kund zu tun, neue Projekte anzukündigen, Freundschaften zu schliessen, Code oder einfach nur das Treffen von Menschen mit dem gemeinsamen Interesse Java.
+		%p> Die JUGHH ist Mitglied des weltweiten Netzwerks der Java User Groups.
+
+
+	%a{:id=>"course"}
+	.post_title
+		%h2 Online-Kurse
+	.post_date
+	
+	.archive_post
+		.comment_gravatar.left
+			%img{:title=>"Rubylearning", :alt=>"Rubylearning", :src=>"/images/rubylearning.png", :height=>"32", :width=>"32"}
+
+		.archive_post_title
+			%h3
+				%a{:href=>"http://www.rubylearning.org", :title=>"Rubylearning"} Rubylearning
+			.post_date Regelmäßige Kurse in unterschiedlichen Bereichen
+
+		.clearer &nbsp;
+		
+		%p
+			Rubylearning wird von 
+			%a{:href=>"http://twitter.com/RubyLearning", :title=>"Satish Talim"} Satish Talim,
+			einem indischen Software-Guru, betreut. Dort gibt es sehr schön kurze Online-Kurse im Ruby-Umfeld.
+		%p
+			Ich habe dort bis jetzt Kurse über
+			%ul
+				%li
+					%a{:href=>"http://www.sinatrarb.com/", :title=>"Sinatra"} Sinatra
+				%li
+					%a{:href=>"http://merbivore.org/", :title=>"Merb"} Merb
+				%li
+					%a{:href=>"http://github.com/", :title=>"Git und GitHub"} Git und GitHub
+				%li
+					%a{:href=>"http://de.wikipedia.org/wiki/Metaprogrammierung", :title=>"Metaprogrammierung"} Metaprogrammierung
+				%li
+					%a{:href=>"http://shoooes.net/", :title=>"Shoes"} Shoes
+			besucht und war bis jetzt immer sehr zufrieden mit den kompakten und gut aufbereiteten Inhalten.
+		
+		%p
+			Die Kurse kosten immer um die 10$ und dauern ca. 1 bis 2 Wochen.

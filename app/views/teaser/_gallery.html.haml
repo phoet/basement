@@ -1,0 +1,8 @@
+.box
+	.box_title=link_to('Fotoalbum', {:controller=>'home', :action=>'gallery'},{:title=>'Fotoalbum'})
+	.box_content
+		.thumbnails
+			-images[0..5].each() do |image|
+				%a{:title=>image.title, :href=>image.url, :class=>"thumb"}
+					%img{:src=>image.thumbnail, :width=>"64", :height=>"64", :alt=>"Fotos von Peter Schröder"}
+			.clearer &nbsp;

@@ -1,0 +1,37 @@
+.post
+	.post_body
+		= render :partial => "shared/quote", :locals => { :author =>'Loriot', :text => 'Plötzliche Regenfälle können zum Betreten einer Buchhandlung zwingen.' }
+	
+	.post_body
+		%p
+			In meiner Freizeit lese ich bevorzugt Fachbücher.
+			Dabei sind die Themengebiete breit verstreut,
+			neuerdings fokussiere ich mich jedoch hauptsächlich auf 
+			%a{:href=>'http://developer.apple.com/mac/library/', :title=>'Objective-C Cocoa'} Objective-C/Cocoa
+			und
+			%a{:href=>'http://www.ruby-lang.org/', :title=>'Ruby'} Ruby-Bücher.
+			
+		%h4 Hier eine kleine zufällige Auswahl:
+
+	#bookshelf
+		#book
+			.comment_list
+				- @more_array.each do |amazon|
+					.comment.alt
+						.comment_gravatar.left{:style => "width: #{amazon.thumbnail_width + 10}px;"}
+							%a{:href => amazon.link, :title => amazon.title}
+								%img{:alt => amazon.title, :title => amazon.title, :src => amazon.thumbnail}
+						
+						.comment_author.left
+							%strong
+								%a{:href => amazon.link, :title => amazon.title}= trim_to(amazon.title,75)
+						
+							.comment_date= "von #{amazon.authors.join(', ')}"
+							.comment_date="#{amazon.price} mit #{amazon.page_count} Seiten von #{amazon.publication_date}"
+							.comment_date="aufgelegt #{amazon.studio} #{amazon.publication_date} mit ISBN #{amazon.isbn}"
+						
+						.clearer &nbsp;
+
+						.comment_body
+							%p= amazon.review
+		= render :partial => 'shared/more', :locals => {:name => 'Bücher'}

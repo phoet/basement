@@ -1,0 +1,8 @@
+--- !ruby/struct:Helper::MenuItem 
+:id: id
+:name: name
+:subitems: 
+- !ruby/struct:Helper::MenuItem 
+  :id: id
+  :name: name
+  :subitems: 

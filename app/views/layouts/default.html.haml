@@ -1,0 +1,107 @@
+!!! XML
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+	%head
+		%meta{'http-equiv'=>"content-type", :content=>"text/html; charset=UTF-8"}
+		%meta{'http-equiv'=>"content-language", :content=>"de"}
+		%meta{'http-equiv'=>"language", :content=>"de"}
+		%meta{:name=>"language", :content=>"deutsch, de"}
+		%meta{:name=>"description", :content=>"#{names},#{keywords}"}
+		%meta{:name=>"keywords", :content=>"#{names},#{keywords}"}
+		%meta{:name=>"author", :content=>names}
+		%meta{:name=>"robots", :content=>"index,follow"}
+		%meta{:name=>"verify-v1", :content=>"DYzuVUS2Ez7zNwT2DNuxbAh2jdIF61Ro0/ft212nZpI="}
+		
+		%link{:rel=>"shortcut icon", :href=>"/favicon.png", :type=>"image/png"}
+		%link{:rel=>"icon", :href=>"/favicon.png", :type=>"image/png"}
+		
+		= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 'jquery.lightbox-0.5', 'application'
+		= stylesheet_link_tag 'style', 'jquery.lightbox-0.5'
+		
+		%title="#{title(controller)} - Peter Schröder - Phoet - #{keywords}"
+	
+	%body#top
+		#layout_wrapper_outer
+			#layout_wrapper
+				#layout_top
+					#site_title
+						%h1
+							%a{:href=>"/", :title=>"Peter Schröder"}
+								Peter 
+								%span Schröder
+						%h2= keywords
+				
+				#layout_body_outer
+					#layout_body
+						#navigation
+							#nav1
+								%ul=menu()
+								.clearer &nbsp;
+							#nav2
+								%ul=menu(:top=>false)
+								.clearer &nbsp;
+						
+						#main
+							#content_outer.left
+								#content= yield
+					
+							#sidebar_outer.right
+								#sidebar
+									= render :partial => 'teaser/about'
+									= render :partial => 'teaser/feeds', :locals => {:feeds => @feeds} if @teaser.include? :feed
+									= render :partial => 'teaser/blog', :locals => {:posts => @posts} if @teaser.include? :blog
+									= render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
+									= render :partial => 'teaser/gallery', :locals => {:images => @random_gallary_images} if @teaser.include? :gallery
+									= render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @teaser.include? :twitter
+							.clearer &nbsp;
+				
+						#dashboard
+							#dashboard_inner
+								.col3.left
+									.col3_content
+										.col_title=category_name('home')
+										%ul=menu(:controller=>'home', :top=>false)
+								
+								.col3mid.left
+									.col3_content
+										.col_title=category_name('work')
+										%ul=menu(:controller=>'work', :top=>false)
+								
+								.col3.right
+									.col3_content
+										.col_title=category_name('interest')
+										%ul=menu(:controller=>'interest', :top=>false)
+						
+								.clearer &nbsp;
+		
+				#footer
+					.left
+						&copy; 
+						=Time.new.year
+						%a{:href=>"http://#{website_url}", :title=>"phoet"}=website_url
+						&reg;
+						%a{:href=>"http://www.peter-schröder.info", :title=>"peter schröder"} www.peter-schröder.info
+						see some code on 
+						%a{:href=>"http://github.com/phoet/basement/", :title=>"github phoet"} github
+					.right
+						%a{:href=>"http://templates.arcsin.se/", :title=>'Arcsin-Templates'} Website template
+						by
+						%a{:href=>"http://arcsin.se/",:title=>'Arcsin'} Arcsin
+					.clearer &nbsp;
+					.left
+						Running on 
+						%a{:href=>"http://www.rubyonrails.org", :title=>"Ruby on Rails"}="Rails 3.0.0.beta"
+						=" and rendering took #{Time.new - @rendering_start} seconds"
+					.clearer &nbsp;
+					=render :partial => '/shared/seitwert'
+
+
+		%script{:type=>"text/javascript"}
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+		%script{:type=>"text/javascript"}
+			try {
+			var pageTracker = _gat._getTracker("UA-2711231-1");
+			pageTracker._trackPageview();
+			} catch(err) {}
