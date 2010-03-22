@@ -49,7 +49,7 @@ class AmazonData
   def review
     puts isbn
     content = @item.editorial_reviews.editorial_review.content.to_s
-    CGI.unescapeHTML(content)
+    CGI.unescapeHTML(content).html_safe
   rescue
     ''
   end

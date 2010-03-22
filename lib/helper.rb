@@ -33,6 +33,9 @@ class Helper
   end
 
   def self.amazon_book(asin)
+    require "amazon"
+    require "amazon/aws"
+    require "amazon/aws/search"
     logger.info "calling amazon #{asin}"
     il = Amazon::AWS::ItemLookup.new( 'ASIN', { 'ItemId'=>asin })
     rg = Amazon::AWS::ResponseGroup.new( 'Medium' )

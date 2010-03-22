@@ -1,0 +1,7 @@
+[global]
+locale = 'de'
+cache = false
+key_id = 'AKIAJFA5X7RTOKFNPVZQ'
+secret_key_id = '4w5ApABP2dALi4/8bdqm9xIcZ8GPe0P0PnocXNTB'
+[de]
+associate = 'kartoffelspal-21'
