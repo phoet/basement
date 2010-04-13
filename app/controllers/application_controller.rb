@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     cache(:posts){Helper::blogger_posts}
     cache(:books){Helper::load_data(:books).sort_random}
     cache(:seitwert){Helper::seitwert}
+    cache(:repos){Helper::repos}
 
     # cache can just handle arrays
     @seitwert = @seitwert[0]
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
     @cites = Helper::load_data(:cites).sort_random
     @feeds = Helper::load_data(:feeds).sort_random
     
-    @teaser = [:blog, :bookshelf, :gallery, :twitter, :feed]
+    @teaser = [:blog, :bookshelf, :gallery, :twitter, :feed, :github]
     @teaser.delete_at(rand(@teaser.size))
   end
 

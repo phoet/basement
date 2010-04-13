@@ -28,6 +28,10 @@
     :name: "B\xC3\xBCcherregal"
     :subitems: 
   - !ruby/struct:Helper::MenuItem 
+    :id: github
+    :name: GitHub-Projekte
+    :subitems: 
+  - !ruby/struct:Helper::MenuItem 
     :id: feed
     :name: News-Feeds
     :subitems: 

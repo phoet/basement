@@ -1,0 +1,7 @@
+.box
+	.box_title=link_to('GitHub-Projekte', {:controller=>'work', :action=>'github'}, {:title=>'GitHub-Projekte'})
+	.box_content
+		%ul
+			-repos[0..4].each() do |repo|
+				%li
+					%a{:href=>"http://github.com/phoet/#{repo.name}", :title=>repo.name}= repo.name

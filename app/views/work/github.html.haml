@@ -1,0 +1,41 @@
+.post
+	.post_body
+		= render :partial => "shared/quote", :locals => { :author =>'Jedi', :text => 'Möge die Macht mit dir sein' }
+	
+	.post_body
+		%p
+			Um ein klein wenig an die Open-Source-Gemeinschaft zurückzugeben,
+			versuche ich in meiner Freizeit ein paar 
+			%a{:href=>"http://blog.nofail.de", :title=>"#nofail - it's all about the sugar"}sinnvolle technische Artikel zu schreiben
+			und veröffentliche 
+			%a{:href=>"http://github.com/phoet", :title=>"GitHub"}meinen Quelltext auf GitHub,
+			um mein bescheidenes Wissen unters Volk zu bringen.
+
+#github
+	- @more_array.each_with_index do |repo, i|
+		.comment_gravatar.left
+			%a{:href=>repo.url, :title=>repo.name}
+				%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"100"}
+		.archive_post_title
+			%h3
+				%a{:href=>repo.url, :title=>repo.name}=repo.name
+			.post_date
+				%a{:href=>repo.homepage, :title=>repo.name}=repo.description
+			.post_date
+				%a{:href=>"#{repo.url}/network", :title=>repo.name}="Verzweigungen: #{repo.forks}"
+				="-"
+				%a{:href=>"#{repo.url}/watchers", :title=>repo.name}="Beobachter: #{repo.watchers}"
+				="-"
+				%a{:href=>"#{repo.url}/issues", :title=>repo.name}="Probleme: #{repo.open_issues}"
+
+		.clearer &nbsp;
+			
+		%strong letzte Änderungen:
+			
+		%ul
+			-@commit_array[i][0..5].each do |commit|
+				%li
+					%a{:href=>commit.url, :title=>commit.message}= commit.message
+					="von <em>#{commit.author.name}</em> (#{format_date_string(commit.committed_date)})".html_safe
+
+= render :partial => 'shared/more', :locals => {:name => 'Projekte'}

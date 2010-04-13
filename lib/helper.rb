@@ -31,6 +31,21 @@ class Helper
   def self.get(url, format)
     HTTParty.get(url, :format=>format, :timeout=>10)
   end
+  
+  def self.repos
+    resp = HTTParty.get 'http://github.com/api/v1/json/phoet/', :type=>:json
+    resp = Mash.new resp
+    resp.user.repositories
+  rescue
+    nil
+  end
+  
+  def self.commits(repo)
+    resp = HTTParty.get "http://github.com/api/v1/json/phoet/#{repo}/commits/master", :type=>:json
+    Mash.new resp
+  rescue
+    nil
+  end
 
   def self.amazon_book(asin)
     require "amazon"

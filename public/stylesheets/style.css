@@ -568,6 +568,10 @@ div.comment_list {
 	padding: 2px;
 }
 .comment_gravatar.min {width: 30px;}
+
+#github .comment_gravatar {width: 120px;}
+#github .post_date {padding: 5px;}
+
 .spinner {
 	padding: 25px;
 }

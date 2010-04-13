@@ -3,5 +3,5 @@
 	.box_content
 		%ul
 			-feeds[0..4].each() do |feed|
-				%li{:style=>"list-style-image: url(/images/rss/list.png);"}
+				%li
 					%a{:href=>feed.site, :title=>feed.title}= feed.title
