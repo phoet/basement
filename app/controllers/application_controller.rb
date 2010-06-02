@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
     cache(:books){Helper::load_data(:books).sort_random}
     cache(:seitwert){Helper::seitwert}
     cache(:repos){Helper::repos}
+    cache(:gists){Helper::gists}
 
     # cache can just handle arrays
     @seitwert = @seitwert[0]
@@ -54,7 +55,7 @@ class ApplicationController < ActionController::Base
     # p "db_cache #{key}"
     from_db = Storage.first(:conditions => {:key => key})
     # p "in db #{from_db.inspect}"
-    if from_db.nil? || from_db.updated_at < Time.new - CACHE_TIME
+    if (from_db.nil? || from_db.updated_at < Time.new - CACHE_TIME) and !OFFLINE
       # p "fetching for db #{key}"
       data = (yield to_cache).collect{|t|t}
       return [] if data.nil? || data.empty?
@@ -63,7 +64,7 @@ class ApplicationController < ActionController::Base
       from_db.data = data
       from_db.save!
     end
-    instance_variable_set :"@#{key.to_s}", from_db.data
+    instance_variable_set :"@#{key.to_s}", (from_db.nil? ? [] : from_db.data)
   end
   
 end

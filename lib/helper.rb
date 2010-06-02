@@ -24,6 +24,17 @@ class Helper
     HTTParty.get(url, :format=>format, :timeout=>10)
   end
   
+  def self.gists
+    #Helper::gists.each{|g| p "#{g.repo} #{g.files} #{g.description} #{g.created_at}"}
+    resp = HTTParty.get 'http://gist.github.com/api/v1/json/gists/phoet', :type=>:json
+    resp = Mash.new resp
+    resp.gists
+  end
+  
+  def self.gist(gist_id, filename)
+    HTTParty.get "http://gist.github.com/raw/#{gist_id}/#{filename}"
+  end
+  
   def self.repos
     resp = HTTParty.get 'http://github.com/api/v1/json/phoet/', :type=>:json
     resp = Mash.new resp

@@ -52,7 +52,7 @@
 									= render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
 									= render :partial => 'teaser/gallery', :locals => {:images => @random_gallary_images} if @teaser.include? :gallery
 									= render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @teaser.include? :twitter
-									= render :partial => 'teaser/github', :locals => {:repos => @repos} if @teaser.include? :github
+									= render :partial => 'teaser/github', :locals => {:repos => @repos, :gists => @gists} if @teaser.include? :github
 							.clearer &nbsp;
 				
 						#dashboard

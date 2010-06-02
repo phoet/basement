@@ -4,4 +4,4 @@
 		%ul
 			- books[0..4].each() do |book|
 				%li
-					%a{:title=>book.title, :href=>"http://www.amazon.de/gp/product/#{book.asin}?ie=UTF8&amp;tag=kartoffelspal-21&amp;linkCode=as2&amp;camp=1638&amp;creative=19454&amp;creativeASIN=#{book.asin}"}=book.title
+					%a{:title=>book.title, :href=>"http://www.amazon.de/gp/product/#{book.asin}?ie=UTF8&amp;tag=kartoffelspal-21&amp;linkCode=as2&amp;camp=1638&amp;creative=19454&amp;creativeASIN=#{book.asin}"}= trim_to(book.title, 30)

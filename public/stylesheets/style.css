@@ -356,6 +356,9 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	color: #444;
 	padding: 16px;
 }
+.smaller {
+	font-size: smaller;
+}
 
 /* Sidebar */
 #sidebar_outer {
@@ -569,7 +572,8 @@ div.comment_list {
 }
 .comment_gravatar.min {width: 30px;}
 
-#github .comment_gravatar {width: 120px;}
+#github .comment_gravatar {width: 65px;}
+#github .comment_gravatar img {padding: 5px;}
 #github .post_date {padding: 5px;}
 
 .spinner {
