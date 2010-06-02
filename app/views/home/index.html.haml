@@ -47,7 +47,8 @@
 						%a{:href=>"http://twitter.com/#{friend.screen_name}/followers"}="#{friend.friends_count} Verfolger"
 						.comment_date
 							-if friend.has_status?
-								=format_date_string(friend.status_created)
+								zuletzt Aktualisiert am
+								=l(friend.status_created)
 					.clearer &nbsp;
 					.comment_body
 						%p

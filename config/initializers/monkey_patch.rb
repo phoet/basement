@@ -1,12 +1,21 @@
 # patch Array to have a random-sort method
 class Array
-  
   def sort_random()
     self.sort do |x,y| 
       Kernel.rand() <=> Kernel.rand()
     end
   end
-  
+end
+
+# patch I18n to automatically make a DateTime from a String
+module I18n
+  class << self
+    alias :localize_old :localize
+    def localize(object, options = {})
+      object = DateTime.parse(object) if object.is_a? String
+      localize_old(object, options)
+    end
+  end
 end
 
 # patch HTTParty to use a configurable timeout

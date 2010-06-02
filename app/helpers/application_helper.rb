@@ -103,8 +103,4 @@ module ApplicationHelper
     end
     ret.html_safe
   end
-
-  def format_date_string(date)
-    Time.parse(date).strftime('%d.%m.%Y - %H:%M') unless date.nil?
-  end
 end

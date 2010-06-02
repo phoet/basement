@@ -1,0 +1,7 @@
+de:
+  date:
+    formats:
+      default: "%d.%m.%Y - %H:%M"
+  time:
+    formats:
+      default: "%d.%m.%Y - %H:%M"

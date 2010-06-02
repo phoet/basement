@@ -35,7 +35,7 @@
 					%span.smaller
 						(
 						%a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
-						=format_date_string(commit.committed_date)
+						=l(commit.committed_date)
 						)
 
 = render :partial => 'shared/more', :locals => {:name => 'Projekte'}
