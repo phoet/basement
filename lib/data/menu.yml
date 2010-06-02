@@ -29,11 +29,7 @@
     :subitems: 
   - !ruby/struct:Helper::MenuItem 
     :id: github
-    :name: GitHub-Projekte
-    :subitems: 
-  - !ruby/struct:Helper::MenuItem 
-    :id: feed
-    :name: News-Feeds
+    :name: Github
     :subitems: 
 - !ruby/struct:Helper::MenuItem 
   :id: interest

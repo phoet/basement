@@ -26,10 +26,9 @@ class ApplicationController < ActionController::Base
 
     @random_gallary_images = @fotos.sort_random
     @cites = Helper::load_data(:cites).sort_random
-    @feeds = Helper::load_data(:feeds).sort_random
     
-    @teaser = [:blog, :bookshelf, :gallery, :twitter, :feed, :github]
-    @teaser.delete_at(rand(@teaser.size))
+    @teaser = [:blog, :bookshelf, :gallery, :twitter, :github]
+    2.times.each{@teaser.delete_at(rand(@teaser.size))}
   end
 
   # extend render-method to not render a layout for xhr requests

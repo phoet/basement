@@ -1,0 +1,121 @@
+--- 
+hash: eae0c332c6794976e108c199118eb52f9e2c538f
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
+specs: 
+- rake: 
+    version: 0.8.7
+- abstract: 
+    version: 1.0.0
+- builder: 
+    version: 2.1.2
+- i18n: 
+    version: 0.3.7
+- memcache-client: 
+    version: 1.7.8
+- tzinfo: 
+    version: 0.3.22
+- activesupport: 
+    version: 3.0.0.beta
+- activemodel: 
+    version: 3.0.0.beta
+- erubis: 
+    version: 2.6.5
+- rack: 
+    version: 1.1.0
+- rack-mount: 
+    version: 0.4.7
+- rack-test: 
+    version: 0.5.4
+- actionpack: 
+    version: 3.0.0.beta
+- mime-types: 
+    version: "1.16"
+- polyglot: 
+    version: 0.3.1
+- treetop: 
+    version: 1.4.8
+- mail: 
+    version: 2.1.5.3
+- text-hyphen: 
+    version: 1.0.0
+- text-format: 
+    version: 1.0.0
+- actionmailer: 
+    version: 3.0.0.beta
+- arel: 
+    version: 0.2.1
+- activerecord: 
+    version: 3.0.0.beta
+- activeresource: 
+    version: 3.0.0.beta
+- bundler: 
+    version: 0.9.25
+- crack: 
+    version: 0.1.6
+- haml: 
+    version: 2.2.24
+- hashie: 
+    version: 0.2.0
+- json_pure: 
+    version: 1.4.3
+- rubyforge: 
+    version: 2.0.4
+- hoe: 
+    version: 2.6.0
+- httparty: 
+    version: 0.5.2
+- mash: 
+    version: 0.1.1
+- oauth: 
+    version: 0.4.0
+- thor: 
+    version: 0.13.6
+- railties: 
+    version: 3.0.0.beta
+- rails: 
+    version: 3.0.0.beta
+- ruby-aaws: 
+    version: 0.7.0
+- sqlite3-ruby: 
+    version: 1.2.5
+- test-unit: 
+    version: 1.2.3
+- yajl-ruby: 
+    version: 0.7.6
+- twitter: 
+    version: 0.9.7
+dependencies: 
+  rails: 
+    version: = 3.0.0.beta
+    group: 
+    - :default
+  sqlite3-ruby: 
+    version: = 1.2.5
+    group: 
+    - :default
+    require: 
+    - sqlite3
+  haml: 
+    version: = 2.2.24
+    group: 
+    - :default
+  twitter: 
+    version: = 0.9.7
+    group: 
+    - :default
+  mash: 
+    version: = 0.1.1
+    group: 
+    - :default
+  ruby-aaws: 
+    version: ">= 0"
+    group: 
+    - :default
+    require: 
+    - amazon/aws
+  test-unit: 
+    version: = 1.2.3
+    group: 
+    - :test

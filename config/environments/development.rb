@@ -18,4 +18,4 @@ BasementRails3::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 end
 
-CACHE_TIME = 100.seconds
+CACHE_TIME = 100 * 60

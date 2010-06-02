@@ -1,7 +1,0 @@
-.box
-	.box_title=link_to('News-Feeds', {:controller=>'work', :action=>'feed'}, {:title=>'News-Feeds'})
-	.box_content
-		%ul
-			-feeds[0..4].each() do |feed|
-				%li
-					%a{:href=>feed.site, :title=>feed.title}= feed.title

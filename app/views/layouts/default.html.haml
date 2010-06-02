@@ -48,7 +48,6 @@
 							#sidebar_outer.right
 								#sidebar
 									= render :partial => 'teaser/about'
-									= render :partial => 'teaser/feeds', :locals => {:feeds => @feeds} if @teaser.include? :feed
 									= render :partial => 'teaser/blog', :locals => {:posts => @posts} if @teaser.include? :blog
 									= render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
 									= render :partial => 'teaser/gallery', :locals => {:images => @random_gallary_images} if @teaser.include? :gallery

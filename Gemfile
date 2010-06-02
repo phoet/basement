@@ -1,7 +1,6 @@
 # Edit this Gemfile to bundle your application's dependencies.
 source 'http://gemcutter.org'
 
-
 gem "rails", "3.0.0.beta"
 
 ## Bundle edge rails:
@@ -9,17 +8,16 @@ gem "rails", "3.0.0.beta"
 
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
-gem "sqlite3-ruby", :require => "sqlite3"
+gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
 
 ## Bundle the gems you use:
 # gem "bj"
 # gem "hpricot", "0.6"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
-gem "haml"
-gem "twitter"
-gem "json"
-gem "mash"
+gem "haml", "2.2.24"
+gem "twitter", "0.9.7"
+gem "mash", "0.1.1"
 gem "ruby-aaws", :require=>"amazon/aws"
 
 ## Bundle gems used only in certain environments:

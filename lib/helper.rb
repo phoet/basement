@@ -20,14 +20,6 @@ class Helper
     end
   end
 
-  def self.rss_feed(type, url)
-    logger.info "calling rss #{type} #{url}"
-    xml = get(url, :xml)
-    FeedData.new type, xml
-  rescue
-    nil
-  end
-
   def self.get(url, format)
     HTTParty.get(url, :format=>format, :timeout=>10)
   end

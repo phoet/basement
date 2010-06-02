@@ -1,8 +1,6 @@
 # load all classes from lib
 require 'amazon_data'
 require 'blogger'
-require 'feed_data'
-require 'feed_item'
 require 'google_data'
 require 'picasa'
 require 'seitwert'

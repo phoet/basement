@@ -32,4 +32,4 @@ BasementRails3::Application.configure do
   # config.threadsafe!
 end
 
-CACHE_TIME = 10.hours
+CACHE_TIME = 10 * 60 * 60

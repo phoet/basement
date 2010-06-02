@@ -2,18 +2,6 @@ class WorkController < ApplicationController
   def index
   end
 
-  def feed
-    more_stuff(@feeds.size) do |count|
-      @feeds[0..count].each_with_index.map do |feed, i| 
-        (@feed_array ||= []) << cache(:"feed_posts#{i}") do 
-          f = Helper::rss_feed(feed.type, feed.url)
-          f.nil? ? [] : f.items
-        end
-        feed
-      end
-    end
-  end
-
   def bookshelf
     more_stuff(@books.size){|count| @books[0..count].map { |book| Helper::amazon_book(book.asin) } }
   end
