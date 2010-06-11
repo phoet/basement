@@ -1,5 +1,6 @@
 module WorkHelper
-  def rss_icon
-    "/images/rss/#{rand(6)}.png"
+  def commits(repo_name)
+    c = Helper::commits repo_name
+    c.nil? ? [] : c.commits
   end
 end

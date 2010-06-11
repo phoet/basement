@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     @random_gallary_images = @fotos.sort_random
     @cites = Helper::load_data(:cites).sort_random
     
-    @teaser = [:blog, :bookshelf, :gallery, :twitter, :github]
+    @teaser = [:blog, :bookshelf, :gallery, :twitter, :repos, :gists]
     2.times.each{@teaser.delete_at(rand(@teaser.size))}
   end
 

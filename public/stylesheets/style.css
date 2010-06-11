@@ -576,6 +576,9 @@ div.comment_list {
 #github .comment_gravatar img {padding: 5px;}
 #github .post_date {padding: 5px;}
 
+#tabs ul li {list-style: none;}
+#tabs ul {padding: 0px; margin: 0px;}
+
 .spinner {
 	padding: 25px;
 }

@@ -31,6 +31,7 @@ $(document).ready(function(){
 		return false;
 	 });
 	toggle_feed();
+	$("#tabs").tabs();
 });
 
 $(document).ajaxComplete(function(event,request, settings){

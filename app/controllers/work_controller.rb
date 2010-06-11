@@ -7,13 +7,17 @@ class WorkController < ApplicationController
   end
 
   def github
-    more_stuff(@repos.size) do |count|
-      @repos[0..count].each_with_index.map do |repo, i|
-        (@commit_array ||= []) << cache(:"repo_commits#{i}") do
-          c = Helper::commits repo.name
-          c.nil? ? [] : c.commits
+    @repos.each_with_index.map do |repo, i|
+      (@commit_array ||= []) << cache(:"repo_commits#{i}") do
+        c = Helper::commits repo.name
+        c.nil? ? [] : c.commits
+      end
+    end
+    @gists.each_with_index.map do |gist, i|
+      (@gist_files_array ||= []) << cache(:"gist_files_#{i}") do
+        gist.files.map do |file|
+          Helper::gist gist.repo, file
         end
-        repo
       end
     end
   end

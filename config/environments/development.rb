@@ -19,4 +19,4 @@ BasementRails3::Application.configure do
 end
 
 CACHE_TIME = 100 * 60
-OFFLINE = true
+OFFLINE = false

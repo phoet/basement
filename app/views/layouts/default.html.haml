@@ -15,11 +15,11 @@
 		%link{:rel=>"shortcut icon", :href=>"/favicon.png", :type=>"image/png"}
 		%link{:rel=>"icon", :href=>"/favicon.png", :type=>"image/png"}
 		
-		= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 'jquery.lightbox-0.5', 'application'
-		= stylesheet_link_tag 'style', 'jquery.lightbox-0.5'
-		
+		= javascript_include_tag 'jquery.lightbox-0.5', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js', 'application'
+		= stylesheet_link_tag 'jquery.lightbox-0.5', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 'style'
+
 		%title="#{title(controller)} - Peter Schröder - Phoet - #{keywords}"
-	
+
 	%body#top
 		#layout_wrapper_outer
 			#layout_wrapper
@@ -52,7 +52,8 @@
 									= render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
 									= render :partial => 'teaser/gallery', :locals => {:images => @random_gallary_images} if @teaser.include? :gallery
 									= render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @teaser.include? :twitter
-									= render :partial => 'teaser/github', :locals => {:repos => @repos, :gists => @gists} if @teaser.include? :github
+									= render :partial => 'teaser/github_repos', :locals => {:repos => @repos} if @teaser.include? :repos
+									= render :partial => 'teaser/github_gists', :locals => {:gists => @gists} if @teaser.include? :gists
 							.clearer &nbsp;
 				
 						#dashboard

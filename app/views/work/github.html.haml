@@ -11,31 +11,60 @@
 			%a{:href=>"http://github.com/phoet", :title=>"GitHub Projekte von Peter Schröder"}meinen Quelltext auf GitHub,
 			um mein bescheidenes Wissen unters Volk zu bringen.
 			
-#github
-	- @more_array.each_with_index do |repo, i|
-		.comment_gravatar.left
-			%a{:href=>repo.url, :title=>repo.name}
-				%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"50"}
-		.archive_post_title
-			%h3
-				%a{:href=>repo.url, :title=>repo.name}=repo.name
-			.post_date
-				%a{:href=>repo.homepage, :title=>repo.description}=repo.description
-				(
-				%a{:href=>"#{repo.url}/watchers", :title=>"watchers"}="#{repo.watchers} ✰"
-				%a{:href=>"#{repo.url}/network", :title=>"forks"}="#{repo.forks} ✪"
-				%a{:href=>"#{repo.url}/issues", :title=>"issues"}="#{repo.open_issues} ❂"
-				)
-		.clearer &nbsp;
-			
-		%ul
-			-@commit_array[i][0..5].each do |commit|
-				%li
-					%a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
-					%span.smaller
-						(
-						%a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
-						=l(commit.committed_date)
-						)
 
-= render :partial => 'shared/more', :locals => {:name => 'Projekte'}
+#github
+	#tabs
+		%ul
+			%li
+				%a{ :href => "#fragment-repos"}
+					%span Projekte
+			%li
+				%a{ :href => "#fragment-gists"}
+					%span Gists
+
+		#fragment-repos
+			- @repos.each_with_index do |repo, i|
+				%div{:class => "comment_gravatar #{cycle('left', 'right')}"}
+					%a{:href=>repo.url, :title=>repo.name}
+						%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"50"}
+				.archive_post_title
+					%h3
+						%a{:href=>repo.url, :title=>repo.name}=repo.name
+					.post_date
+						%a{:href=>repo.homepage, :title=>repo.description}=repo.description
+				.clearer &nbsp;
+				
+				%ul
+					-@commit_array[i][0..5].each do |commit|
+						%li
+							%a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
+							%span.smaller
+								(
+								%a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
+								=l(commit.committed_date)
+								)
+
+				.post_date
+					%a{:href=>repo.url, :title=>repo.name}="Repository"
+					has
+					%a{:href=>"#{repo.url}/watchers", :title=>"watchers"}="#{repo.watchers} Watchers"
+					%a{:href=>"#{repo.url}/network", :title=>"forks"}="#{repo.forks} Forks"
+					%a{:href=>"#{repo.url}/issues", :title=>"issues"}="and #{repo.open_issues} open Issues"
+				.post_date
+
+
+		#fragment-gists
+			- @gists.each_with_index do |gist, i|
+				%div{:class => "comment_gravatar #{cycle('left', 'right')}"}
+					%a{:href=>gist.url}
+						%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"50"}
+				.archive_post_title
+					%h3
+						%a{:href=>gist.url}=gist.files.join(', ')
+					.post_date
+						%a{:href=>gist.homepage, :title=>gist.description}=gist.description
+				.clearer &nbsp;
+				-@gist_files_array[i].each do |file|
+					%div
+						%pre{:style => "width: auto; overflow: auto; padding: 4px;"}=file
+				.post_date
