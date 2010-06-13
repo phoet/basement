@@ -7,7 +7,7 @@ class Helper
   end
 
   def self.logger
-    RAILS_DEFAULT_LOGGER
+    Rails.logger
   end
 
   def self.load_data(structure)
@@ -90,8 +90,9 @@ class Helper
   end
 
   def self.twitter_posts
-    logger.info 'calling twitter posts'
-    Twitter::Search.new('phoet', api_endpoint: ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT'])
+    endpoint = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
+    logger.info "calling twitter posts with #{endpoint}"
+    Twitter::Search.new('phoet', api_endpoint: endpoint)
   end
 
   def self.twitter_friends
