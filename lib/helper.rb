@@ -91,7 +91,7 @@ class Helper
 
   def self.twitter_posts
     logger.info 'calling twitter posts'
-    Twitter::Search.new('phoet', api_endpoint: ENV['APIGEE_TWITTER_API_ENDPOINT'])
+    Twitter::Search.new('phoet', api_endpoint: ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT'])
   end
 
   def self.twitter_friends

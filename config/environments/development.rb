@@ -20,4 +20,4 @@ end
 
 CACHE_TIME = 100 * 60
 OFFLINE = false
-ENV['APIGEE_TWITTER_API_ENDPOINT'] = 'search.twitter.com/search'
+ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT'] = 'search.twitter.com/search'
