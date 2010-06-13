@@ -25,7 +25,6 @@ class Helper
   end
   
   def self.gists
-    #Helper::gists.each{|g| p "#{g.repo} #{g.files} #{g.description} #{g.created_at}"}
     resp = HTTParty.get 'http://gist.github.com/api/v1/json/gists/phoet', :type=>:json
     resp = Mash.new resp
     resp.gists
@@ -92,7 +91,7 @@ class Helper
 
   def self.twitter_posts
     logger.info 'calling twitter posts'
-    Twitter::Search.new('phoet')
+    Twitter::Search.new('phoet', api_endpoint: ENV['APIGEE_TWITTER_API_ENDPOINT'])
   end
 
   def self.twitter_friends
