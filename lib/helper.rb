@@ -90,7 +90,7 @@ class Helper
   end
 
   def self.twitter_posts
-    endpoint = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
+    endpoint = "#{ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']}/search"
     logger.info "calling twitter posts with #{endpoint}"
     Twitter::Search.new('phoet', api_endpoint: endpoint)
   end
