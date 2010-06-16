@@ -51,7 +51,7 @@ specs:
 - activeresource: 
     version: 3.0.0.beta
 - bundler: 
-    version: 0.9.25
+    version: 0.9.26
 - crack: 
     version: 0.1.6
 - haml: 
