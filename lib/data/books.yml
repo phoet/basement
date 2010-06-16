@@ -1,5 +1,20 @@
 --- 
 - !ruby/struct:ApplicationController::Book 
+  :asin: 1430218150
+  :title: Learn Objective-C on the Mac
+- !ruby/struct:ApplicationController::Book 
+  :asin: 1430218096
+  :title: Learn C on the Mac
+- !ruby/struct:ApplicationController::Book 
+  :asin: 1430218592
+  :title: Learn Cocoa on the Mac
+- !ruby/struct:ApplicationController::Book 
+  :asin: "0321552636"
+  :title: Xcode 3 Unleashed
+- !ruby/struct:ApplicationController::Book 
+  :asin: 1430224592
+  :title: Beginning Iphone 3 Development
+- !ruby/struct:ApplicationController::Book 
   :asin: 006135323X
   :title: Predictably Irrational
 - !ruby/struct:ApplicationController::Book 
