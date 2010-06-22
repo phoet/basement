@@ -18,6 +18,7 @@ gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
 gem "haml", "2.2.24"
 gem "twitter", "0.9.7"
 gem "mash", "0.1.1"
+gem "coderay", "0.9.3"
 gem "ruby-aaws", :require=>"amazon/aws"
 
 ## Bundle gems used only in certain environments:

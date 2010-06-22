@@ -1,70 +1,72 @@
 .post
-	.post_body
-		= render :partial => "shared/quote", :locals => { :author =>'Jedi', :text => 'Möge die Macht mit dir sein' }
-	
-	.post_body
-		%p
-			Um ein klein wenig an die Open-Source-Gemeinschaft zurückzugeben,
-			versuche ich in meiner Freizeit ein paar 
-			%a{:href=>"http://blog.nofail.de", :title=>"#nofail - it's all about the sugar"}sinnvolle technische Artikel zu schreiben
-			und veröffentliche 
-			%a{:href=>"http://github.com/phoet", :title=>"GitHub Projekte von Peter Schröder"}meinen Quelltext auf GitHub,
-			um mein bescheidenes Wissen unters Volk zu bringen.
-			
+  .post_body
+    = render :partial => "shared/quote", :locals => { :author =>'Jedi', :text => 'Möge die Macht mit dir sein' }
+  
+  .post_body
+    %p
+      Um ein klein wenig an die Open-Source-Gemeinschaft zurückzugeben,
+      versuche ich in meiner Freizeit ein paar 
+      %a{:href=>"http://blog.nofail.de", :title=>"#nofail - it's all about the sugar"}sinnvolle technische Artikel zu schreiben
+      und veröffentliche 
+      %a{:href=>"http://github.com/phoet", :title=>"GitHub Projekte von Peter Schröder"}meinen Quelltext auf GitHub,
+      um mein bescheidenes Wissen unters Volk zu bringen.
+      
 
 #github
-	#tabs
-		%ul
-			%li
-				%a{ :href => "#fragment-repos"}
-					%span Projekte
-			%li
-				%a{ :href => "#fragment-gists"}
-					%span Gists
+  .post
+    .comment_list
+      .comment.alt
+        .comment_gravatar.left
+          %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte"}
+            %img{:title=>"GitHub Projekte", :alt=>"GitHub Projekte", :src=>"/images/github.gif", :width=>"50"}
+        .comment_author.left
+          %h3
+            %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte"} GitHub Projekte
+          .post_date
+            ="Derzeit #{@repos.count} öffentliche Projekte"
+        .clearer &nbsp;
 
-		#fragment-repos
-			- @repos.each_with_index do |repo, i|
-				%div{:class => "comment_gravatar #{cycle('left', 'right')}"}
-					%a{:href=>repo.url, :title=>repo.name}
-						%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"50"}
-				.archive_post_title
-					%h3
-						%a{:href=>repo.url, :title=>repo.name}=repo.name
-					.post_date
-						%a{:href=>repo.homepage, :title=>repo.description}=repo.description
-				.clearer &nbsp;
-				
-				%ul
-					-@commit_array[i][0..5].each do |commit|
-						%li
-							%a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
-							%span.smaller
-								(
-								%a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
-								=l(commit.committed_date)
-								)
+  .accordion
+    - @repos.each_with_index do |repo, i|
+      %h3
+        %a{:href => "#", :title=>repo.name}
+          =repo.name
+          %span.smaller.gitimages.forks
+            =repo.forks
+          %span.smaller.gitimages.watchers
+            =repo.watchers
+      %div
+        %strong
+          %a{:href=>repo.url, :title=>repo.description}=repo.description
 
-				.post_date
-					%a{:href=>repo.url, :title=>repo.name}="Repository"
-					has
-					%a{:href=>"#{repo.url}/watchers", :title=>"watchers"}="#{repo.watchers} Watchers"
-					%a{:href=>"#{repo.url}/network", :title=>"forks"}="#{repo.forks} Forks"
-					%a{:href=>"#{repo.url}/issues", :title=>"issues"}="and #{repo.open_issues} open Issues"
-				.post_date
+        %ul
+          -@commit_array[i][0..4].each do |commit|
+            %li
+              %a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
+              %span.smaller
+                %a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
+                =l(commit.committed_date)
 
+  .post
+    .comment_list
+      .comment.alt
+        .comment_gravatar.left
+          %a{:href=>"http://gist.github.com/phoet/", :title=>"GitHub Gists"}
+            %img{:title=>"GitHub Gists", :alt=>"GitHub Gists", :src=>"/images/github.gif", :width=>"50"}
+        .comment_author.left
+          %h3
+            %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte"} GitHub Gists
+          .post_date
+            ="Derzeit #{@gists.count} öffentliche Code-Schnipsel"
+        .clearer &nbsp;
 
-		#fragment-gists
-			- @gists.each_with_index do |gist, i|
-				%div{:class => "comment_gravatar #{cycle('left', 'right')}"}
-					%a{:href=>gist.url}
-						%img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/images/github.gif", :width=>"50"}
-				.archive_post_title
-					%h3
-						%a{:href=>gist.url}=gist.files.join(', ')
-					.post_date
-						%a{:href=>gist.homepage, :title=>gist.description}=gist.description
-				.clearer &nbsp;
-				-@gist_files_array[i].each do |file|
-					%div
-						%pre{:style => "width: auto; overflow: auto; padding: 4px;"}=file
-				.post_date
+  .accordion
+    - @gists.each_with_index do |gist, i|
+      %h3
+        %a{:href => "#", :title=>gist.description}=gist.description
+      %div
+        -@gist_files_array[i].each_with_index do |file, k|
+          %strong
+            %a{:href=>gist.url}=gist.files[k]
+          %div
+            %pre.code=CodeRay.scan(file, file_extension(gist.files[k])).div.html_safe

@@ -582,3 +582,22 @@ div.comment_list {
 .spinner {
 	padding: 25px;
 }
+
+
+.gitimages{
+  float: right;
+  padding: 5px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+.gitimages.forks{
+  background: url(/images/forks.png) no-repeat;
+}
+.gitimages.watchers{
+  background: url(/images/watchers.png) no-repeat;
+}
+
+.code {
+  width: auto; 
+  overflow: auto;
+}

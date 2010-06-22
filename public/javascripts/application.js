@@ -31,7 +31,7 @@ $(document).ready(function(){
 		return false;
 	 });
 	toggle_feed();
-	$("#tabs").tabs();
+	$(".accordion").accordion({active: false, collapsible: true, autoHeight: false});
 });
 
 $(document).ajaxComplete(function(event,request, settings){

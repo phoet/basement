@@ -1,5 +1,5 @@
 --- 
-hash: eae0c332c6794976e108c199118eb52f9e2c538f
+hash: 804fe6bcf1f4ee5bbb12003c62e4a92414506e9b
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -52,24 +52,26 @@ specs:
     version: 3.0.0.beta
 - bundler: 
     version: 0.9.26
+- coderay: 
+    version: 0.9.3
 - crack: 
     version: 0.1.6
 - haml: 
     version: 2.2.24
 - hashie: 
-    version: 0.2.0
+    version: 0.2.1
 - json_pure: 
     version: 1.4.3
 - rubyforge: 
     version: 2.0.4
 - hoe: 
-    version: 2.6.0
+    version: 2.6.1
 - httparty: 
     version: 0.5.2
 - mash: 
     version: 0.1.1
 - oauth: 
-    version: 0.4.0
+    version: 0.4.1
 - thor: 
     version: 0.13.6
 - railties: 
@@ -107,6 +109,10 @@ dependencies:
     - :default
   mash: 
     version: = 0.1.1
+    group: 
+    - :default
+  coderay: 
+    version: = 0.9.3
     group: 
     - :default
   ruby-aaws: 

@@ -1,5 +1,5 @@
 .box
-	.box_title=link_to('Gists', {:controller=>'work', :action=>'github'}, {:title=>'GitHub-Gists'})
+	.box_title=link_to('GitHub Gists', {:controller=>'work', :action=>'github'}, {:title=>'GitHub Gists'})
 	.box_content
 		%ul
 			-gists[0..4].each() do |gist|
