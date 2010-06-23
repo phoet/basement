@@ -1,0 +1,15 @@
+h1. basement
+
+my personal homepage hosted on "Heroku":http://heroku.com bamboo stack basement with Ruby 1.9.1 and Rails 3 beta:
+
+"www.phoet.de":http://www.phoet.de
+
+h2. apis
+
+connects to several external apis:
+
+* twitter (using twitter gem and "apigee":http://apigee.com)
+* blogger
+* picasa
+* github
+* amazon (using amazon/aaws gem)
