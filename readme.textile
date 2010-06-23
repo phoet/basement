@@ -13,3 +13,8 @@ connects to several external apis:
 * picasa
 * github
 * amazon (using amazon/aaws gem)
+
+h2. todos
+
+* move amazon rc into environment props
+* drop amazon/aaws and use savon
