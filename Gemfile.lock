@@ -1,5 +1,5 @@
 --- 
-hash: 804fe6bcf1f4ee5bbb12003c62e4a92414506e9b
+hash: ebe4e9e18a9acd7352105d2c9b40ccb04a34b50a
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -21,7 +21,7 @@ specs:
 - activemodel: 
     version: 3.0.0.beta
 - erubis: 
-    version: 2.6.5
+    version: 2.6.6
 - rack: 
     version: 1.1.0
 - rack-mount: 
@@ -50,16 +50,20 @@ specs:
     version: 3.0.0.beta
 - activeresource: 
     version: 3.0.0.beta
+- crack: 
+    version: 0.1.6
+- hashie: 
+    version: 0.2.1
+- httpclient: 
+    version: 2.1.5.2
+- asin: 
+    version: 0.0.1
 - bundler: 
     version: 0.9.26
 - coderay: 
     version: 0.9.3
-- crack: 
-    version: 0.1.6
 - haml: 
     version: 2.2.24
-- hashie: 
-    version: 0.2.1
 - json_pure: 
     version: 1.4.3
 - rubyforge: 
@@ -68,18 +72,14 @@ specs:
     version: 2.6.1
 - httparty: 
     version: 0.5.2
-- mash: 
-    version: 0.1.1
 - oauth: 
     version: 0.4.1
 - thor: 
-    version: 0.13.6
+    version: 0.13.7
 - railties: 
     version: 3.0.0.beta
 - rails: 
     version: 3.0.0.beta
-- ruby-aaws: 
-    version: 0.7.0
 - sqlite3-ruby: 
     version: 1.2.5
 - test-unit: 
@@ -107,20 +107,18 @@ dependencies:
     version: = 0.9.7
     group: 
     - :default
-  mash: 
-    version: = 0.1.1
+  hashie: 
+    version: = 0.2.1
     group: 
     - :default
   coderay: 
     version: = 0.9.3
     group: 
     - :default
-  ruby-aaws: 
-    version: ">= 0"
+  asin: 
+    version: = 0.0.1
     group: 
     - :default
-    require: 
-    - amazon/aws
   test-unit: 
     version: = 1.2.3
     group: 

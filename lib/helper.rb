@@ -1,4 +1,6 @@
 class Helper
+  
+  extend ASIN
 
   MenuItem = Struct.new(:id, :name, :subitems)
 
@@ -26,7 +28,7 @@ class Helper
   
   def self.gists
     resp = HTTParty.get 'http://gist.github.com/api/v1/json/gists/phoet', :type=>:json
-    resp = Mash.new resp
+    resp = Hashie::Mash.new resp
     resp.gists
   end
   
@@ -36,7 +38,7 @@ class Helper
   
   def self.repos
     resp = HTTParty.get 'http://github.com/api/v1/json/phoet/', :type=>:json
-    resp = Mash.new resp
+    resp = Hashie::Mash.new resp
     resp.user.repositories
   rescue
     nil
@@ -44,23 +46,15 @@ class Helper
   
   def self.commits(repo)
     resp = HTTParty.get "http://github.com/api/v1/json/phoet/#{repo}/commits/master", :type=>:json
-    Mash.new resp
+    Hashie::Mash.new resp
   rescue
     nil
   end
 
   def self.amazon_book(asin)
-    require "amazon"
-    require "amazon/aws"
-    require "amazon/aws/search"
-    logger.info "calling amazon #{asin}"
-    il = Amazon::AWS::ItemLookup.new( 'ASIN', { 'ItemId'=>asin })
-    rg = Amazon::AWS::ResponseGroup.new( 'Medium' )
-    req = Amazon::AWS::Search::Request.new
     begin
-      resp = req.search( il, rg)
-      item = resp.item_lookup_response.items[0].item
-      AmazonData.new item
+      p item = lookup(asin, :AWSAccessKeyId => 'AKIAJFA5X7RTOKFNPVZQ', :ResponseGroup => :Medium)
+      item
     rescue
       raise "could not load book for #{asin} (#{$!})"
     end
@@ -112,7 +106,7 @@ class Helper
   def self.seitwert
     logger.info 'calling seitwert'
     xml = get('http://www.seitwert.de/api/getseitwert.php?url=www.phoet.de&api=bfe1534821649e71c2694d0ace86fab0', :xml)
-    [Mash.new(xml['urlinfo'])]
+    [Hashie::Mash.new(xml['urlinfo'])]
   rescue Timeout::Error
     []
   end

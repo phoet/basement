@@ -1,5 +1,4 @@
 # load all classes from lib
-require 'amazon_data'
 require 'blogger'
 require 'google_data'
 require 'picasa'

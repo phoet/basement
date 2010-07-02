@@ -1,6 +1,6 @@
 class Repository
   def initialize(json)
-    @repo = Mash.new json
+    @repo = Hashie::Mash.new json
   end
   
   

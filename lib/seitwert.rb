@@ -1,32 +1,30 @@
-require 'mash'
-
 class Seitwert
   def initialize(xml)
-    @mash = Mash.new(xml['urlinfo'])
+    @data = Hashie::Mash.new(xml['urlinfo'])
   end
   
   def seitwert
-    @mash.seitwert
+    @data.seitwert
   end
   
   def alexa
-    @mash.alexa
+    @data.alexa
   end
   
   def google
-    @mash.google
+    @data.google
   end
   
   def yahoo
-    @mash.yahoo
+    @data.yahoo
   end
   
   def social
-    @mash.social
+    @data.social
   end
   
   def technical
-    @mash.technical
+    @data.technical
   end
   
 end

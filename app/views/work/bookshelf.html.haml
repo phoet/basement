@@ -1,37 +1,39 @@
 .post
-	.post_body
-		= render :partial => "shared/quote", :locals => { :author =>'Loriot', :text => 'Plötzliche Regenfälle können zum Betreten einer Buchhandlung zwingen.' }
-	
-	.post_body
-		%p
-			In meiner Freizeit lese ich bevorzugt Fachbücher.
-			Dabei sind die Themengebiete breit verstreut,
-			neuerdings fokussiere ich mich jedoch hauptsächlich auf 
-			%a{:href=>'http://developer.apple.com/mac/library/', :title=>'Objective-C Cocoa'} Objective-C/Cocoa
-			und
-			%a{:href=>'http://www.ruby-lang.org/', :title=>'Ruby'} Ruby-Bücher.
-			
-		%h4 Hier eine kleine zufällige Auswahl:
+  .post_body
+    = render :partial => "shared/quote", :locals => { :author =>'Loriot', :text => 'Plötzliche Regenfälle können zum Betreten einer Buchhandlung zwingen.' }
+  
+  .post_body
+    %p
+      In meiner Freizeit lese ich bevorzugt Fachbücher.
+      Dabei sind die Themengebiete breit verstreut,
+      neuerdings fokussiere ich mich jedoch hauptsächlich auf 
+      %a{:href=>'http://developer.apple.com/mac/library/', :title=>'Objective-C Cocoa'} Objective-C/Cocoa
+      und
+      %a{:href=>'http://www.ruby-lang.org/', :title=>'Ruby'} Ruby-Bücher.
+      
+    %h4 Hier eine kleine zufällige Auswahl:
 
-	#bookshelf
-		#book
-			.comment_list
-				- @more_array.each do |amazon|
-					.comment.alt
-						.comment_gravatar.left{:style => "width: #{amazon.thumbnail_width + 10}px;"}
-							%a{:href => amazon.link, :title => amazon.title}
-								%img{:alt => amazon.title, :title => amazon.title, :src => amazon.thumbnail}
-						
-						.comment_author.left
-							%strong
-								%a{:href => amazon.link, :title => amazon.title}= trim_to(amazon.title,75)
-						
-							.comment_date= "von #{amazon.authors.join(', ')}"
-							.comment_date="#{amazon.price} mit #{amazon.page_count} Seiten von #{amazon.publication_date}"
-							.comment_date="aufgelegt #{amazon.studio} #{amazon.publication_date} mit ISBN #{amazon.isbn}"
-						
-						.clearer &nbsp;
-
-						.comment_body
-							%p= amazon.review
-		= render :partial => 'shared/more', :locals => {:name => 'Bücher'}
+  #bookshelf
+    #book
+      .comment_list
+        -# TODO move this stuff in a class!
+        - @more_array.each do |item|
+          .comment.alt
+            .comment_gravatar.left{:style => "width: #{item.raw.SmallImage.Width.to_i + 10}px;"}
+              %a{:href => item.raw.DetailPageURL, :title => item.title}
+                %img{:alt => item.title, :title => item.title, :src => item.raw.SmallImage.URL}
+            
+            .comment_author.left
+              %strong
+                %a{:href => item.raw.DetailPageURL, :title => item.title}= trim_to(item.title,75)
+            
+              .comment_date= "von #{item.raw.ItemAttributes.Author.respond_to?(:join) ? item.raw.ItemAttributes.Author.join(', ') : item.raw.ItemAttributes.Author}"
+              .comment_date="#{item.raw.ItemAttributes.ListPrice.FormattedPrice} mit #{item.raw.ItemAttributes.NumberOfPages} Seiten"
+              .comment_date="aufgelegt #{item.raw.ItemAttributes.Label} #{item.raw.ItemAttributes.PublicationDate} mit ISBN #{item.raw.ItemAttributes.EAN}"
+            
+            .clearer &nbsp;
+            
+            .comment_body
+              %p= ([] << item.raw.EditorialReviews.EditorialReview).flatten.last.Content.html_safe rescue ""
+                
+    = render :partial => 'shared/more', :locals => {:name => 'Bücher'}
