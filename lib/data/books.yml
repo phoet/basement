@@ -18,9 +18,6 @@
   :asin: 006135323X
   :title: Predictably Irrational
 - !ruby/struct:ApplicationController::Book 
-  :asin: "0321125215"
-  :title: Domain-Driven Design
-- !ruby/struct:ApplicationController::Book 
   :asin: "3898644766"
   :title: SOA in der Praxis
 - !ruby/struct:ApplicationController::Book 
