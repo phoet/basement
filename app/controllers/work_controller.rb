@@ -3,7 +3,11 @@ class WorkController < ApplicationController
   end
 
   def bookshelf
-    more_stuff(@books.size){|count| @books[0..count].map { |book| Helper::amazon_book(book.asin) } }
+    more_stuff(@books.size) do |count|
+      @books[0..count].each_with_index.map do |book, i|
+        cache(:"book_#{i}"){[Helper::amazon_book(book.asin)]}.first
+      end
+    end
   end
 
   def github
