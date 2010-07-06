@@ -53,7 +53,8 @@ class Helper
 
   def self.amazon_book(asin)
     begin
-      p item = lookup(asin, :AWSAccessKeyId => 'AKIAJFA5X7RTOKFNPVZQ', :ResponseGroup => :Medium)
+      configure :secret => '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', :key => 'AKIAJFA5X7RTOKFNPVZQ'
+      p item = lookup(asin, :ResponseGroup => :Medium)
       item
     rescue
       raise "could not load book for #{asin} (#{$!})"

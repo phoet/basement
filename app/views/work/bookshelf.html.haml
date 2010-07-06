@@ -28,7 +28,7 @@
                 %a{:href => item.raw.DetailPageURL, :title => item.title}= trim_to(item.title,75)
             
               .comment_date= "von #{item.raw.ItemAttributes.Author.respond_to?(:join) ? item.raw.ItemAttributes.Author.join(', ') : item.raw.ItemAttributes.Author}"
-              .comment_date="#{item.raw.ItemAttributes.ListPrice.FormattedPrice} mit #{item.raw.ItemAttributes.NumberOfPages} Seiten"
+              .comment_date="#{(item.raw.ItemAttributes.ListPrice.FormattedPrice rescue '')} mit #{item.raw.ItemAttributes.NumberOfPages} Seiten"
               .comment_date="aufgelegt #{item.raw.ItemAttributes.Label} #{item.raw.ItemAttributes.PublicationDate} mit ISBN #{item.raw.ItemAttributes.EAN}"
             
             .clearer &nbsp;
