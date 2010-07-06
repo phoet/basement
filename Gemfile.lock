@@ -1,5 +1,5 @@
 --- 
-hash: 34085fe9969290ecccd915461fec0afa989b0040
+hash: 8e83fb0f7942cbf80cc485637140ba810039b66c
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -57,7 +57,7 @@ specs:
 - httpclient: 
     version: 2.1.5.2
 - asin: 
-    version: 0.0.4
+    version: 0.0.5
 - bundler: 
     version: 0.9.26
 - coderay: 
@@ -116,7 +116,7 @@ dependencies:
     group: 
     - :default
   asin: 
-    version: = 0.0.4
+    version: = 0.0.5
     group: 
     - :default
   test-unit: 
