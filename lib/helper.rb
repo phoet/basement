@@ -53,7 +53,7 @@ class Helper
 
   def self.amazon_book(asin)
     begin
-      configure :secret => '4w5ApABP2dALi4/8bdqm9xIcZ8GPe0P0PnocXNTB', :key => 'AKIAJFA5X7RTOKFNPVZQ'
+      configure :secret => '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', :key => 'AKIAJFA5X7RTOKFNPVZQ', :host => 'webservices.amazon.de'
       p item = lookup(asin, :ResponseGroup => :Medium)
       item
     rescue
