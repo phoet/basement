@@ -19,7 +19,7 @@ gem "haml", "2.2.24"
 gem "twitter", "0.9.7"
 gem "hashie", "0.2.1"
 gem "coderay", "0.9.3"
-gem "asin", "0.0.5"
+gem "asin", "0.0.6"
 
 ## Bundle gems used only in certain environments:
 # gem "rspec", :group => :test
