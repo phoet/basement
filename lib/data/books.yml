@@ -1,5 +1,11 @@
 --- 
 - !ruby/struct:ApplicationController::Book 
+  :asin: "1430224037"
+  :title: iPhone Advanced Projects
+- !ruby/struct:ApplicationController::Book 
+  :asin: 143022505X
+  :title: "More iPhone 3 Development: Tackling iPhone SDK 3"
+- !ruby/struct:ApplicationController::Book 
   :asin: 1430218150
   :title: Learn Objective-C on the Mac
 - !ruby/struct:ApplicationController::Book 

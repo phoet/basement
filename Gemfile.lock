@@ -1,5 +1,5 @@
 --- 
-hash: bff8f6ee34d0fd4ae60195fb144eb1b53d69d8f1
+hash: b57a547a24afb60fd254274464dd1bf146d845fe
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -57,7 +57,7 @@ specs:
 - httpclient: 
     version: 2.1.5.2
 - asin: 
-    version: 0.0.6
+    version: 0.0.7
 - bundler: 
     version: 0.9.26
 - coderay: 
@@ -75,7 +75,7 @@ specs:
 - oauth: 
     version: 0.4.1
 - thor: 
-    version: 0.13.7
+    version: 0.13.8
 - railties: 
     version: 3.0.0.beta
 - rails: 
@@ -88,6 +88,8 @@ specs:
     version: 0.7.7
 - twitter: 
     version: 0.9.7
+- wirble: 
+    version: 0.1.3
 dependencies: 
   rails: 
     version: = 3.0.0.beta
@@ -116,10 +118,14 @@ dependencies:
     group: 
     - :default
   asin: 
-    version: = 0.0.6
+    version: = 0.0.7
     group: 
     - :default
   test-unit: 
     version: = 1.2.3
+    group: 
+    - :test
+  wirble: 
+    version: = 0.1.3
     group: 
     - :test
