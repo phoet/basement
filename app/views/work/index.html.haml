@@ -7,11 +7,10 @@
 		meine eigenen Fähigkeiten zu reflektieren, Schwächen zu erkennen und diese auszumerzen.
 		%p
 			Aus diesem Grund lese ich regelmäßig
-			=link_to('Fachbücher', :action => 'bookshelf') + ", halte mich mit"
-			%a{:href=>"http://www.google.com/reader/shared/phoetmail", :title=>"News-Feeds"} News-Feeds
-			auf dem Laufenden oder besuche
+			=link_to('Fachbücher', :action => 'bookshelf') + ", "
+			halte mich mit News-Feeds auf dem Laufenden oder besuche
 			%a{:href=>"#roundtable", :title=>"Stammtische"} Stammtische,
-			%a{:href=>"http://it-republik.de/conferences/railswaycon2010/", :title=>"Konferenzen"} Konferenzen
+			%a{:href=>"#conference", :title=>"Konferenzen"} Konferenzen
 			und nehme an
 			%a{:href=>"#course", :title=>"Online-Kurse"} Online-Kursen
 			teil.
@@ -96,6 +95,43 @@
 		.clearer &nbsp;
 		%p Diese Usergroup gehört ganz klar in die Kategorie "Will ich eigentlich hin, vergess ich aber immer..."
 
+.post
+	%a{:id=>"conference"}
+	.div{:class=>"post_title"}
+		%h2 Konferenzen
+	.post_date
+	
+	.archive_post
+
+		.comment_gravatar.left
+			%img{:title=>"RailsWayCon", :alt=>"RailsWayCon", :src=>"/images/railswaycon.png", :height=>"32", :width=>"32"}
+		.archive_post_title
+			%h3
+				%a{:href=>"http://it-republik.de/conferences/railswaycon2010/", :title=>"RailsWayCon"} RailsWayCon
+			.post_date 31. Mai - 2. Juni 2010
+		.clearer &nbsp;
+		%p
+			Die diesjährigen RailsWayCon in Berlin war 
+			%a{:href=>"http://www.blaulabs.de/2010/06/railswaycon-2010/"} die erste Entwickler-Konferenz, an der ich teilgenommen habe.
+			Neben vielen interessanten Vorträgen zu Rails gab es nebenan auf der
+			%a{:href=>"http://createordie.de/webinale2010/", :title=>"Webinale"} Webinale
+			auch noch viel Stoff in Sachen Web 2.0, Social Media etc zu erlauschen.
+
+		.comment_gravatar.left
+			%img{:title=>"Arrrr Camp", :alt=>"Arrrr Camp", :src=>"/images/arrrrcamp.png", :height=>"32", :width=>"32"}
+		.archive_post_title
+			%h3
+				%a{:href=>"http://arrrrcamp.be/", :title=>"Arrrr Camp"} Arrrr Camp
+			.post_date 29. Oktober 2010
+		.clearer &nbsp;
+		%p
+			Um Ruby, Rails, 
+			%a{:href=>"http://radiantcms.org/", :title=>"Radiant"}Radiant
+			und Rum geht es auf dem Arrr Camp im Belgischen Ghent.
+			Hoffentlich gibt es dort auch wieder viele nette Leute zu treffen,
+			denn der private Austausch ist meistens das interessanteste bei diesen Events.
+
+.post
 	%a{:id=>"course"}
 	.post_title
 		%h2 Online-Kurse
@@ -133,3 +169,4 @@
 		
 		%p
 			Die Kurse kosten immer um die 10$ und dauern ca. 1 bis 2 Wochen.
+

@@ -13,11 +13,47 @@
 			An dieser Stelle möchte ich drei beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
 		%ul
 			%li
+				%a{:href => "#tolingo"} tolingo GmbH
+			%li
 				%a{:href => "#blau"} blau Mobilfunk GmbH
 			%li
 				%a{:href => "#freenet"} freenet AG
 			%li
 				%a{:href => "#bigpoint"} Bigpoint GmbH
+
+/ tolingo
+.post
+	.post_title
+		%h2
+			%a{:id => "tolingo", :href => "http://www.tolingo.de", :title => "tolingo GmbH"} Rails-Entwickler bei tolingo
+
+	.post_date ab September 2010
+	.post_body
+		%a{:href => "http://www.tolingo.de", :title => "tolingo GmbH"}
+			%img{:src => "/images/tolingo.png", :class => "alignleft", :alt => "tolingo GmbH", :title => "tolingo GmbH"}
+		.clearer &nbsp;
+		%p
+			Ab Mitte September werde ich als Rails-Entwickler bei
+			%a{:href => "http://www.tolingo.de", :title => "tolingo GmbH"} tolingo
+			an den Start gehen.
+		%p
+			Tolingo ist ein relativ junges Start-Up, das durch Risikokapital finanziert wird.
+			Unter anderem sind dort auch die Gründer von
+			%a{:href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"} blau
+			beteiligt.
+		%p
+			Ich habe bereits einen Probetag dort verbracht und freue mich schon auf frischen Wind,
+			motivierte Leute und ein extrem junges Team.
+		
+		.clearer &nbsp;
+		
+		.post_meta
+			Links: 
+			%a{:href => "http://www.tolingo.de", :title => "tolingo GmbH"} tolingo GmbH
+			|
+			%a{:href => "http://tolingo.de/blog", :title => "tolingo blog"} Firmen-Blog
+			|
+			%a{:href => "http://www.facebook.de/tolingo", :title => "tolingo facebook"} Facebook-Profil
 
 / blau
 .post
@@ -25,44 +61,45 @@
 		%h2
 			%a{:id => "blau", :href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"} Software-Entwickler bei blau
 
-	.post_date September 2007 bis jetzt
+	.post_date 2007 bis 2010
 	.post_body
-		%a{:id => "blau", :href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"}
+		%a{:href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"}
 			%img{:src => "/images/blau.png", :class => "alignleft", :alt => "blau Mobilfunk GmbH", :title => "blau Mobilfunk GmbH"}
 		.clearer &nbsp;
 		%p
-			Seit 2007 arbeite ich als Softwareentwickler im Bereich 
+			3 Jahre habe ich als Softwareentwickler im Bereich 
 			%a{:href => "http://de.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition", :title => "J2EE"} J2EE
 			bei 
-			%a{:href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"} blau.
-			Die blau-IT besteht inzwischen aus einem Team von über 20 Mann (und einer Frau!) aus den
+			%a{:href => "http://www.blaumobilfunk.de", :title => "blau Mobilfunk GmbH"} blau
+			gearbeitet.
+			Die blau-IT besteht aus einem Team von über 20 Mann (und einer Frau!) aus den
 			Bereichen Java-Entwicklung, Web-Entwicklung (Rails), Operations und IT-Management.
 		%p
 			Die Software-Entwicklung kann sich in weiten Teilen selbst organisieren und benutzt den agilen 
 			%a{:href => "http://en.wikipedia.org/wiki/Scrum_(development)", :title => "SCRUM"} SCRUM-Prozess
-			für die Abwicklung der Projekt-Aufgaben. 
+			für die Abwicklung der Projektaufgaben. 
 			Die Umsetzung von agilen Methoden und pragmatischen Ansätzen wird im Team besprochen und tagtäglich praktiziert.
 			Testdriven Development, Continous Integration, Refactoring und Pairprogramming stehen dabei hoch im Kurs.
 		%p
-			Derzeit wird verstärkt
 			%a{:href => "http://jruby.org/", :title => "JRuby"}JRuby
 			="/"
 			%a{:href => "http://www.ruby-lang.org", :title => "The Ruby Language"} Ruby
-			als Programmiersprache eingesetzt, da diese besonders gut mit
+			wird verstärkt als Programmiersprache eingesetzt, da diese besonders gut mit
 			den Paradigmen der agilen Software-Entwicklung harmoniert. 
 			Bisher werden die mit Ruby erstellten Werkzeuge hauptsächlich für die Automatisierung von 
 			Aufgaben wie Release, Deployment und Spidering eingesetzt.
 			%br
-			Als Build-Werkzeug nutzen wir deshalb
+			Als Build-Werkzeug wird deshalb
 			%a{:href => "http://buildr.apache.org", :title => "Buildr"} Buildr
-			als Ersatz für ANT, wobei wir eine selbst entwickelte 
+			als Ersatz für ANT genutzt, wobei eine selbst entwickelte 
 			%a{:href => "http://github.com/klaas1979/ivy4r/", :title => "ivy4r"} ivy4r Bibliothek
-			verwenden, um unsere Abhängigkeitsverwaltung
+			verwendet wird, um die Abhängigkeitsverwaltung
 			%a{:href => "http://ant.apache.org/ivy/", :title => "Ivy"} Apache-Ivy
 			einbinden zu können.
 			%br
 			Auch einige (J)Ruby on Rails Anwendungen für den Inhouse-Einsatz sind bereits im produktiven Einsatz,
-			die erste "Live" Anwendung wird auch in Kürze folgen.
+			%a{:href => "http://www.simvoice.de", :title => "simvoice"} die erste "Live" Anwendung
+			ist auch bereits am Start.
 		
 		.clearer &nbsp;
 		
@@ -79,9 +116,8 @@
 			%a{:href => "http://www.nettokom.de", :title => "NettoKOM - Günstig mobil telefonieren"} NettoKOM
 			|
 			%a{:href => "http://www.simvoice.de", :title => "simvoice"} SIMVOICE
-			
-/ freenet
 
+/ freenet
 .post
 	.post_title
 		%h2
@@ -89,7 +125,7 @@
 
 	.post_date August 2006 bis August 2007
 	.post_body
-		%a{:id => "freenet", :href => "http://www.freenet.ag", :title => "freenet AG"}
+		%a{:href => "http://www.freenet.ag", :title => "freenet AG"}
 			%img{:src => "/images/freenet.png", :class => "alignleft", :alt => "freenet AG", :title => "freenet AG"}
 		.clearer &nbsp;
 		%p
@@ -121,7 +157,7 @@
 	
 	.post_date Januar bis Mai 2006
 	.post_body
-		%a{:id => "bigpoint", :href => "http://www.bigpiont.de", :title => "Bigpoint"}
+		%a{:href => "http://www.bigpiont.de", :title => "Bigpoint"}
 			%img{:src => "/images/bigpoint.png", :class => "alignleft", :alt => "Bigpoint GmbH", :title => "Bigpoint GmbH"}
 		.clearer &nbsp;
 		%p
