@@ -53,9 +53,8 @@ class Helper
 
   def self.amazon_book(asin)
     begin
-      configure :secret => '4w5ApABP2dALi4/8bdqm9xIcZ8GPe0P0PnocXNTB', :key => 'AKIAJFA5X7RTOKFNPVZQ', :host => 'webservices.amazon.de'
-      p item = lookup(asin, :ResponseGroup => :Medium)
-      item
+      configure(:secret => '4w5ApABP2dALi4/8bdqm9xIcZ8GPe0P0PnocXNTB', :key => 'AKIAJFA5X7RTOKFNPVZQ', :host => 'webservices.amazon.de', :logger => logger)
+      lookup(asin, :ResponseGroup => :Medium)
     rescue
       raise "could not load book for #{asin} (#{$!})"
     end
