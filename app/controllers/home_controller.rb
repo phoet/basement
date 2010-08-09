@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     render :layout=>false
   end
   
-  def heroku
-    render :layout=>false, :text => File.open("#{RAILS_ROOT}/tmp/some_tmp",'a+') {|file| file << "moin"; file.rewind; file.readlines}
+  def reset_cache
+    render :text => "deleted #{Storage.delete_all} items from cache" 
   end
 end
