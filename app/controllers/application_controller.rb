@@ -5,7 +5,7 @@ require 'seitwert'
 require 'twitter_user'
 
 class ApplicationController < ActionController::Base
-git
+
   protect_from_forgery
   helper :all
   layout 'default'

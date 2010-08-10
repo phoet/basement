@@ -26,8 +26,4 @@ class HomeController < ApplicationController
     response.headers["Content-Type"] = 'text/xml'
     render :layout=>false
   end
-  
-  def reset_cache
-    render :text => "deleted #{Storage.delete_all} items from cache" 
-  end
 end
