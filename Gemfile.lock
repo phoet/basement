@@ -1,3 +1,10 @@
+PATH
+  remote: /Users/peterschroder/Documents/ruby/rails_redis_cache
+  specs:
+    rails_redis_cache (0.0.1)
+      activesupport (>= 3.0.0.beta)
+      redis (>= 2.0.0)
+
 GEM
   remote: http://gemcutter.org/
   specs:
@@ -75,6 +82,7 @@ GEM
       rake (>= 0.8.3)
       thor (~> 0.13)
     rake (0.8.7)
+    redis (2.0.5)
     rubyforge (2.0.4)
       json_pure (>= 1.1.7)
     sqlite3-ruby (1.2.5)
@@ -104,6 +112,7 @@ DEPENDENCIES
   haml (= 2.2.24)
   hashie (= 0.2.1)
   rails (= 3.0.0.beta)
+  rails_redis_cache!
   sqlite3-ruby (= 1.2.5)
   test-unit (= 1.2.3)
   twitter (= 0.9.7)

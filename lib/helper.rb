@@ -67,7 +67,7 @@ class Helper
       Blogger.new(e)
     end
   rescue
-    []
+    nil
   end
 
   BASE_URL = 'http://picasaweb.google.com/data/feed/base/user/'
@@ -86,29 +86,23 @@ class Helper
   def self.twitter_posts
     endpoint = "#{ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']}/search"
     logger.info "calling twitter posts with #{endpoint}"
-    Twitter::Search.new('phoet', api_endpoint: endpoint)
+    Twitter::Search.new('phoet', api_endpoint: endpoint).collect{|t| t}
   end
 
   def self.twitter_friends
     logger.info 'calling twitter friends'
     json = get("http://twitter.com/statuses/friends/phoet.json", :json)
-    if json.is_a? Array
-      json.map do |json|
-        TwitterUser.new(json)
-      end
-    else
-      []
-    end
+    json.map{ |json| TwitterUser.new(json) }
   rescue
-    []
+    nil
   end
 
   def self.seitwert
     logger.info 'calling seitwert'
     xml = get('http://www.seitwert.de/api/getseitwert.php?url=www.phoet.de&api=bfe1534821649e71c2694d0ace86fab0', :xml)
-    [Hashie::Mash.new(xml['urlinfo'])]
+    Hashie::Mash.new(xml['urlinfo'])
   rescue Timeout::Error
-    []
+    nil
   end
 
 end

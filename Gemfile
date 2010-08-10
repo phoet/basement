@@ -11,6 +11,7 @@ gem "rails", "3.0.0.beta"
 gem "sqlite3-ruby", "1.2.5", :require => "sqlite3"
 
 ## Bundle the gems you use:
+gem "rails_redis_cache", :path => "~/Documents/ruby/rails_redis_cache"
 gem "haml", "2.2.24"
 gem "twitter", "0.9.7"
 gem "hashie", "0.2.1"

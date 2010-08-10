@@ -31,4 +31,3 @@ module HTTParty
       end
   end
 end
-

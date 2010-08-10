@@ -1,5 +1,11 @@
-class ApplicationController < ActionController::Base
+require 'blogger'
+require 'google_data'
+require 'picasa'
+require 'seitwert'
+require 'twitter_user'
 
+class ApplicationController < ActionController::Base
+git
   protect_from_forgery
   helper :all
   layout 'default'
@@ -13,17 +19,14 @@ class ApplicationController < ActionController::Base
   # prepare all the caching and loading-stuff for each request
   def prepare_cache
     @rendering_start = Time.new
-    cache(:tweets){Helper::twitter_posts}
-    cache(:friends){Helper::twitter_friends.sort_random}
-    cache(:fotos){Helper::picasa_fotos}
-    cache(:posts){Helper::blogger_posts}
-    cache(:books){Helper::load_data(:books).sort_random}
-    cache(:seitwert){Helper::seitwert}
-    cache(:repos){Helper::repos}
-    cache(:gists){Helper::gists}
-
-    # cache can just handle arrays
-    @seitwert = @seitwert[0]
+    cache_and_set(:tweets){Helper::twitter_posts}
+    cache_and_set(:friends){Helper::twitter_friends.sort_random}
+    cache_and_set(:fotos){Helper::picasa_fotos}
+    cache_and_set(:posts){Helper::blogger_posts}
+    cache_and_set(:books){Helper::load_data(:books).sort_random}
+    cache_and_set(:seitwert){Helper::seitwert}
+    cache_and_set(:repos){Helper::repos}
+    cache_and_set(:gists){Helper::gists}
 
     @random_gallary_images = @fotos.sort_random
     @cites = Helper::load_data(:cites).sort_random
@@ -51,20 +54,9 @@ class ApplicationController < ActionController::Base
     @more_array = yield session[action_name] ||= initial_count
   end
 
-  def cache(key, &to_cache)
-    # p "db_cache #{key}"
-    from_db = Storage.first(:conditions => {:key => key})
-    # p "in db #{from_db.inspect}"
-    if (from_db.nil? || from_db.updated_at < Time.new - CACHE_TIME) and !OFFLINE
-      # p "fetching for db #{key}"
-      data = (yield to_cache).collect{|t|t}
-      return [] if data.nil? || data.empty?
-      from_db = (from_db || Storage.new)
-      from_db.key = key
-      from_db.data = data
-      from_db.save!
-    end
-    instance_variable_set :"@#{key.to_s}", (from_db.nil? ? [] : from_db.data)
+  def cache_and_set(key, &to_cache)
+    data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
+    instance_variable_set(:"@#{key}", data) if data
   end
   
 end
