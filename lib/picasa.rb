@@ -1,5 +1,13 @@
 class Picasa < GoogleData
   
+  # id in link like 
+  # http://picasaweb.google.com/data/entry/base/user/heddahh/albumid/5425173089411226785?alt=json&hl=en_US
+  def album_id
+    aid = @json["id"]["$t"]
+    /\/(\d+)\?/.match(aid)
+    $1
+  end
+  
   def summary
     @json["summary"]["$t"]
   end

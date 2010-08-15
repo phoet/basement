@@ -9,8 +9,8 @@ class HomeController < ApplicationController
 
   def gallery
     more_stuff(@fotos.size) do |count|
-      @fotos[0..count].each_with_index.map do |foto, i| 
-        (@gallery_array ||= []) << cache_and_set(:"gallery_images#{i}"){Helper::picasa_fotos(foto.pictures_url)}
+      @fotos[0..count].each.map do |foto| 
+        (@picture_hash ||= {})[foto.album_id] = cache_and_set(:"gallery_images_#{foto.album_id}"){Helper::picasa_fotos(foto.pictures_url)}
         foto
       end
     end

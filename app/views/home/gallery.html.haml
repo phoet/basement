@@ -1,37 +1,37 @@
 .post
-	.post_body= render :partial => "shared/quote", :locals => { :author =>'Werbebranche', :text => 'Ein Bild sagt mehr als tausend Worte.' }
+  .post_body= render :partial => "shared/quote", :locals => { :author =>'Werbebranche', :text => 'Ein Bild sagt mehr als tausend Worte.' }
 
-	-unless @gallery_images.nil?
-		%div
-			.post_body
-				-@gallery_images.each_with_index do |image, i|
-					%a{:href => image.picture}
-						%img{:src => image.thumbnail, :class => "alignleft"}
-		
-	.clearer &nbsp;
-		
-	#gallery
-		-@more_array.each_with_index do |t, i|
-			.gallery
-				.post_title
-					%a{:href=>t.url, :title=>t.title}
-						%h2= trim_to(t.title, 18)
-				.post_body
-					%a{:href=>t.url, :title=>t.title, :class=>'slideshow', :name=>i}
-						%img{:src => t.thumbnail, :alt => t.title, :class => "alignleft", :style => "width:160px;height:160px;"}
-						-@gallery_array[i][0..2].each do |f|
-							%img{:src => f.thumbnail, :alt => f.title, :class => "alignleft mini"}
-				.clearer &nbsp;
-				.post_meta
-					Fotos:
-					%a{:href => t.url, :title => t.title}=t.photo_count
-					="| Datum: #{t.published} | Author: "
-					%a{:href =>t.author_url}= t.author_name
-				%div &nbsp;
-			%div{:class=>"images images#{i}"}
-				-@gallery_array[i].each_with_index do |image, i|
-					%li
-						%a{:href => image.picture}
-							%img{:src => image.thumbnail}
-		.clearer &nbsp;
-		= render :partial => 'shared/more', :locals => {:name => 'Alben'}
+  -unless @gallery_images.nil?
+    %div
+      .post_body
+        -@gallery_images.each_with_index do |image, i|
+          %a{:href => image.picture}
+            %img{:src => image.thumbnail, :class => "alignleft"}
+    
+  .clearer &nbsp;
+    
+  #gallery
+    -@more_array.each do |t|
+      .gallery
+        .post_title
+          %a{:href=>t.url, :title=>t.title}
+            %h2= trim_to(t.title, 18)
+        .post_body
+          %a{:href=>t.url, :title=>t.title, :class=>'slideshow', :name=>t.album_id}
+            %img{:src => t.thumbnail, :alt => t.title, :class => "alignleft", :style => "width:160px;height:160px;"}
+            -@picture_hash[t.album_id][0..2].each do |f|
+              %img{:src => f.thumbnail, :alt => f.title, :class => "alignleft mini"}
+        .clearer &nbsp;
+        .post_meta
+          Fotos:
+          %a{:href => t.url, :title => t.title}=t.photo_count
+          ="| Datum: #{t.published} | Author: "
+          %a{:href =>t.author_url}= t.author_name
+        %div &nbsp;
+      %div{:class=>"images images_#{t.album_id}"}
+        -@picture_hash[t.album_id].each do |image|
+          %li
+            %a{:href => image.picture}
+              %img{:src => image.thumbnail}
+    .clearer &nbsp;
+    = render :partial => 'shared/more', :locals => {:name => 'Alben'}

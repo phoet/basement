@@ -26,8 +26,8 @@ $(document).ready(function(){
 	});
 	$('.slideshow').live("click", function(){
 		var name = $(this).attr('name');
-		$('.images' + name + ' a').lightBox();
-		$('.images' + name + ' a :first').click();
+		$('.images_' + name + ' a').lightBox();
+		$('.images_' + name + ' a :first').click();
 		return false;
 	 });
 	toggle_feed();
