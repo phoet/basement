@@ -8,13 +8,13 @@ h2. apis
 
 connects to several external apis:
 
+* amazon (using "asin":http://rubygems.org/gems/asin gem)
 * twitter (using twitter gem and "apigee":http://apigee.com)
+* seitwert
 * blogger
 * picasa
 * github
-* amazon (using amazon/aaws gem)
 
-h2. todos
+h2. TODO
 
-* move amazon rc into environment props
-* drop amazon/aaws and use savon
+* generate cv pdf using something like prawn or wickedpdf
