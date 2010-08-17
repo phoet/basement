@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
     data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
     instance_variable_set(:"@#{key}", data) if data
   rescue
-    logger.error "error caching key=#{key} (#{$!})"
+    raise "error caching key=#{key} (#{$!})"
   end
   
 end

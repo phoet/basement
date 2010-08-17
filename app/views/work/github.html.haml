@@ -29,7 +29,7 @@
         .clearer &nbsp;
 
   .accordion
-    - @repos.each_with_index do |repo, i|
+    - @repos.each do |repo|
       %h3
         %a{:href => "#", :title=>repo.name}
           =repo.name
@@ -42,7 +42,7 @@
           %a{:href=>repo.url, :title=>repo.description}=repo.description
 
         %ul
-          -@commit_array[i][0..4].each do |commit|
+          -@commit_hash[repo.name][0..4].each do |commit|
             %li
               %a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
               %span.smaller
@@ -63,11 +63,11 @@
         .clearer &nbsp;
 
   .accordion
-    - @gists.each_with_index do |gist, i|
+    - @gists.each do |gist|
       %h3
         %a{:href => "#", :title=>gist.description}=gist.description
       %div
-        -@gist_files_array[i].each_with_index do |file, k|
+        -@gist_files_hash[gist.repo].each_with_index do |file, k|
           %strong
             %a{:href=>gist.url}=gist.files[k]
           %div

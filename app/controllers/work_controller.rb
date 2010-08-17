@@ -4,21 +4,21 @@ class WorkController < ApplicationController
 
   def bookshelf
     more_stuff(@books.size) do |count|
-      @books[0..count].each_with_index.map do |book, i|
-        cache(:"book_#{i}"){[Helper::amazon_book(book.asin)]}.first
+      @books[0..count].map do |book|
+        cache(:"book_#{book.asin}"){[Helper::amazon_book(book.asin)]}.first
       end
     end
   end
 
   def github
-    @repos.each_with_index.map do |repo, i|
-      (@commit_array ||= []) << cache_and_set(:"repo_commits#{i}") do
+    @repos.map do |repo|
+      (@commit_hash ||= {})[repo.name] = cache_and_set(:"repo_commits_#{repo.name.gsub(/\W/, '')}") do
         c = Helper::commits repo.name
         c.nil? ? [] : c.commits
       end
     end
-    @gists.each_with_index.map do |gist, i|
-      (@gist_files_array ||= []) << cache_and_set(:"gist_files_#{i}") do
+    @gists.map do |gist|
+      (@gist_files_hash ||= {})[gist.repo] = cache_and_set(:"gist_files_#{gist.repo}") do
         gist.files.map do |file|
           Helper::gist gist.repo, file
         end

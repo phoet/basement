@@ -4,7 +4,7 @@
   -unless @gallery_images.nil?
     %div
       .post_body
-        -@gallery_images.each_with_index do |image, i|
+        -@gallery_images.each do |image|
           %a{:href => image.picture}
             %img{:src => image.thumbnail, :class => "alignleft"}
     
