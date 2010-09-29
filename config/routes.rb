@@ -50,6 +50,8 @@ BasementRails3::Application.routes.draw do |map|
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
   root :to => "home#index"
+  
+  match '/interest/curriculum/:type(.:format)' => 'interest#curriculum_pdf'
 
   # See how all your routes lay out with "rake routes"
 

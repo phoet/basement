@@ -2,12 +2,7 @@
 	.post_body
 		= render :partial=>"shared/quote", :locals=>{ :author=>@cite.author, :text=>@cite.text }
 		%p
-			Was möchte ein Besucher auf der Startseite meiner Webseite sehen?
-			Ich weiß es nicht genau, aber wenn Du einen Vorschlag hast, dann kannst Du
-			mich gerne 
-			=link_to('kontaktieren.', :controller=>'interest')
-		%p
-			Auf jeden Fall gibt es hier für Dich die Möglichkeit, mehr über mich zu erfahren:
+			Privates, Fachliches und Interessantes (oder so), auf jeden Fall gibt's hier:
 		%ul
 			%li
 				Einträge aus meinem
@@ -36,7 +31,7 @@
 	#index.post
 		.post_title
 			%h2
-				%a{:href=>"http://twitter.com/phoet/friends", :title=>"Was machen meine Freunde gerade?"} Was machen meine Freunde gerade?
+				%a{:href=>"http://twitter.com/phoet/friends", :title=>"Was geht auf Twitter?"} Was geht auf Twitter?
 		.comment_list
 			-@more_array.each do |friend|
 				.comment.alt
@@ -55,4 +50,4 @@
 							-if friend.has_status?
 								=links_4_twitter(h(friend.status_text))
 		
-		= render :partial=>'shared/more', :locals=>{:name=>'Freunde'}
+		= render :partial=>'shared/more', :locals=>{:name=>'Tweets'}
