@@ -1,5 +1,11 @@
 --- 
 - !ruby/struct:ApplicationController::Book 
+  :asin: "1590598210"
+  :title: Practical Ruby for System Administration
+- !ruby/struct:ApplicationController::Book 
+  :asin: "1430230517"
+  :title: "The Definitive Guide to Mongodb: The Nosql Database for Cloud and Desktop"
+- !ruby/struct:ApplicationController::Book 
   :asin: "1430224037"
   :title: iPhone Advanced Projects
 - !ruby/struct:ApplicationController::Book 
