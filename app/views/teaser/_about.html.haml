@@ -1,16 +1,15 @@
 .box#about
-	.box_title=link_to('Über Mich', {:controller=>'interest', :action=>'curriculum'}, {:title=>'Über Mich'})
-	.box_content
-		.thumbnails
-			-link_to({:controller=>'interest', :action=>'curriculum'}, {:class=>'thumb'}) do
-				%img{:src=>"http://www.gravatar.com/avatar/056c32203f8017f075ac060069823b66.png", :alt=>"Peter Schröder", :title=>"Peter Schröder"}
-			%p 
-				Ich bin 
-				=age
-				Jahre alt und wohne auf der
-				%a{:title=>"Schanze", :href=>"http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A"} Schanze.
-				Seit September arbeite ich als 
-				%a{:href=>"http://de.wikipedia.org/wiki/Softwareentwickler",:title=>'Softwareentwickler'} Rails-Entwickler
-				bei der
-				%a{:href=>"http://www.tolingo.de",:title=>'tolingo GmbH'} tolingo GmbH.
-		%div
+  .box_title=link_to('Über Mich', {:controller=>'interest', :action=>'curriculum'}, {:title=>'Über Mich'})
+  .box_content
+    .thumbnails
+      -link_to({:controller=>'interest', :action=>'curriculum'}, {:class=>'thumb'}) do
+        %img{:src=>"http://www.gravatar.com/avatar/056c32203f8017f075ac060069823b66.png", :alt=>"Peter Schröder", :title=>"Peter Schröder"}
+      %p 
+        Ich bin 
+        =age
+        Jahre alt und wohne auf der
+        %a{:title=>"Schanze", :href=>"http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A"} Schanze.
+        Seit September arbeite ich als 
+        %a{:href=>"http://de.wikipedia.org/wiki/Softwareentwickler",:title=>'Softwareentwickler'} Ruby Entwickler
+        bei
+        = link_to("fromAtoB.", {:controller=>'interest', :action=>'employer'})

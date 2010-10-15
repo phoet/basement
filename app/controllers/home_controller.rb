@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     @cite = @cites[rand(@cites.size)]
-    puts @friends.class
     more_stuff(@friends.size) do |count|
       @friends[0..count]
     end
