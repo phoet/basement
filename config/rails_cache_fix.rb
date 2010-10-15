@@ -147,7 +147,6 @@ module ActiveSupport
       # for :namespace which can be used to set the global namespace for the cache.
       def initialize(options = nil)
         @options = options ? options.dup : {}
-        puts "***" * 50
         puts @options
       end
 
