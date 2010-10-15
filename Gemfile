@@ -25,3 +25,7 @@ group :test do
   gem "test-unit", "1.2.3"
   gem "wirble", "0.1.3"
 end
+
+group :heroku do
+  gem "heroku", "1.10.14"
+end

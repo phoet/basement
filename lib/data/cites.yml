@@ -1,28 +1,28 @@
 --- 
 - !ruby/struct:ApplicationController::Cite 
-  :author: Abraham (Grampa) Simpson
-  :text: "Mein Homer ist kein Kommunist. Er ist vielleicht ein L\xC3\xBCgner, ein Schwein, ein Idiot und ein Kommunist, aber er ist kein Porno-Star!"
+  author: Abraham (Grampa) Simpson
+  text: "Mein Homer ist kein Kommunist. Er ist vielleicht ein L\xC3\xBCgner, ein Schwein, ein Idiot und ein Kommunist, aber er ist kein Porno-Star!"
 - !ruby/struct:ApplicationController::Cite 
-  :author: Seymour Skinner
-  :text: "Aus Anonymit\xC3\xA4tsgr\xC3\xBCnden nennen wir sie Lisa S. Oder nein, lieber L. Simpson."
+  author: Seymour Skinner
+  text: "Aus Anonymit\xC3\xA4tsgr\xC3\xBCnden nennen wir sie Lisa S. Oder nein, lieber L. Simpson."
 - !ruby/struct:ApplicationController::Cite 
-  :author: Barney Gumble
-  :text: "H\xC3\xA4ltst du mich etwa f\xC3\xBCr einen krankhaften Trinker? Oh, da hat jemand Bier im Aschenbecher versch\xC3\xBCttet!"
+  author: Barney Gumble
+  text: "H\xC3\xA4ltst du mich etwa f\xC3\xBCr einen krankhaften Trinker? Oh, da hat jemand Bier im Aschenbecher versch\xC3\xBCttet!"
 - !ruby/struct:ApplicationController::Cite 
-  :author: Homer Jay Simpson
-  :text: "Nukular, das Wort hei\xC3\x9Ft Nukular!"
+  author: Homer Jay Simpson
+  text: "Nukular, das Wort hei\xC3\x9Ft Nukular!"
 - !ruby/struct:ApplicationController::Cite 
-  :author: Homer Jay Simpson
-  :text: Neiiin!
+  author: Homer Jay Simpson
+  text: Neiiin!
 - !ruby/struct:ApplicationController::Cite 
-  :author: Homer Jay Simpson
-  :text: "Auf den Alkohol - die Ursache und die L\xC3\xB6sung aller Probleme!"
+  author: Homer Jay Simpson
+  text: "Auf den Alkohol - die Ursache und die L\xC3\xB6sung aller Probleme!"
 - !ruby/struct:ApplicationController::Cite 
-  :author: Nelson Muntz
-  :text: HaHaaaa!
+  author: Nelson Muntz
+  text: HaHaaaa!
 - !ruby/struct:ApplicationController::Cite 
-  :author: Charles Montgomery Burns
-  :text: Ausgezeichnet...
+  author: Charles Montgomery Burns
+  text: Ausgezeichnet...
 - !ruby/struct:ApplicationController::Cite 
-  :author: "Uter (bayrische Austauschsch\xC3\xBCler)"
-  :text: Jag' mi net, i will net laufen! I bi voll mit Schoki!
+  author: "Uter (bayrische Austauschsch\xC3\xBCler)"
+  text: Jag' mi net, i will net laufen! I bi voll mit Schoki!

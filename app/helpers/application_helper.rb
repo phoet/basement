@@ -54,9 +54,14 @@ module ApplicationHelper
         m.id == current_controller
       end.subitems
     end
+    p items
     items.map do |i|
+      p i
       page_options = (top ? {:controller => i.id} : {:controller => current_controller, :action => i.id})
-      cssclass = ([current_controller, controller.action_name].include?(i.id) || current_page?(page_options)) ? ' class="current_page_item"' : ''
+      a = [current_controller, controller.action_name].include?(i.id)
+      p page_options
+      b = current_page?(page_options)
+      cssclass = (a || b) ? ' class="current_page_item"' : ''
       link = link_to(i.name, page_options, {:title => i.name})
       "<li #{cssclass}>#{link}</li>\n"
     end.join.html_safe

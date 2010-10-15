@@ -1,49 +1,49 @@
 --- 
 - !ruby/struct:Helper::MenuItem 
-  :id: home
-  :name: Privates
-  :subitems: 
+  id: home
+  name: Privates
+  subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: index
-    :name: Willkommen
-    :subitems: 
+    id: index
+    name: Willkommen
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: blog
-    :name: Tagebuch
-    :subitems: 
+    id: blog
+    name: Tagebuch
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: gallery
-    :name: Fotoalbum
-    :subitems: 
+    id: gallery
+    name: Fotoalbum
+    subitems: 
 - !ruby/struct:Helper::MenuItem 
-  :id: work
-  :name: Fachliches
-  :subitems: 
+  id: work
+  name: Fachliches
+  subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: index
-    :name: Weiterbildung
-    :subitems: 
+    id: index
+    name: Weiterbildung
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: bookshelf
-    :name: "B\xC3\xBCcherregal"
-    :subitems: 
+    id: bookshelf
+    name: "B\xC3\xBCcherregal"
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: github
-    :name: Github
-    :subitems: 
+    id: github
+    name: Github
+    subitems: 
 - !ruby/struct:Helper::MenuItem 
-  :id: interest
-  :name: Interessantes
-  :subitems: 
+  id: interest
+  name: Interessantes
+  subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: index
-    :name: Kontakt
-    :subitems: 
+    id: index
+    name: Kontakt
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: curriculum
-    :name: Lebenslauf
-    :subitems: 
+    id: curriculum
+    name: Lebenslauf
+    subitems: 
   - !ruby/struct:Helper::MenuItem 
-    :id: employer
-    :name: Arbeitgeber
-    :subitems: 
+    id: employer
+    name: Arbeitgeber
+    subitems: 
