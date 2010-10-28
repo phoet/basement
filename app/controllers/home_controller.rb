@@ -29,4 +29,5 @@ class HomeController < ApplicationController
   def reset_cache
     render :text=>"reset redis cache: #{cache_store.redis.flushdb}"
   end
+  
 end
