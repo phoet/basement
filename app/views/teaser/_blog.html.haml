@@ -1,7 +1,8 @@
 .box
-	.box_title=link_to('Tagebuch', {:controller=>'home', :action=>'blog'}, {:title=>'Tagebuch'})
-	.box_content
-		%ul
-			-posts[0..4].each() do |post|
-				%li
-					%a{:href=>post.url, :title=>h(post.title)}=trim_to(h(post.title), 30)
+  .box_title=link_to('Tagebuch', {:controller=>'home', :action=>'blog'}, {:title=>'Tagebuch'})
+  .box_content
+    -if posts
+      %ul
+        -posts[0..4].each() do |post|
+          %li
+            %a{:href=>post.url, :title=>h(post.title)}=trim_to(h(post.title), 30)
