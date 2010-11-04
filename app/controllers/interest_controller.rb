@@ -12,7 +12,7 @@ class InterestController < ApplicationController
     @document_partial = params[:type]
     respond_to do |format|
       format.pdf do
-        data = DocRaptor.create(:name => @document_partial, :document_url => "http://phoet.de/interest/curriculum/#{@document_partial}.html", :document_type => "pdf")
+        data = DocRaptor.create(:name => "#{@document_partial}.pdf", :document_content => render_to_string, :document_type => "pdf", :prince_options => {:baseurl => 'http://www.phoet.de'})
         send_data data, :type => 'application/pdf', :filename => "#{@document_partial}.pdf"
       end
       format.html
