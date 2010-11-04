@@ -10,7 +10,7 @@ gem "twitter", "0.9.12"
 gem "hashie", "0.4.0"
 gem "coderay", "0.9.3"
 gem "asin", "0.0.8"
-gem "doc_raptor", "0.1.1"
+gem "doc_raptor", "0.1.2"
 
 ## Bundle gems used only in certain environments:
 group :test do
