@@ -1,1 +1,2 @@
-rvm 1.9.2@basement
+rvm 1.9.2@basement --create
+rvm wrapper 1.9.2@basement textmate
