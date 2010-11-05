@@ -1,8 +1,8 @@
 .post
   .post_body= render :partial => "shared/quote", :locals => { :author =>'Wilhelm Busch', :text => 'Ist der Ruf erst ruiniert, lebt es sich ganz ungeniert.' }
 
-=render :partial => 'document', :locals => {:href => "/lebenslauf_stichpunkte.pdf", :title => 'Lebenslauf in Stichpunkten'}
-=render :partial => 'document', :locals => {:href => "/lebenslauf_tabellarisch.pdf", :title => 'tabellarischer Lebenslauf'}
+=render :partial => 'document', :locals => {:type => "bullets", :title => 'Lebenslauf in Stichpunkten'}
+=render :partial => 'document', :locals => {:type => "table", :title => 'tabellarischer Lebenslauf'}
 
 =render :partial => 'curriculum_bullets'
 =render :partial => 'curriculum_table'
