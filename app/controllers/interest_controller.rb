@@ -12,8 +12,15 @@ class InterestController < ApplicationController
     @document_partial = params[:type]
     respond_to do |format|
       format.pdf do
-        data = DocRaptor.create(:name => "#{@document_partial}.pdf", :document_content => render_to_string, :document_type => "pdf", :prince_options => {:baseurl => 'http://www.phoet.de'})
-        send_data data, :type => 'application/pdf', :filename => "#{@document_partial}.pdf"
+        params = {
+          :name => "#{@document_partial}.pdf",
+          :document_content => render_to_string,
+          :document_type => "pdf",
+          :prince_options => {:baseurl => 'http://www.phoet.de'},
+        }
+        params[:test] = true unless Rails.env.production?
+        response = DocRaptor.create(params)
+        send_data response.body, :type => 'application/pdf', :filename => "#{@document_partial}.pdf"
       end
       format.html
     end
