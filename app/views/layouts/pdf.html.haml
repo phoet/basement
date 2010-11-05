@@ -9,8 +9,7 @@
     %meta{:name=>"description", :content=>"#{names},#{keywords}"}
     %meta{:name=>"keywords", :content=>"#{names},#{keywords}"}
     %meta{:name=>"author", :content=>names}
-    
-    = stylesheet_link_tag 'style', :media => 'screen, print'
+    %link{:href=>"/stylesheets/style.css", :media=>"screen, print", :rel=>"stylesheet", :type=>"text/css"}
     
     %style
       @page { size: A4 }
