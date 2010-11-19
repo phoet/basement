@@ -14,6 +14,4 @@ connects to several external apis:
 * blogger
 * picasa
 * github
-* amazon (using "asin":http://github.com/phoet/asin gem)
-* seitwert
 * docraptor
