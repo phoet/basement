@@ -13,7 +13,7 @@ gem "asin", "0.0.8"
 gem "doc_raptor", "0.1.2"
 
 ## Bundle gems used only in certain environments:
-group :test do
+group :test, :development do
   gem "test-unit", "1.2.3"
   gem "wirble", "0.1.3"
   gem 'ruby-debug19', :require => 'ruby-debug'
