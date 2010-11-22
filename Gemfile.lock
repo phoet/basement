@@ -39,8 +39,6 @@ GEM
     columnize (0.3.1)
     configuration (1.1.0)
     crack (0.1.8)
-    doc_raptor (0.1.2)
-      httparty (>= 0.4.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (2.2.24)
@@ -130,7 +128,6 @@ PLATFORMS
 DEPENDENCIES
   asin (= 0.0.8)
   coderay (= 0.9.3)
-  doc_raptor (= 0.1.2)
   haml (= 2.2.24)
   hashie (= 0.4.0)
   heroku (= 1.10.14)

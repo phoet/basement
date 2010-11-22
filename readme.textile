@@ -14,9 +14,4 @@ connects to several external apis:
 * blogger
 * picasa
 * github
-* amazon (using "asin":http://github.com/phoet/asin gem)
-* seitwert
-
-h2. tools
-
-* "wicked_pdf":http://github.com/mileszs/wicked_pdf with "wkhtmltopdf":http://code.google.com/p/wkhtmltopdf/ for pdf generation
+* docraptor
