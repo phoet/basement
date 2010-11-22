@@ -4,6 +4,6 @@
 			%img{:alt => title, :src => "/images/pdf.png", :height => 32, :width => 32}
 		.comment_author.left
 			%h3
-				=link_to(title, :action => 'curriculum_pdf', :type => "curriculum_#{type}", :format => 'pdf')
+				%a{:href=>"/lebenslauf_#{type}.pdf", :title=>title}=title
 			.comment_date="~ 250 KB"
 		.clearer &nbsp;
