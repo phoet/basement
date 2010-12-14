@@ -1,14 +1,7 @@
-require 'blogger'
-require 'google_data'
-require 'picasa'
-require 'seitwert'
-require 'twitter_user'
-
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
   helper :all
-  layout 'default'
 
   Book = Struct.new(:asin, :title)
   Cite = Struct.new(:author, :text)

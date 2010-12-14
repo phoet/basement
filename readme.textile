@@ -1,6 +1,6 @@
 h1. basement
 
-my personal homepage hosted on "Heroku":http://heroku.com bamboo stack basement with Ruby 1.9.1 and Rails 3 beta:
+my personal homepage hosted on "Heroku":http://heroku.com bamboo stack basement with Ruby 1.9.2 and Rails 3 beta:
 
 "www.phoet.de":http://www.phoet.de
 
