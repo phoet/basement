@@ -1,8 +1,9 @@
-require 'blogger'
 require 'google_data'
+require 'blogger'
 require 'picasa'
 require 'seitwert'
 require 'twitter_user'
+require 'helper'
 
 class ApplicationController < ActionController::Base
 

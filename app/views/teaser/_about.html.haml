@@ -2,7 +2,7 @@
   .box_title=link_to('Über Mich', {:controller=>'interest', :action=>'curriculum'}, {:title=>'Über Mich'})
   .box_content
     .thumbnails
-      -link_to({:controller=>'interest', :action=>'curriculum'}, {:class=>'thumb'}) do
+      = link_to({:controller=>'interest', :action=>'curriculum'}, {:class=>'thumb'}) do
         %img{:src=>"http://www.gravatar.com/avatar/056c32203f8017f075ac060069823b66.png", :alt=>"Peter Schröder", :title=>"Peter Schröder"}
       %p 
         Ich bin 
