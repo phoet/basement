@@ -3,11 +3,8 @@ require File.expand_path('../boot', __FILE__)
 require "action_controller/railtie"
 require "active_resource/railtie"
 
-require File.expand_path(File.dirname(__FILE__) + "/rails_cache_fix") 
-
 # Auto-require default libraries and those for the current Rails environment.
 Bundler.require :default, Rails.env
-
 
 module BasementRails3
   class Application < Rails::Application
