@@ -9,7 +9,8 @@ gem "haml", "~> 2.2.24"
 gem "twitter", "~> 0.9.12"
 gem "hashie", "~> 0.4.0"
 gem "coderay", "~> 0.9.3"
-gem "asin", "~> 0.0.8"
+gem "asin", "~> 0.1.0"
+gem "httpclient", "~> 2.1.5.2"
 
 ## Bundle gems used only in certain environments:
 group :test, :development do
