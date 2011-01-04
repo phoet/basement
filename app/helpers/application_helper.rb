@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def age
-    birthday = Date.new(1980,8,27)
+    birthday = Date.new(1980, 8, 27)
     age = Date.today.year - birthday.year
     age -= 1 if Date.today < birthday + age.years
     age
@@ -54,12 +54,9 @@ module ApplicationHelper
         m.id == current_controller
       end.subitems
     end
-    p items
     items.map do |i|
-      p i
       page_options = (top ? {:controller => i.id} : {:controller => current_controller, :action => i.id})
       a = [current_controller, controller.action_name].include?(i.id)
-      p page_options
       b = current_page?(page_options)
       cssclass = (a || b) ? ' class="current_page_item"' : ''
       link = link_to(i.name, page_options, {:title => i.name})
@@ -84,7 +81,7 @@ module ApplicationHelper
 
   def links_4_urls(text)
     ret = text.dup
-    title = text.gsub /[^\w]/, ' '
+    title = text.gsub(/[^\w]/, ' ')
     URI::extract(text, ['http','https']) do |match|
       link = "<a href='#{match}' title='#{title}'>#{match}</a>"
       ret.gsub!(match, link)

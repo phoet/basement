@@ -1,112 +1,124 @@
 --- 
 - !ruby/struct:ApplicationController::Book 
+  asin: "0131479415"
+  title: "Agile Estimating and Planning"
+- !ruby/struct:ApplicationController::Book 
+  asin: "3898646777"
+  title: "Android 2: Grundlagen und Programmierung"
+- !ruby/struct:ApplicationController::Book 
+  asin: "0321601912"
+  title: "Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation"
+- !ruby/struct:ApplicationController::Book 
+  asin: "0321601661"
+  title: "The Rails 3 Way"
+- !ruby/struct:ApplicationController::Book 
+  asin: "1449380379"
+  title: "Macruby: The Definitive Guide: Ruby and Cocoa on OS X"
+- !ruby/struct:ApplicationController::Book 
   asin: "1590598210"
-  title: Practical Ruby for System Administration
+  title: "Practical Ruby for System Administration"
 - !ruby/struct:ApplicationController::Book 
   asin: "1430230517"
   title: "The Definitive Guide to Mongodb: The Nosql Database for Cloud and Desktop"
 - !ruby/struct:ApplicationController::Book 
   asin: "1430224037"
-  title: iPhone Advanced Projects
+  title: "iPhone Advanced Projects"
 - !ruby/struct:ApplicationController::Book 
-  asin: 143022505X
+  asin: "143022505X"
   title: "More iPhone 3 Development: Tackling iPhone SDK 3"
 - !ruby/struct:ApplicationController::Book 
-  asin: 1430218150
-  title: Learn Objective-C on the Mac
+  asin: "1430218150"
+  title: "Learn Objective-C on the Mac"
 - !ruby/struct:ApplicationController::Book 
-  asin: 1430218096
-  title: Learn C on the Mac
+  asin: "1430218096"
+  title: "Learn C on the Mac"
 - !ruby/struct:ApplicationController::Book 
-  asin: 1430218592
-  title: Learn Cocoa on the Mac
+  asin: "1430218592"
+  title: "Learn Cocoa on the Mac"
 - !ruby/struct:ApplicationController::Book 
   asin: "0321552636"
-  title: Xcode 3 Unleashed
+  title: "Xcode 3 Unleashed"
 - !ruby/struct:ApplicationController::Book 
-  asin: 1430224592
-  title: Beginning Iphone 3 Development
-- !ruby/struct:ApplicationController::Book 
-  asin: 006135323X
-  title: Predictably Irrational
+  asin: "1430224592"
+  title: "Beginning Iphone 3 Development"
 - !ruby/struct:ApplicationController::Book 
   asin: "0321125215"
-  title: Domain-Driven Design
+  title: "Domain-Driven Design"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898644766"
-  title: SOA in der Praxis
+  title: "SOA in der Praxis"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898644472"
-  title: Hibernate
+  title: "Hibernate"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0321356683
-  title: Effective Java
+  asin: "0321356683"
+  title: "Effective Java"
 - !ruby/struct:ApplicationController::Book 
-  asin: 020161622X
-  title: The Pragmatic Programmer
+  asin: "020161622X"
+  title: "The Pragmatic Programmer"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898644650"
-  title: Spring
+  title: "Spring"
 - !ruby/struct:ApplicationController::Book 
   asin: "1590597664"
-  title: Beginning Ruby
+  title: "Beginning Ruby"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0321349601
-  title: Java Concurrency in Practice
+  asin: "0321349601"
+  title: "Java Concurrency in Practice"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898643395"
-  title: eXtreme Programming
+  title: "eXtreme Programming"
 - !ruby/struct:ApplicationController::Book 
-  asin: 032133678X
-  title: Java Puzzlers
+  asin: "032133678X"
+  title: "Java Puzzlers"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0596007124
-  title: Head First Design Patterns
+  asin: "0596007124"
+  title: "Head First Design Patterns"
 - !ruby/struct:ApplicationController::Book 
   asin: "1847193072"
-  title: Tapestry 5
+  title: "Tapestry 5"
 - !ruby/struct:ApplicationController::Book 
   asin: "3446415351"
   title: "Ruby on Rails f\xC3\xBCr JEE-Experten"
 - !ruby/struct:ApplicationController::Book 
-  asin: 097873923X
-  title: Textmate
+  asin: "097873923X"
+  title: "Textmate"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898644782"
-  title: Scrum
+  title: "Scrum"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0321246683
-  title: Unix for Mac OS X 10.4 Tiger
+  asin: "0321246683"
+  title: "Unix for Mac OS X 10.4 Tiger"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0596516177
-  title: The Ruby Programming Language
+  asin: "0596516177"
+  title: "The Ruby Programming Language"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0596527756
-  title: Java Generics and Collections
+  asin: "0596527756"
+  title: "Java Generics and Collections"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0974514055
-  title: Programming Ruby
+  asin: "0974514055"
+  title: "Programming Ruby"
 - !ruby/struct:ApplicationController::Book 
   asin: "1933988355"
-  title: jQuery in Action
+  title: "jQuery in Action"
 - !ruby/struct:ApplicationController::Book 
   asin: "3898644294"
   title: "EJB 3.0 f\xC3\xBCr Umsteiger"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0132350882
-  title: Clean Code
+  asin: "0132350882"
+  title: "Clean Code"
 - !ruby/struct:ApplicationController::Book 
   asin: "1934356190"
-  title: Programming Cocoa with Ruby
+  title: "Programming Cocoa with Ruby"
 - !ruby/struct:ApplicationController::Book 
   asin: "1934356514"
   title: "Beginning Mac Programming: Develop with Objective-C and Cocoa"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0321503619
-  title: Cocoa Programming for Mac OS X
+  asin: "0321503619"
+  title: "Cocoa Programming for Mac OS X"
 - !ruby/struct:ApplicationController::Book 
-  asin: 0596523009
-  title: Ruby Best Practices
+  asin: "0596523009"
+  title: "Ruby Best Practices"
 - !ruby/struct:ApplicationController::Book 
   asin: "0321566157"
   title: "Programming in Objective-C 2.0"
