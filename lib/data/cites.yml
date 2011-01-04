@@ -25,4 +25,4 @@
   text: Ausgezeichnet...
 - !ruby/struct:ApplicationController::Cite 
   author: "Uter (bayrische Austauschsch\xC3\xBCler)"
-  text: Jag' mi net, i will net laufen! I bi voll mit Schoki!
+  text: "Jag' mi net, i will net laufen! I bi voll mit Schoki!"
