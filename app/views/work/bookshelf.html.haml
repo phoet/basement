@@ -18,9 +18,14 @@
       .comment_list
         - @more_array.each do |item|
           .comment.alt
-            .comment_gravatar.left{:style => "width: #{item.raw.SmallImage.Width.to_i + 10}px;"}
-              %a{:href => item.raw.DetailPageURL, :title => item.title}
-                %img{:alt => item.title, :title => item.title, :src => item.raw.SmallImage.URL}
+            - if item.raw.SmallImage
+              .comment_gravatar.left{:style => "width: #{item.raw.SmallImage.Width.to_i + 10}px;"}
+                %a{:href => item.raw.DetailPageURL, :title => item.title}
+                  %img{:alt => item.title, :title => item.title, :src => item.raw.SmallImage.URL}
+            - else
+              .comment_gravatar.left
+                %a{:href => item.raw.DetailPageURL, :title => item.title}
+                  %img{:alt => item.title, :title => item.title, :src => '/images/sample-gravatar.jpg'}
             
             .comment_author.left
               %strong

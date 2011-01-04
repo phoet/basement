@@ -16,12 +16,6 @@ class Helper
     YAML::load_file("lib/data/#{structure}.yml")
   end
 
-  def self.dump(structure, filename='dump')
-    File.open("tmp/#{filename}.yml", 'w') do |out|
-      out.write(structure.to_yaml)
-    end
-  end
-
   def self.get(url, format)
     HTTParty.get(url, :format=>format, :timeout=>10)
   end
@@ -86,7 +80,7 @@ class Helper
   def self.twitter_posts
     endpoint = "#{ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']}/search"
     logger.info "calling twitter posts with #{endpoint}"
-    Twitter::Search.new('phoet', api_endpoint: endpoint).collect{|t| t}
+    Twitter::Search.new('phoet', :api_endpoint => endpoint).collect{|t| t}
   end
 
   def self.twitter_friends
