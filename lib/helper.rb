@@ -1,5 +1,5 @@
 class Helper
-  
+
   extend ASIN
 
   MenuItem = Struct.new(:id, :name, :subitems)
@@ -19,25 +19,25 @@ class Helper
   def self.get(url, format)
     HTTParty.get(url, :format=>format, :timeout=>10)
   end
-  
+
   def self.gists
     resp = HTTParty.get 'http://gist.github.com/api/v1/json/gists/phoet', :type=>:json
     resp = Hashie::Mash.new resp
     resp.gists
   end
-  
+
   def self.gist(gist_id, filename)
     HTTParty.get "http://gist.github.com/raw/#{gist_id}/#{filename}"
   end
-  
+
   def self.repos
     resp = HTTParty.get 'http://github.com/api/v1/json/phoet/', :type=>:json
     resp = Hashie::Mash.new resp
-    resp.user.repositories
+    resp.user.repositories.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
   rescue
     nil
   end
-  
+
   def self.commits(repo)
     resp = HTTParty.get "http://github.com/api/v1/json/phoet/#{repo}/commits/master", :type=>:json
     Hashie::Mash.new resp
