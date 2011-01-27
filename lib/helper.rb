@@ -1,7 +1,5 @@
 class Helper
 
-  extend ASIN
-
   MenuItem = Struct.new(:id, :name, :subitems)
 
   def self.menu
@@ -47,8 +45,7 @@ class Helper
 
   def self.amazon_book(asin)
     begin
-      configure(:secret => ENV['ASIN_SECRET'], :key => ENV['ASIN_KEY'], :host => 'webservices.amazon.de', :logger => logger)
-      lookup(asin, :ResponseGroup => :Medium)
+      ASIN.client.lookup(asin, :ResponseGroup => :Medium)
     rescue
       raise "could not load book for #{asin} (#{$!})"
     end
