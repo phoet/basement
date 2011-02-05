@@ -36,18 +36,19 @@
 			-@more_array.each do |friend|
 				.comment.alt
 					.comment_gravatar.left
-						%img{:alt=>friend.name, :title=>friend.name, :src=>friend.thumbnail, :height=>32, :width=>32}
+						%img{:alt=>friend.name, :title=>friend.name, :src=>friend.profile_image_url, :height=>32, :width=>32}
 					.comment_author.left
 						%a{:href=>"http://twitter.com/#{friend.screen_name}"}="#{friend.name}, "
 						%a{:href=>"http://twitter.com/#{friend.screen_name}/followers"}="#{friend.friends_count} Verfolger"
 						.comment_date
-							-if friend.has_status?
+							-if friend.status
 								zuletzt Aktualisiert am
-								=l(friend.status_created)
+								=l(friend.status.created_at)
 					.clearer &nbsp;
 					.comment_body
 						%p
-							-if friend.has_status?
-								=links_4_twitter(h(friend.status_text))
+							-if friend.status
+								=links_4_twitter(h(friend.status.text))
 		
 		= render :partial=>'shared/more', :locals=>{:name=>'Tweets'}
+
