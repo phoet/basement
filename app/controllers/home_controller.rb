@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @cite = @cites[rand(@cites.size)]
     more_stuff(@friends.size) do |count|
       @friends[0..count]
-    end
+    end if @friends
   end
 
   def gallery
