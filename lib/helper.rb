@@ -1,3 +1,5 @@
+require 'crack'
+
 class Helper
 
   MenuItem = Struct.new(:id, :name, :subitems)
@@ -11,52 +13,63 @@ class Helper
   end
 
   def self.load_data(structure)
-    YAML::load_file("lib/data/#{structure}.yml")
+    YAML::load_file("lib/data/#{structure}.yml").shuffle
   end
 
-  def self.get(url, format)
-    HTTParty.get(url, :format=>format, :timeout=>10)
+  def self.get(url, format=:json)
+    content = HTTPClient.get(url).content
+    if format == :json
+      Hashie::Mash.new(Crack::JSON.parse(content))
+    elsif format == :xml
+      Hashie::Mash.new(Crack::XML.parse(content))
+    elsif format == :raw
+      content
+    else
+      raise "unsupported format #{format}"
+    end
   end
 
   def self.gists
-    resp = HTTParty.get 'http://gist.github.com/api/v1/json/gists/phoet', :type=>:json
-    resp = Hashie::Mash.new resp
+    url = 'https://gist.github.com/api/v1/json/gists/phoet'
+    logger.info "fetching gists from #{url}"
+    resp = get url
     resp.gists
   end
 
   def self.gist(gist_id, filename)
-    HTTParty.get "http://gist.github.com/raw/#{gist_id}/#{filename}"
+    url = "https://gist.github.com/raw/#{gist_id}/#{filename}"
+    logger.info "fetching gist from #{url}"
+    get url, :raw
   end
 
   def self.repos
-    resp = HTTParty.get 'http://github.com/api/v1/json/phoet/', :type=>:json
-    resp = Hashie::Mash.new resp
+    url = 'http://github.com/api/v1/json/phoet/'
+    logger.info "fetching repos from #{url}"
+    resp = get url
     resp.user.repositories.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
   rescue
     nil
   end
 
   def self.commits(repo)
-    resp = HTTParty.get "http://github.com/api/v1/json/phoet/#{repo}/commits/master", :type=>:json
-    Hashie::Mash.new resp
+    url = "http://github.com/api/v1/json/phoet/#{repo}/commits/master"
+    logger.info "fetching commit from #{url}"
+    get url
   rescue
     nil
   end
 
   def self.amazon_book(asin)
-    begin
-      ASIN.client.lookup(asin, :ResponseGroup => :Medium)
-    rescue
-      raise "could not load book for #{asin} (#{$!})"
-    end
+    logger.info "fetching book for asin #{asin}"
+    ASIN.client.lookup(asin, :ResponseGroup => :Medium)
+  rescue
+    raise "could not load book for #{asin} (#{$!})"
   end
 
   def self.blogger_posts
     logger.info 'calling blogger'
     parsed = get('http://uschisblogg.blogspot.com/feeds/posts/default?alt=json', :json)
-    parsed['feed']['entry'].map do |e| 
-      Blogger.new(e)
-    end
+    parsed['feed']['entry'].map { |e| Blogger.new(e) }
   rescue
     nil
   end
@@ -64,26 +77,23 @@ class Helper
   BASE_URL = 'http://picasaweb.google.com/data/feed/base/user/'
 
   def self.picasa_fotos(urls=["#{BASE_URL}phoet6/?alt=json","#{BASE_URL}heddahh/?alt=json"])
-    urls = [urls] if urls.is_a? String
-    urls.map do |url|
+    urls = [] << urls
+    urls.flatten.map do |url|
       logger.info "calling picasa #{url}"
       parsed = get(url, :json)
-      parsed['feed']['entry'].map do |e| 
-        Picasa.new(e)
-      end
-    end.flatten.sort_random
+      parsed['feed']['entry'].map { |e| Picasa.new(e) }
+    end.flatten.shuffle
   end
 
   def self.twitter_posts
-    endpoint = "#{ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']}/search"
-    logger.info "calling twitter posts with #{endpoint}"
-    Twitter::Search.new('phoet', :api_endpoint => endpoint).collect{|t| t}
+    logger.info "calling twitter posts"
+    Twitter::Search.new.q('phoet').fetch
   end
 
   def self.twitter_friends
     logger.info 'calling twitter friends'
-    json = get("http://twitter.com/statuses/friends/phoet.json", :json)
-    json.map{ |json| TwitterUser.new(json) }
+    json = get "https://twitter.com/statuses/friends/phoet.json"
+    json.shuffle
   rescue
     nil
   end
@@ -91,9 +101,10 @@ class Helper
   def self.seitwert
     logger.info 'calling seitwert'
     xml = get('http://www.seitwert.de/api/getseitwert.php?url=www.phoet.de&api=bfe1534821649e71c2694d0ace86fab0', :xml)
-    Hashie::Mash.new(xml['urlinfo'])
+    xml.urlinfo
   rescue Timeout::Error
     nil
   end
 
 end
+
