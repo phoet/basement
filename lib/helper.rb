@@ -19,7 +19,12 @@ class Helper
   def self.get(url, format=:json)
     content = HTTPClient.get(url).content
     if format == :json
-      Hashie::Mash.new(Crack::JSON.parse(content))
+      resp = Crack::JSON.parse(content)
+      if resp.is_a? Array
+        resp.map{|r| Hashie::Mash.new(r)}
+      else
+        Hashie::Mash.new(resp)
+      end
     elsif format == :xml
       Hashie::Mash.new(Crack::XML.parse(content))
     elsif format == :raw
