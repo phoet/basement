@@ -1,10 +1,8 @@
 !!! XML
 !!!
-%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", :lang => "de"}
   %head
     %meta{'http-equiv'=>"content-type", :content=>"text/html; charset=UTF-8"}
-    %meta{'http-equiv'=>"content-language", :content=>"de"}
-    %meta{'http-equiv'=>"language", :content=>"de"}
     %meta{:name=>"language", :content=>"deutsch, de"}
     %meta{:name=>"description", :content=>"#{names},#{keywords}"}
     %meta{:name=>"keywords", :content=>"#{names},#{keywords}"}
@@ -98,7 +96,7 @@
           .clearer &nbsp;
           =render :partial => '/shared/seitwert'
 
-    %img{:src=>'https://www.xing.com/profile/peter_schroeder2', :style=>'display:none;', :width => '1px', :height =>'1px'}
+    %img{:src=>'https://www.xing.com/profile/peter_schroeder2', :style=>'display:none;width:1px;height:1px;'}
 
     :javascript
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
