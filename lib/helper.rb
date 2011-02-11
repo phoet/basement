@@ -13,7 +13,7 @@ class Helper
   end
 
   def self.load_data(structure)
-    YAML::load_file("lib/data/#{structure}.yml").shuffle
+    YAML::load_file("lib/data/#{structure}.yml")
   end
 
   def self.get(url, format=:json)

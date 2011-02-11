@@ -22,12 +22,12 @@ class ApplicationController < ActionController::Base
     cache_and_set(:friends){Helper::twitter_friends}
     cache_and_set(:fotos){Helper::picasa_fotos}
     cache_and_set(:posts){Helper::blogger_posts}
-    cache_and_set(:books){Helper::load_data(:books)}
+    cache_and_set(:books){Helper::load_data(:books).shuffle}
     cache_and_set(:seitwert){Helper::seitwert}
     cache_and_set(:repos){Helper::repos}
     cache_and_set(:gists){Helper::gists}
 
-    @cites = Helper::load_data(:cites)
+    @cites = Helper::load_data(:cites).shuffle
     @teaser = [:blog, :bookshelf, :gallery, :twitter, :repos, :gists]
     2.times.each{@teaser.delete_at(rand(@teaser.size))}
   end
