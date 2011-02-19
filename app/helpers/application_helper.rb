@@ -81,7 +81,7 @@ module ApplicationHelper
 
   def links_4_urls(text)
     ret = text.dup
-    title = text.gsub(/[^\w]/, ' ')
+    title = text.gsub(/[^\w]/, ' ').strip
     URI::extract(text, ['http','https']) do |match|
       link = "<a href='#{match}' title='#{title}'>#{match}</a>"
       ret.gsub!(match, link)
@@ -91,11 +91,11 @@ module ApplicationHelper
 
   def links_4_twitter(text)
     ret = links_4_urls(text)
-    title = text.gsub(/[^\w]/, ' ')
-    regex = /#(\S+)/
+    title = text.gsub(/[^\w]/, ' ').strip
+    regex = /(^|\s)#(\S+)/
     text.scan(regex) do |m|
-      match = '#' + m[0]
-      link = "<a href='http://search.twitter.com/search?q=#{m[0]}' title='#{title}'>#{match}</a>"
+      match = '#' + m[1]
+      link = "<a href='http://search.twitter.com/search?q=#{m[1]}' title='#{title}'>#{match}</a>"
       ret.gsub!(match, link)
     end
     text.scan(/@(\w+)/) do |m|
