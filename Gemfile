@@ -15,6 +15,8 @@ group :test, :development do
   gem "test-unit", "~> 1.2.3"
   gem "wirble", "~> 0.1.3"
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'rspec', "~> 2.5.0"
+  gem 'rspec-rails', "~> 2.5.0"
 end
 
 group :heroku do
