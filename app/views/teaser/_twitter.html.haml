@@ -1,13 +1,13 @@
 .box#twitter
-	.box_title
-		%a{:href=>"http://twitter.com/phoet", :title=>'twitter'}
-			%img{:src=>"/images/twitter_icon.png", :alt=>"twitter", :title=>'twitter'}
-	.box_content
-		-tweets[0..4].each() do |tweet|
-			%blockquote{:class=>"box"} 
-				=links_4_twitter(tweet.text)
-				.sub
-					von 
-					%a{:href=>"http://twitter.com/#{tweet.from_user}", :title=>tweet.from_user}=tweet.from_user
-					vor
-					=calc_difference(tweet.created_at)
+  .box_title
+    %a{:href=>"http://twitter.com/phoet", :title=>'twitter'}
+      %img{:src=>"/images/twitter_icon.png", :alt=>"twitter", :title=>'twitter'}
+  .box_content
+    -tweets[0..4].each() do |tweet|
+      %blockquote{:class=>"box"} 
+        =links_4_twitter(tweet.text)
+        .sub
+          von 
+          %a{:href=>"http://twitter.com/#{tweet.from_user}", :title=>tweet.from_user}=tweet.from_user
+          vor
+          %a{:href=>"http://twitter.com/#{tweet.from_user}/status/#{tweet.id}", :title=>tweet.from_user}=calc_difference(tweet.created_at)
