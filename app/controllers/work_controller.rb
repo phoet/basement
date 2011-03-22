@@ -1,6 +1,6 @@
 class WorkController < ApplicationController
-  def index
-  end
+
+  def index; end
 
   def bookshelf
     more_stuff(@books.size) do |count|
@@ -26,28 +26,4 @@ class WorkController < ApplicationController
     end
   end
 
-  # some fallbacks for searchengine, cause i dont know how to do this better
-
-  def all_books
-    redirect_permanently :action=>'index'
-  end
-
-  def some_books
-    redirect_permanently :action=>'index'
-  end
-
-  def prev_feed
-    redirect_permanently :action=>'index'
-  end
-
-  def next_feed
-    redirect_permanently :action=>'index'
-  end
-
-  private
-
-  def redirect_permanently(options)  
-    headers["Status"] = "301 Moved Permanently"
-    redirect_to options
-  end
 end

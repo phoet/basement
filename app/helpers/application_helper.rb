@@ -44,6 +44,8 @@ module ApplicationHelper
     end.name
   end
 
+# TODO use tag helpers for html stuff
+
   def menu(options={})
     top = options[:top].nil? || options[:top]
     current_controller = options[:controller] || controller.controller_name

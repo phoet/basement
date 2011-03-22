@@ -7,7 +7,10 @@
       %p 
         Ich bin 
         =age
-        Jahre alt und wohne auf der
-        %a{:title=>"Schanze", :href=>"http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A"} Schanze.
-        Ich bin freiberuflicher
-        =link_to("Ruby und Java Entwickler.", :controller=>'interest', :action=>'employer')
+        Jahre alt, wohne in
+        =link_to 'Hamburg', "http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A", :title=>'Hamburg, Schanze'
+        und bin als
+        =link_to("eLancer", :controller=>'interest', :action=>'employer')
+        bei
+        =link_to("Qype", :controller=>'interest', :action=>'employer', :anchor=>'qype')
+        im Einsatz.

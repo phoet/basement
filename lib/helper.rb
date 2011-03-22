@@ -2,8 +2,6 @@ require 'crack'
 
 class Helper
 
-  MenuItem = Struct.new(:id, :name, :subitems)
-
   def self.menu
     load_data :menu
   end
@@ -13,7 +11,7 @@ class Helper
   end
 
   def self.load_data(structure)
-    YAML::load_file("lib/data/#{structure}.yml")
+    YAML::load_file("lib/data/#{structure}.yml").map{ |item| Hashie::Mash.new(item) }
   end
 
   def self.get(url, format=:json)
