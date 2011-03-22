@@ -13,7 +13,7 @@
     %link{:rel=>"shortcut icon", :href=>"/favicon.png", :type=>"image/png"}
     %link{:rel=>"icon", :href=>"/favicon.png", :type=>"image/png"}
     
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js', 'jquery.lightbox-0.5', 'application'
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js', 'jquery.lightbox-0.5', 'application'
     = stylesheet_link_tag 'jquery.lightbox-0.5', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', 'style'
 
     %title="#{title(controller)} - Peter Schröder - Phoet - #{keywords}"
@@ -96,4 +96,4 @@
           .clearer &nbsp;
           =render :partial => '/shared/seitwert'
 
-    = render :partial => 'shared/javascript'
+    = render :partial => '/shared/javascript'

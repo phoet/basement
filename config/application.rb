@@ -6,7 +6,7 @@ require "active_resource/railtie"
 # Auto-require default libraries and those for the current Rails environment.
 Bundler.require :default, Rails.env
 
-module BasementRails3
+module Basement
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -40,5 +40,8 @@ module BasementRails3
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
+    
+    config.secret_token = '1ba21b11a5e1fb5d128e3b0665417064f6dd279b09b15fdabe6ba5c256031d0ea4f352169bc854bb78ec4959f1b29eaebe547862cbb40ea2991a4ec15a5678cd'
+    config.session_store :cookie_store, :key => '_basement_rails3_session', :secret => '179f0e6d7ec282a66e8d3327434c7808ac91e062caeeef5bf55daaac45b3b9b0d568487611b26f4ffe867cce7b56057e032711ea000de6c313e7445f15b8269f'
   end
 end
