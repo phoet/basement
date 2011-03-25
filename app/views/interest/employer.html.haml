@@ -1,17 +1,23 @@
 .post
   .post_body
     =render :partial => "shared/quote", :locals => { :author =>'Volksmund', :text => 'Wer rastet, der rostet!' }
+
     %p
-      Getreu dieses Mottos habe ich in meinem Berufsleben schon
+      Getreu dieses Mottos habe ich in meinem Berufsleben schon 
       viele Jobwechsel vollzogen und durfte dabei unterschiedlichste Arbeitgeber kennenlernen.
     %p
-      Bei jedem Wechsel konnte ich neue Aufgabengebiete erschließen und meinen Erfahrungsschatz erweitern.
+      Bei jedem Berufswechsel konnte ich neue Aufgabengebiete erschließen und meinen Erfahrungsschatz erweitern.
       Heute verfüge ich über ein breites Fundament von solidem Fachwissen und einen
       großen Werkzeugkoffer mit vielen Mustern, Methoden und Vorgehensweisen, die ich gerne
       mit Kollegen diskutiere und verfeinere.
     %p
+      Seit dem ersten Februar habe ich nun endlich den Schritt in die Selbständigkeit gewagt 
+      und bin als freiberuflicher Software-Entwickler in Hamburg tätig.
+    %p
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
+      %li
+        %a{:href => "#qype"} Qype GmbH
       %li
         %a{:href => "#fromatob"} Verkehrsmittelvergleich.de GmbH
       %li
@@ -20,6 +26,45 @@
         %a{:href => "#freenet"} freenet AG
       %li
         %a{:href => "#bigpoint"} Bigpoint GmbH
+
+/ qype
+.post
+  .post_title
+    %h2
+      %a{:id => "qype", :href => "http://www.qype.com/", :title => "Qype GmbH"} Ruby Entwickler bei der Qype GmbH
+
+  .post_date seit Februar 2011
+  .post_body
+    %a{:href => "http://www.qype.com/", :title => "Qype GmbH"}
+      %img{:src => "/images/qype.png", :class => "alignleft", :alt => "Qype GmbH", :title => "Qype GmbH"}
+    .clearer &nbsp;
+    %p
+      Seit Februar arbeite ich zusammen mit dem HSV-Team bei
+      %a{:href => "http://www.qype.com/", :title => "Qype GmbH"} Qype
+      an der, in verschiedenen Sprachen zur Verfügung stehenden, Bewertungs-Plattform.
+    %p
+      Bei Qype wird in drei agilen Teams mit SCRUM an unterschiedlichen Projekten gearbeitet.
+      Die Teams teilen sich dabei hauptsächlich in die Bereiche Website, Backoffice, API und Android Entwicklung auf.
+      Im Rahmen dieses gestandenen Software-Produktes kann ich neue Kenntnisse im Umgang mit
+      großen Rails-Applikationen sammeln. 
+      Themen wie Skalierung, Performance, Refactoring und Continous Deployment sind für mich dabei von besonderem Interesse.
+    %p
+      Mein Aufgabengebiet umfasst derzeit die Weiterentwicklung der Qype-Website.
+      Neben der Umsetzung kleinerer Features auf der Website kümmere ich mich auch um die Optimierung
+      der bestehenden Plattform. Verbesserung der Test-Geschwindigkeit, Aktualisierung der Rails Version, 
+      Einführung aktuellen Tools wie 
+      =link_to 'Bundler', 'http://gembundler.com/'
+      und die Evaluierung neuer Test-Best-Practices stehen dabei auf der Agenda.
+    
+    .clearer &nbsp;
+    
+    .post_meta
+      Links: 
+      %a{:href => "http://www.qype.com/", :title => "Qype Gmbh"} Qype Gmbh
+      |
+      %a{:href => "http://www.qype.com/developers/api", :title => "Qype API"} Qype API
+      |
+      %a{:href => "http://blog.qype.com/", :title => "Qype Blog"} Qype Blog
 
 / fromatob
 .post

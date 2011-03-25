@@ -1,17 +1,12 @@
 require 'google_data'
 require 'blogger'
 require 'picasa'
-require 'seitwert'
 require 'helper'
 
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
   helper :all
-
-  Book = Struct.new(:asin, :title)
-  Cite = Struct.new(:author, :text)
-  Feed = Struct.new(:type, :title, :site, :url)
 
   before_filter :prepare_cache
 
@@ -42,20 +37,20 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # generic helper for adding more results to view
-  def more_stuff(size, initial_count=3)
-    unless params[:id].nil?
-      session[action_name] = params[:id].to_i
-      session[action_name] = size -1 if session[action_name] >= size
+    # generic helper for adding more results to view
+    def more_stuff(size, initial_count=3)
+      unless params[:id].nil?
+        session[action_name] = params[:id].to_i
+        session[action_name] = size -1 if session[action_name] >= size
+      end
+      @more_array = yield session[action_name] ||= initial_count
     end
-    @more_array = yield session[action_name] ||= initial_count
-  end
 
-  def cache_and_set(key, &to_cache)
-    data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
-    instance_variable_set(:"@#{key}", data) if data
-  rescue
-    raise "error caching key=#{key} (#{$!})"
-  end
-  
+    def cache_and_set(key, &to_cache)
+      data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
+      instance_variable_set(:"@#{key}", data) if data
+    rescue
+      raise "error caching key=#{key} (#{$!})"
+    end
+
 end
