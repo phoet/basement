@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  
+  skip_before_filter :prepare_cache, :only => [:reset_cache]
 
   def index
     @cite = @cites[rand(@cites.size)]
