@@ -44,7 +44,7 @@
         %ul
           -@commit_hash[repo.name][0..4].each do |commit|
             %li
-              %a{:href=>commit.url, :title=>commit.message}= trim_to(commit.message, 65)
+              %a{:href=>"http://github.com#{commit.url}", :title=>commit.message}= trim_to(commit.message, 65)
               %span.smaller
                 %a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
                 =l(commit.committed_date)
@@ -69,6 +69,6 @@
       %div
         -@gist_files_hash[gist.repo].each_with_index do |file, k|
           %strong
-            %a{:href=>gist.url}=gist.files[k]
+            %a{:href=>"http://gist.github.com/#{gist.repo}"}=gist.files[k]
           %div
             %pre.code=CodeRay.scan(file, file_extension(gist.files[k])).div.html_safe
