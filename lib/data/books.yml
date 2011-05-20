@@ -1,5 +1,14 @@
 --- 
 - 
+  asin: "1933988932"
+  title: "Grails in Action"
+- 
+  asin: "1590599950"
+  title: "The Definitive Guide to Grails"
+- 
+  asin: "1593272820"
+  title: "Eloquent JavaScript"
+- 
   asin: "1934356735"
   title: "Crafting Rails Applications"
 - 
