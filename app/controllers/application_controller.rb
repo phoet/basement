@@ -2,6 +2,7 @@ require 'google_data'
 require 'blogger'
 require 'picasa'
 require 'helper'
+require 'hashie/rash'
 
 class ApplicationController < ActionController::Base
 
@@ -35,22 +36,22 @@ class ApplicationController < ActionController::Base
     super
   end
 
-  private
+  private()
 
-    # generic helper for adding more results to view
-    def more_stuff(size, initial_count=3)
-      unless params[:id].nil?
-        session[action_name] = params[:id].to_i
-        session[action_name] = size -1 if session[action_name] >= size
-      end
-      @more_array = yield session[action_name] ||= initial_count
+  # generic helper for adding more results to view
+  def more_stuff(size, initial_count=3)
+    unless params[:id].nil?
+      session[action_name] = params[:id].to_i
+      session[action_name] = (size - 1) if session[action_name] >= size
     end
+    @more_array = yield session[action_name] ||= initial_count
+  end
 
-    def cache_and_set(key, &to_cache)
-      data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
-      instance_variable_set(:"@#{key}", data) if data
-    rescue
-      raise "error caching key=#{key} (#{$!})"
-    end
+  def cache_and_set(key, &to_cache)
+    data = cache("#{key}", {:expires_in => CACHE_TIME}, &to_cache)
+    instance_variable_set(:"@#{key}", data) if data
+  rescue
+    raise "error caching key=#{key} (#{$!})"
+  end
 
 end
