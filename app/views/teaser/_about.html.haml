@@ -9,8 +9,7 @@
         =age
         Jahre alt, wohne in
         =link_to 'Hamburg', "http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A", :title=>'Hamburg, Schanze'
-        und bin als
-        =link_to("eLancer", :controller=>'interest', :action=>'employer')
-        bei
-        =link_to("Dating Cafe", :controller=>'interest', :action=>'employer', :anchor=>'datingcafe')
-        im Einsatz.
+        und bin
+        =link_to("arbeite", :controller=>'interest', :action=>'employer', :anchor=>'datingcafe')
+        am liebsten mit 
+        ="#{link_to("Ruby und Rails", "http://workingwithrails.com/person/17645-peter-schr-der")}.".html_safe
