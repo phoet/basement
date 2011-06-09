@@ -2,6 +2,7 @@ require 'google_data'
 require 'blogger'
 require 'picasa'
 require 'helper'
+require 'hashie/rash'
 
 class ApplicationController < ActionController::Base
 
@@ -41,7 +42,7 @@ class ApplicationController < ActionController::Base
     def more_stuff(size, initial_count=3)
       unless params[:id].nil?
         session[action_name] = params[:id].to_i
-        session[action_name] = size -1 if session[action_name] >= size
+        session[action_name] = (size - 1) if session[action_name] >= size
       end
       @more_array = yield session[action_name] ||= initial_count
     end
