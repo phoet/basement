@@ -90,13 +90,12 @@ class Helper
 
   def self.twitter_posts
     logger.info "calling twitter posts"
-    Twitter::Search.new.q('phoet').fetch
+    Twitter.home_timeline
   end
 
   def self.twitter_friends
     logger.info 'calling twitter friends'
-    json = get "https://twitter.com/statuses/friends/phoet.json"
-    json.shuffle
+    Twitter.friends.users.shuffle
   rescue
     nil
   end

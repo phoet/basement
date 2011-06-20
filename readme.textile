@@ -9,7 +9,7 @@ h2. apis
 connects to several external apis:
 
 * amazon (using "asin":http://rubygems.org/gems/asin gem)
-* twitter (using twitter gem and "apigee":http://apigee.com)
+* twitter
 * seitwert
 * blogger
 * picasa
