@@ -64,7 +64,7 @@ class Helper
 
   def self.amazon_book(asin)
     logger.info "fetching book for asin #{asin}"
-    ASIN.client.lookup(asin, :ResponseGroup => :Medium)
+    ASIN::Client.instance.lookup(asin, :ResponseGroup => :Medium)
   rescue
     raise "could not load book for #{asin} (#{$!})"
   end
