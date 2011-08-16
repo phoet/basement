@@ -1,6 +1,6 @@
 h1. basement
 
-my personal homepage hosted on "Heroku":http://heroku.com bamboo stack basement with Ruby 1.9.2 and Rails 3 beta:
+my personal homepage hosted on "Heroku":http://heroku.com cedar stack basement with Ruby 1.9.2 and Rails 3.1:
 
 "www.phoet.de":http://www.phoet.de
 
@@ -14,4 +14,3 @@ connects to several external apis:
 * blogger
 * picasa
 * github
-* docraptor
