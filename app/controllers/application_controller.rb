@@ -10,20 +10,22 @@ class ApplicationController < ActionController::Base
   helper :all
 
   before_filter :prepare_cache
+  
+  helper_method :my_helper
 
   # prepare all the caching and loading-stuff for each request
   def prepare_cache
     @rendering_start = Time.new
-    cache_and_set(:tweets){Helper::twitter_posts}
-    cache_and_set(:friends){Helper::twitter_friends}
-    cache_and_set(:fotos){Helper::picasa_fotos}
-    cache_and_set(:posts){Helper::blogger_posts}
-    cache_and_set(:books){Helper::load_data(:books).shuffle}
-    cache_and_set(:seitwert){Helper::seitwert}
-    cache_and_set(:repos){Helper::repos}
-    cache_and_set(:gists){Helper::gists}
+    cache_and_set(:tweets)    { my_helper.twitter_posts }
+    cache_and_set(:friends)   { my_helper.twitter_friends }
+    cache_and_set(:fotos)     { my_helper.picasa_fotos }
+    cache_and_set(:posts)     { my_helper.blogger_posts }
+    cache_and_set(:books)     { my_helper.load_data(:books).shuffle }
+    cache_and_set(:seitwert)  { my_helper.seitwert }
+    cache_and_set(:repos)     { my_helper.repos }
+    cache_and_set(:gists)     { my_helper.gists }
 
-    @cites = Helper::load_data(:cites).shuffle
+    @cites = my_helper.load_data(:cites).shuffle
     @teaser = [:blog, :bookshelf, :gallery, :twitter, :repos, :gists]
     2.times.each{@teaser.delete_at(rand(@teaser.size))}
   end
@@ -37,6 +39,10 @@ class ApplicationController < ActionController::Base
   end
 
   private()
+  
+  def my_helper
+    Helper.instance
+  end
 
   # generic helper for adding more results to view
   def more_stuff(size, initial_count=3)

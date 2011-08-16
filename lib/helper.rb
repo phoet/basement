@@ -1,20 +1,25 @@
 require 'crack'
+require 'singleton'
 
 class Helper
 
-  def self.menu
+  BASE_URL = 'http://picasaweb.google.com/data/feed/base/user/'
+
+  include Singleton
+
+  def menu
     load_data :menu
   end
 
-  def self.logger
+  def logger
     Rails.logger
   end
 
-  def self.load_data(structure)
+  def load_data(structure)
     YAML::load_file("lib/data/#{structure}.yml").map{ |item| Hashie::Mash.new(item) }
   end
 
-  def self.get(url, format=:json)
+  def get(url, format=:json)
     content = HTTPClient.get(url).content
     if format == :json
       resp = Crack::JSON.parse(content)
@@ -32,20 +37,20 @@ class Helper
     end
   end
 
-  def self.gists
+  def gists
     url = 'https://gist.github.com/api/v1/json/gists/phoet'
     logger.info "fetching gists from #{url}"
     resp = get url
     resp.gists
   end
 
-  def self.gist(gist_id, filename)
+  def gist(gist_id, filename)
     url = "https://gist.github.com/raw/#{gist_id}/#{filename}"
     logger.info "fetching gist from #{url}"
     get url, :raw
   end
 
-  def self.repos
+  def repos
     url = 'http://github.com/api/v1/json/phoet/'
     logger.info "fetching repos from #{url}"
     resp = get url
@@ -54,7 +59,7 @@ class Helper
     nil
   end
 
-  def self.commits(repo)
+  def commits(repo)
     url = "http://github.com/api/v1/json/phoet/#{repo}/commits/master"
     logger.info "fetching commit from #{url}"
     get url
@@ -62,14 +67,14 @@ class Helper
     nil
   end
 
-  def self.amazon_book(asin)
+  def amazon_book(asin)
     logger.info "fetching book for asin #{asin}"
-    ASIN::Client.instance.lookup(asin, :ResponseGroup => :Medium)
+    ASIN::Client.instance.lookup(asin, :ResponseGroup => :Medium).first
   rescue
     raise "could not load book for #{asin} (#{$!})"
   end
 
-  def self.blogger_posts
+  def blogger_posts
     logger.info 'calling blogger'
     parsed = get('http://uschisblogg.blogspot.com/feeds/posts/default?alt=json', :json)
     parsed['feed']['entry'].map { |e| Blogger.new(e) }
@@ -77,9 +82,7 @@ class Helper
     nil
   end
 
-  BASE_URL = 'http://picasaweb.google.com/data/feed/base/user/'
-
-  def self.picasa_fotos(urls=["#{BASE_URL}phoet6/?alt=json","#{BASE_URL}heddahh/?alt=json"])
+  def picasa_fotos(urls=["#{BASE_URL}phoet6/?alt=json","#{BASE_URL}heddahh/?alt=json"])
     urls = [] << urls
     urls.flatten.map do |url|
       logger.info "calling picasa #{url}"
@@ -88,19 +91,19 @@ class Helper
     end.flatten.shuffle
   end
 
-  def self.twitter_posts
+  def twitter_posts
     logger.info "calling twitter posts"
-    Twitter.home_timeline
+    Twitter::Search.new.q("phoet").fetch
   end
 
-  def self.twitter_friends
+  def twitter_friends
     logger.info 'calling twitter friends'
     Twitter.friends.users.shuffle
   rescue
     nil
   end
 
-  def self.seitwert
+  def seitwert
     logger.info 'calling seitwert'
     xml = get('http://www.seitwert.de/api/getseitwert.php?url=www.phoet.de&api=bfe1534821649e71c2694d0ace86fab0', :xml)
     xml.urlinfo
@@ -109,4 +112,3 @@ class Helper
   end
 
 end
-
