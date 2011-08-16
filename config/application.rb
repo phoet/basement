@@ -14,7 +14,7 @@ module Basement
 
     # Add additional load paths for your own custom dirs
     # config.load_paths += %W( #{config.root}/extras )
-    config.autoload_paths << 'lib'
+    config.autoload_paths += %W( #{config.root}/lib )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named
@@ -32,11 +32,11 @@ module Basement
     config.i18n.default_locale = :de
 
     # Configure generators values. Many other options are available, be sure to check the documentation.
-    # config.generators do |g|
-    #   g.orm             :active_record
-    #   g.template_engine :erb
-    #   g.test_framework  :test_unit, :fixture => true
-    # end
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :haml
+      g.test_framework  :rspec, :fixture => false
+    end
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
