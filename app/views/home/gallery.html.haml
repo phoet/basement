@@ -15,7 +15,7 @@
       .gallery
         .post_title
           %a{:href=>t.url, :title=>t.title}
-            %h2= trim_to(t.title, 18)
+            %h2= t.title.truncate(18)
         .post_body
           %a{:href=>t.url, :title=>t.title, :class=>'slideshow', :name=>t.album_id}
             %img{:src => t.thumbnail, :alt => t.title, :class => "alignleft", :style => "width:160px;height:160px;"}

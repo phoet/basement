@@ -94,6 +94,8 @@ class Helper
   def twitter_posts
     logger.info "calling twitter posts"
     Twitter::Search.new.q("phoet").fetch
+  rescue
+    []
   end
 
   def twitter_friends

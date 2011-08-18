@@ -24,10 +24,6 @@ module ApplicationHelper
     my_helper.menu.map{|m|m.subitems.map{|s|"#{m.id}/#{s.id}"}}.flatten
   end
 
-  def trim_to(text, length)
-    text.size > length ? text[0..(length-1)] + '...' : text
-  end
-
   def title(controller)
     my_helper.menu.each do |m|
       cname = controller.controller_name

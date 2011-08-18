@@ -1,6 +1,7 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
+# setup redis cache
 ActionController::Base.cache_store = ActiveSupport::Cache::RailsRedisCache.new(:url => ENV['REDISTOGO_URL'])
 
 # Initialize the rails application

@@ -49,7 +49,7 @@ html {
 }
 
 body {
-	background: #202020 url('/images/body.gif') repeat-x left top;
+	background: #202020 url('/assets/body.gif') repeat-x left top;
 	color: #5A5A50;
 	font: normal 0.8em sans-serif;
 	line-height: 1.5em;	
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6 {
 
 
 blockquote {
-	background: #F6F6F6 url('/images/quote.gif') no-repeat;
+	background: #F6F6F6 url('/assets/quote.gif') no-repeat;
 	border-bottom: 1px solid #DDD;
 	border-top: 1px solid #DDD;
 	color: #332;
@@ -267,7 +267,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 ------------------------------------------------------------------- */
 
 /* General */
-#layout_wrapper_outer {background: url('/images/layout_wrapper_outer.jpg') no-repeat center top;}
+#layout_wrapper_outer {background: url('/assets/layout_wrapper_outer.jpg') no-repeat center top;}
 #layout_wrapper {
 	color: #FFF;
 	margin: 0 auto;
@@ -276,9 +276,9 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 #layout_top {height: 114px;}
 
-#layout_body_outer {background: #373737 url('/images/layout_body_outer.jpg') repeat-x;}
+#layout_body_outer {background: #373737 url('/assets/layout_body_outer.jpg') repeat-x;}
 #layout_body {
-	background: url('/images/layout_body.gif') no-repeat;
+	background: url('/assets/layout_body.gif') no-repeat;
 	padding: 8px 8px 0;
 }
 
@@ -302,7 +302,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Navigation */
 #navigation {
-	background: #3A3A3A url('/images/navigation.gif') no-repeat;
+	background: #3A3A3A url('/assets/navigation.gif') no-repeat;
 	font: bold 1.3em sans-serif;
 	padding: 0 8px;
 }
@@ -321,7 +321,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 }
 #nav1 a:hover {color: #EEE;}
 #nav1 li.current_page_item a,#nav1 li.current_page_parent a {
-	background: url('/images/nav1_arrow.gif') no-repeat center bottom;
+	background: url('/assets/nav1_arrow.gif') no-repeat center bottom;
 	color: #ADE7F6;	
 }
 
@@ -330,7 +330,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	padding: 10px;
 }
 #nav2 {
-	background: #5090AE url('/images/nav2.gif') repeat-x;
+	background: #5090AE url('/assets/nav2.gif') repeat-x;
 	margin: 0 -8px;
 	padding: 0 8px;
 }
@@ -340,7 +340,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Main */
 #main {
-	background: url('/images/main.gif') repeat-y;
+	background: url('/assets/main.gif') repeat-y;
 	border-bottom: 1px solid #C5C5C5;
 }
 #main ol, #main ul {margin: 0 0 1.2em 1.6em;}
@@ -412,7 +412,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Footer links */
 #footer {
-	background: url('/images/footer.gif') no-repeat;
+	background: url('/assets/footer.gif') no-repeat;
 	color: #777;
 	font-size: 0.9em;
 	padding: 22px 8px 10px;
@@ -591,10 +591,10 @@ div.comment_list {
   font-weight: bold;
 }
 .gitimages.forks{
-  background: url(/images/forks.png) no-repeat;
+  background: url(/assets/forks.png) no-repeat;
 }
 .gitimages.watchers{
-  background: url(/images/watchers.png) no-repeat;
+  background: url(/assets/watchers.png) no-repeat;
 }
 
 .code {

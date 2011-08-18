@@ -20,7 +20,7 @@
       .comment.alt
         .comment_gravatar.left
           %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte"}
-            %img{:title=>"GitHub Projekte", :alt=>"GitHub Projekte", :src=>"/images/github.gif", :width=>"50"}
+            %img{:title=>"GitHub Projekte", :alt=>"GitHub Projekte", :src=>"/assets/github.gif", :width=>"50"}
         .comment_author.left
           %h3
             %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte", :name=>"projects"} GitHub Projekte
@@ -44,7 +44,7 @@
         %ul
           -@commit_hash[repo.name][0..4].each do |commit|
             %li
-              %a{:href=>"http://github.com#{commit.url}", :title=>commit.message}= trim_to(commit.message, 65)
+              %a{:href=>"http://github.com#{commit.url}", :title=>commit.message}= commit.message.truncate(65)
               %span.smaller
                 %a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
                 =l(commit.committed_date)
@@ -54,7 +54,7 @@
       .comment.alt
         .comment_gravatar.left
           %a{:href=>"http://gist.github.com/phoet/", :title=>"GitHub Gists"}
-            %img{:title=>"GitHub Gists", :alt=>"GitHub Gists", :src=>"/images/github.gif", :width=>"50"}
+            %img{:title=>"GitHub Gists", :alt=>"GitHub Gists", :src=>"/assets/github.gif", :width=>"50"}
         .comment_author.left
           %h3
             %a{:href=>"http://github.com/phoet/", :title=>"GitHub Projekte", :name=>"gists"} GitHub Gists

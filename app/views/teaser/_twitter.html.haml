@@ -1,7 +1,7 @@
 .box#twitter
   .box_title
     %a{:href=>"http://twitter.com/phoet", :title=>'twitter'}
-      %img{:src=>"/images/twitter_icon.png", :alt=>"twitter", :title=>'twitter'}
+      %img{:src=>"/assets/twitter_icon.png", :alt=>"twitter", :title=>'twitter'}
   .box_content
     -tweets[0..4].each() do |tweet|
       %blockquote{:class=>"box"} 

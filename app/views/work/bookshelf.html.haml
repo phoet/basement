@@ -25,11 +25,11 @@
             - else
               .comment_gravatar.left
                 %a{:href => item.raw.DetailPageURL, :title => item.title}
-                  %img{:alt => item.title, :title => item.title, :src => '/images/sample-gravatar.jpg'}
+                  %img{:alt => item.title, :title => item.title, :src => '/assets/sample-gravatar.jpg'}
             
             .comment_author.left
               %strong
-                %a{:href => item.raw.DetailPageURL, :title => item.title}= trim_to(item.title,75)
+                %a{:href => item.raw.DetailPageURL, :title => item.title}= item.title.truncate(70)
             
               .comment_date= "von #{item.raw.ItemAttributes.Author.respond_to?(:join) ? item.raw.ItemAttributes.Author.join(', ') : item.raw.ItemAttributes.Author}"
               .comment_date="#{(item.raw.ItemAttributes.ListPrice.FormattedPrice rescue '')} mit #{item.raw.ItemAttributes.NumberOfPages} Seiten"

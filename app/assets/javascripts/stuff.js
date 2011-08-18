@@ -5,7 +5,7 @@ function ac(url, id){
 	var speed = 'slow';
 	var c = $('#' + id);
 	c.toggle(speed);
-	c.before('<div class="comment_gravatar spinner center"><img src="/images/spinner.gif" /></div>');
+	c.before('<div class="comment_gravatar spinner center"><img src="/assets/spinner.gif" /></div>');
 	c.load(url + ' #' + id, function(data){
 		$('.spinner').remove();
 		c.toggle(speed);
@@ -18,7 +18,7 @@ $(document).ready(function(){
 		var url = $(this).attr('href');
 		var id = $(this).attr('name');
 		var c = $('#' + id);
-		$(this).before('<div class="comment_gravatar spinner center"><img src="/images/spinner.gif" /></div>');
+		$(this).before('<div class="comment_gravatar spinner center"><img src="/assets/spinner.gif" /></div>');
 		c.load(url + ' #' + id, function(data){
 			$('.spinner').remove();
 		});
