@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc6'
 
-gem "rails_redis_cache", git: 'git://github.com/phoet/rails_redis_cache.git', ref: '329e98825e157095cba5'
+gem "rails_redis_cache", "~> 0.1.0"
 gem "haml", "~> 3.1.2"
 gem "asin", "~> 0.6.0"
 gem "twitter", "~> 1.4.1"
