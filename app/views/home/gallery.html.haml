@@ -26,7 +26,7 @@
           Fotos:
           %a{:href => t.url, :title => t.title}=t.photo_count
           ="| Datum: #{t.published} | Author: "
-          %a{:href =>t.author_url}= t.author_name
+          %a{:href =>t.author_url}= t.author_name.truncate(8)
         %div &nbsp;
       %div{:class=>"images images_#{t.album_id}"}
         -@picture_hash[t.album_id].each do |image|
