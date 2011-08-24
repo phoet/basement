@@ -33,7 +33,7 @@ GEM
     addressable (2.2.6)
     archive-tar-minitar (0.5.2)
     arel (2.2.1)
-    asin (0.6.0)
+    asin (0.6.1)
       crack (~> 0.1.8)
       hashie (~> 1.0.0)
       httpi (~> 0.9.5)
@@ -189,7 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  asin (~> 0.6.0)
+  asin (~> 0.6.1)
   coderay (~> 0.9.8)
   coffee-rails (~> 3.1.0.rc)
   foreman (~> 0.19.0)

@@ -4,7 +4,7 @@ gem 'rails', '3.1.0.rc6'
 
 gem "rails_redis_cache", "~> 0.1.0"
 gem "haml", "~> 3.1.2"
-gem "asin", "~> 0.6.0"
+gem "asin", "~> 0.6.1"
 gem "twitter", "~> 1.4.1"
 gem "coderay", "~> 0.9.8"
 gem "httpclient", "~> 2.2.0.2"
