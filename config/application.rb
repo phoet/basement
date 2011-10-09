@@ -6,7 +6,7 @@ require "active_resource/railtie"
 # If you have a Gemfile, require the default gems, the ones in the
 # current environment and also include :assets gems if in development
 # or test environments.
-Bundler.require *Rails.groups(:assets) if defined?(Bundler)
+Bundler.require(*Rails.groups(:assets)) if defined?(Bundler)
 
 module Basement
   class Application < Rails::Application
@@ -16,6 +16,7 @@ module Basement
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.

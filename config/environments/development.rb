@@ -16,6 +16,9 @@ Basement::Application.configure do
   # Don't care if the mailer can't send
   # config.action_mailer.raise_delivery_errors = false
 
+  # Do not compress assets
+  config.assets.compress = false
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -24,6 +27,13 @@ Basement::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+
+  # Expands the lines which load the assets
+  # config.assets.debug = true
+
+  # Debug RJS
+  # config.action_view.debug_rjs = true
+
 end
 
-CACHE_TIME = 100 * 60
+CACHE_TIME = 10000 * 60

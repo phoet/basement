@@ -17,6 +17,8 @@
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
       %li
+        %a{:href => "#wlw"} Wer liefert was? GmbH
+      %li
         %a{:href => "#qype"} Qype GmbH
       %li
         %a{:href => "#fromatob"} Verkehrsmittelvergleich.de GmbH
@@ -26,6 +28,48 @@
         %a{:href => "#freenet"} freenet AG
       %li
         %a{:href => "#bigpoint"} Bigpoint GmbH
+
+/ wlw
+.post
+  .post_title
+    %h2
+      = link_to "Ruby Entwickler bei Wer liefert was?", "http://www.wlw.de/", :id => "wlw", :title => "Wer liefert was? GmbH"
+
+  .post_date Bis Ende des Jahres
+  .post_body
+    = link_to "http://www.wlw.de/", :title => "Wer liefert was? GmbH" do
+      = image_tag "wlw.png", :class => "alignleft", :alt => "Wer liefert was? GmbH", :title => "Wer liefert was? GmbH"
+    .clearer &nbsp;
+    %p
+      Seit September arbeite ich für den IT-Dienstleister
+      = link_to 'AKRA', 'http://akra.de', :title => 'AKRA GmbH'
+      beim Betreiber der Lieferanten-Suchmaschine
+      = link_to "'Wer liefert was?'", "http://www.wlw.de/", :title => "Wer liefert was? GmbH"
+      in Hamburg.
+    %p
+      In einem kleinen, interdisziplinären Team arbeiten dort
+      Festangestellte und Freelancer an der Ablösung der
+      monolithischen Java Plattform, die durch eine moderne,
+      gut getestete Rails Anwendung abgelöst werden soll.
+    %p
+      Besonders Interessant ist die Arbeit mit aktuellen
+      Technologien wie
+      = link_to "CouchDB", "http://couchdb.org"
+      und
+      = link_to "Elasticsearch", "http://www.elasticsearch.org/"
+      sowie die agile Vorgehensweise mit einer pragmatischen
+      Mischung aus 
+      = link_to "Kanban", "http://de.wikipedia.org/wiki/Kanban"
+      und
+      = link_to "SCRUM.", "http://de.wikipedia.org/wiki/Scrum"
+    
+    .clearer &nbsp;
+    
+    .post_meta
+      Links: 
+      = link_to "Wer liefert was?", "http://www.wlw.de/", :title => "Wer liefert was? GmbH"
+      |
+      = link_to "Meine Lieferanten", "http://www.wlw.de/meine_lieferanten", :title => "Meine Lieferanten"
 
 / qype
 .post
