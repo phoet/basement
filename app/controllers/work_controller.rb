@@ -5,7 +5,7 @@ class WorkController < ApplicationController
   def bookshelf
     more_stuff(@books.size) do |count|
       @books[0..count].map do |book|
-        cache(:"book_#{book.asin}"){ [my_helper.amazon_book(book.asin)] }.first
+        cache(:"book_#{book.asin}"){ [Helper::amazon_book(book.asin)] }.first
       end
     end
   end
@@ -13,14 +13,14 @@ class WorkController < ApplicationController
   def github
     @repos.map do |repo|
       (@commit_hash ||= {})[repo.name] = cache_and_set(:"repo_commits_#{repo.name.gsub(/\W/, '')}") do
-        c = my_helper.commits repo.name
+        c = Helper::commits repo.name
         c.nil? ? [] : c.commits
       end
     end
     @gists.map do |gist|
       (@gist_files_hash ||= {})[gist.repo] = cache_and_set(:"gist_files_#{gist.repo}") do
         gist.files.map do |file|
-          my_helper.gist gist.repo, file
+          Helper::gist gist.repo, file
         end
       end
     end

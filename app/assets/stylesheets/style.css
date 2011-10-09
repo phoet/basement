@@ -575,6 +575,11 @@ div.comment_list {
 #github .comment_gravatar {width: 65px;}
 #github .comment_gravatar img {padding: 5px;}
 #github .post_date {padding: 5px;}
+#github h3 a {
+  font-size:12px;
+  color: blue;
+  border: 1px solid gray;
+}
 
 #tabs ul li {list-style: none;}
 #tabs ul {padding: 0px; margin: 0px;}

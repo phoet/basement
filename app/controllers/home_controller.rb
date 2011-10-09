@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   def gallery
     more_stuff(@fotos.size) do |count|
       @fotos[0..count].each.map do |foto|
-        (@picture_hash ||= {})[foto.album_id] = cache_and_set(:"gallery_images_#{foto.album_id}"){my_helper.picasa_fotos(foto.pictures_url)}
+        (@picture_hash ||= {})[foto.album_id] = cache_and_set(:"gallery_images_#{foto.album_id}"){Helper::picasa_fotos(foto.pictures_url)}
         foto
       end
     end

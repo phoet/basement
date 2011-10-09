@@ -21,11 +21,11 @@ module ApplicationHelper
   end
 
   def menuitems
-    my_helper.menu.map{|m|m.subitems.map{|s|"#{m.id}/#{s.id}"}}.flatten
+    Helper::menu.map{|m|m.subitems.map{|s|"#{m.id}/#{s.id}"}}.flatten
   end
 
   def title(controller)
-    my_helper.menu.each do |m|
+    Helper::menu.each do |m|
       cname = controller.controller_name
       m.subitems.each do |sub|
         aname = controller.action_name
@@ -35,7 +35,7 @@ module ApplicationHelper
   end
 
   def category_name(name)
-    my_helper.menu.find() do |m|
+    Helper::menu.find() do |m|
       m.id == name
     end.name
   end
@@ -44,9 +44,9 @@ module ApplicationHelper
     top = options[:top].nil? || options[:top]
     current_controller = options[:controller] || controller.controller_name
     if top
-      items = my_helper.menu
+      items = Helper::menu
     else
-      items = my_helper.menu.find() do |m|
+      items = Helper::menu.find() do |m|
         m.id == current_controller
       end.subitems
     end
