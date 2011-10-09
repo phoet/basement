@@ -1,4 +1,5 @@
 require 'crack'
+require 'mash'
 
 class Helper
   class << self
@@ -17,6 +18,7 @@ class Helper
     end
 
     def get(url, format=:json)
+      logger.info "fetching #{url} with format #{format}"
       content = HTTPClient.get(url).content
       case format
       when :json
@@ -32,31 +34,23 @@ class Helper
     end
 
     def gists
-      url = 'https://gist.github.com/api/v1/json/gists/phoet'
-      logger.info "fetching gists from #{url}"
-      resp = get url
+      resp = get 'https://gist.github.com/api/v1/json/gists/phoet'
       resp.gists
     end
 
     def gist(gist_id, filename)
-      url = "https://gist.github.com/raw/#{gist_id}/#{filename}"
-      logger.info "fetching gist from #{url}"
-      get url, :raw
+      get "https://gist.github.com/raw/#{gist_id}/#{filename}", :raw
     end
 
     def repos
-      url = 'http://github.com/api/v1/json/phoet/'
-      logger.info "fetching repos from #{url}"
-      resp = get url
+      resp = get 'http://github.com/api/v1/json/phoet/'
       resp.user.repositories.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
     rescue
       nil
     end
 
     def commits(repo)
-      url = "http://github.com/api/v1/json/phoet/#{repo}/commits/master"
-      logger.info "fetching commit from #{url}"
-      get url
+      get "http://github.com/api/v1/json/phoet/#{repo}/commits/master"
     rescue
       nil
     end
@@ -69,7 +63,6 @@ class Helper
     end
 
     def blogger_posts
-      logger.info 'calling blogger'
       parsed = get('http://uschisblogg.blogspot.com/feeds/posts/default?alt=json', :json)
       parsed['feed']['entry'].map { |e| Blogger.new(e) }
     rescue
@@ -79,7 +72,6 @@ class Helper
     def picasa_fotos(urls=["#{BASE_URL}phoet6/?alt=json","#{BASE_URL}heddahh/?alt=json"])
       urls = [] << urls
       urls.flatten.map do |url|
-        logger.info "calling picasa #{url}"
         parsed = get(url, :json)
         parsed['feed']['entry'].map { |e| Picasa.new(e) }
       end.flatten.shuffle
@@ -89,7 +81,7 @@ class Helper
       logger.info "calling twitter posts"
       Twitter::Search.new.q("phoet").fetch
     rescue
-      []
+      nil
     end
 
     def twitter_friends
