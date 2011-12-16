@@ -1,5 +1,5 @@
 require 'crack'
-require 'mash'
+require 'hashie/mash'
 
 class Helper
   class << self
@@ -86,8 +86,9 @@ class Helper
 
     def twitter_friends
       logger.info 'calling twitter friends'
-      Twitter.friends.users.shuffle
+      Twitter.follower_ids("phoet").ids.shuffle[0..4].map { |id| Twitter.user(id) }
     rescue
+      logger.error "error calling twitter friends: #{$!}"
       nil
     end
 

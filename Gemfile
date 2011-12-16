@@ -1,9 +1,9 @@
 source "http://rubygems.org"
 
-gem "rails", "3.1.1"
+gem "rails", "3.1.3"
 
 gem "rails_redis_cache",  "0.1.0"
-gem "rack",               "1.3.3"
+gem "rack",               "1.3.5"
 gem "haml",               "3.1.2"
 gem "asin",               "0.7.0"
 gem "twitter",            "1.4.1"
