@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gem "rails", "3.1.3"
 
-gem "rails_redis_cache",  "0.1.0"
+gem "rails_redis_cache",  "0.2.0"
 gem "rack",               "1.3.5"
 gem "haml",               "3.1.2"
 gem "asin",               "0.7.0"
@@ -21,6 +21,8 @@ group :assets do
 end
 
 group :development do
+  gem "rails-dev-tweaks"
+  gem "itslog"
   gem "heroku"
   gem "wirble"
   gem "pry"
