@@ -5,7 +5,8 @@ class WorkController < ApplicationController
   def bookshelf
     more_stuff(@books.size) do |count|
       @books[0..count].map do |book|
-        cache(:"book_#{book.asin}"){ [Helper::amazon_book(book.asin)] }.first
+        data = Helper::amazon_book(book.asin)
+        cache(:"book_#{book.asin}"){ [ASIN::SimpleItem.new(JSON.parse(data.raw.to_json))] }.first # fix some wired serialization bug
       end
     end
   end
