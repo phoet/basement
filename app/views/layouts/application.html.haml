@@ -10,14 +10,14 @@
     %meta{:name=>"robots", :content=>"index,follow"}
     %meta{:name=>"verify-v1", :content=>"DYzuVUS2Ez7zNwT2DNuxbAh2jdIF61Ro0/ft212nZpI="}
     %meta{:name=>"google-site-verification", :content=>"9ROlZo5P92RwF8jhAFrCrFKdwYe15GdN39wO2SRKO7U"}
-    
+
     %link{:rel=>"shortcut icon", :href=>"/favicon.png", :type=>"image/png"}
     %link{:rel=>"icon", :href=>"/favicon.png", :type=>"image/png"}
-    
+
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    
+
     %title="#{title(controller)} - Peter Schröder - Phoet - #{keywords}"
 
   %body#top
@@ -27,10 +27,10 @@
           #site_title
             %h1
               %a{:href=>"/", :title=>"Peter Schröder"}
-                Peter 
+                Peter
                 %span Schröder
             %h2= keywords
-        
+
         #layout_body_outer
           #layout_body
             #navigation
@@ -40,11 +40,11 @@
               #nav2
                 %ul=menu(:top=>false)
                 .clearer &nbsp;
-            
+
             #main
               #content_outer.left
                 #content= yield
-          
+
               #sidebar_outer.right
                 #sidebar
                   = render :partial => 'teaser/about'
@@ -55,34 +55,34 @@
                   = render :partial => 'teaser/github_repos', :locals => {:repos => @repos} if @teaser.include? :repos
                   = render :partial => 'teaser/github_gists', :locals => {:gists => @gists} if @teaser.include? :gists
               .clearer &nbsp;
-        
+
             #dashboard
               #dashboard_inner
                 .col3.left
                   .col3_content
                     .col_title=category_name('home')
                     %ul=menu(:controller=>'home', :top=>false)
-                
+
                 .col3mid.left
                   .col3_content
                     .col_title=category_name('work')
                     %ul=menu(:controller=>'work', :top=>false)
-                
+
                 .col3.right
                   .col3_content
                     .col_title=category_name('interest')
                     %ul=menu(:controller=>'interest', :top=>false)
-            
+
                 .clearer &nbsp;
-    
+
         #footer
           .left
-            &copy; 
+            &copy;
             =Time.new.year
             %a{:href=>"http://#{website_url}", :title=>"phoet"}=website_url
             &reg;
             %a{:href=>"http://www.peter-schröder.info", :title=>"peter schröder"} www.peter-schröder.info
-            see some code on 
+            see some code on
             %a{:href=>"http://github.com/phoet/basement/", :title=>"github phoet"} github
             or recommend me on
             %a{:href => "http://www.workingwithrails.com/recommendation/new/person/17645-peter-schr-der"} Working With Rails
@@ -92,7 +92,7 @@
             %a{:href=>"http://arcsin.se/",:title=>'Arcsin'} Arcsin
           .clearer &nbsp;
           .left
-            Running on 
+            Running on
             %a{:href=>"http://www.rubyonrails.org", :title=>"Ruby on Rails"}="Rails #{Rails.version}"
             =" and rendering took #{Time.new - @rendering_start} seconds"
           .clearer &nbsp;

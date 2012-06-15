@@ -1,3 +1,4 @@
+require 'json'
 require 'crack'
 require 'hashie/mash'
 
@@ -19,10 +20,10 @@ class Helper
 
     def get(url, format=:json)
       logger.info "fetching #{url} with format #{format}"
-      content = HTTPClient.get(url).content
+      content = HTTPClient.get(url, :follow_redirect => true).content
       case format
       when :json
-        resp = Crack::JSON.parse(content)
+        resp = JSON.parse(content)
         resp.is_a?(Array) ? resp.map{|r| Hashie::Mash.new(r)} : Hashie::Mash.new(resp)
       when :xml
         Hashie::Mash.new(Crack::XML.parse(content))
@@ -34,23 +35,27 @@ class Helper
     end
 
     def gists
-      resp = get 'https://gist.github.com/api/v1/json/gists/phoet'
-      resp.gists
-    end
-
-    def gist(gist_id, filename)
-      get "https://gist.github.com/raw/#{gist_id}/#{filename}", :raw
+      get "https://api.github.com/users/phoet/gists"
     end
 
     def repos
-      resp = get 'http://github.com/api/v1/json/phoet/'
-      resp.user.repositories.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
+      repos = get "https://api.github.com/users/phoet/repos"
+      repos.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
     rescue
       nil
     end
 
-    def commits(repo)
-      get "http://github.com/api/v1/json/phoet/#{repo}/commits/master"
+    def commit(repo)
+      commits = get "https://api.github.com/repos/phoet/#{repo}/commits/master"
+      commits.map(&:commit)
+    rescue
+      nil
+    end
+
+    def gist_files(gist)
+      gist.files.map do |file|
+        get file.second.raw_url, :raw
+      end
     rescue
       nil
     end

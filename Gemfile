@@ -14,7 +14,6 @@ gem "foreman",            "0.24.0"
 gem "rails_autolink",     "1.0.2"
 gem "jquery-rails",       "1.0.14"
 
-# Gems used only for assets and not required in production environments by default.
 group :assets do
   gem "sass-rails",   "3.1.0"
   gem "uglifier",     "1.0.3"
@@ -26,6 +25,7 @@ group :development do
   gem "heroku"
   gem "wirble"
   gem "pry"
+  gem "pry-remote"
 end
 
 group :test do

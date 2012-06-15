@@ -14,16 +14,11 @@ class WorkController < ApplicationController
   def github
     @repos.map do |repo|
       (@commit_hash ||= {})[repo.name] = cache_and_set(:"repo_commits_#{repo.name.gsub(/\W/, '')}") do
-        c = Helper::commits repo.name
-        c.nil? ? [] : c.commits
+        Helper::commit repo.name
       end
     end
     @gists.map do |gist|
-      (@gist_files_hash ||= {})[gist.repo] = cache_and_set(:"gist_files_#{gist.repo}") do
-        gist.files.map do |file|
-          Helper::gist gist.repo, file
-        end
-      end
+      (@gist_files_hash ||= {})[gist.id] = Helper::gist_files gist
     end
   end
 

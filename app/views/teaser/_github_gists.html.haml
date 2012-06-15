@@ -5,4 +5,4 @@
       %ul
         -gists[0..4].each() do |gist|
           %li
-            %a{:href=>"http://gist.github.com/#{gist.repo}", :title=>gist.description}= gist.description
+            %a{:href=>"http://gist.github.com/#{gist.id}", :title=>gist.description}= gist.description
