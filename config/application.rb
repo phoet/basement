@@ -49,6 +49,6 @@ module Basement
     config.assets.version = '1.0'
 
     # caching for all envs
-    config.cache_store = ActiveSupport::Cache::RailsRedisCacheStore.new(:url => ENV['REDISTOGO_URL'])
+    config.cache_store = :redis_store, ENV['REDISTOGO_URL']
   end
 end

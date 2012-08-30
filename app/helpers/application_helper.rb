@@ -66,7 +66,6 @@ module ApplicationHelper
 
   def links_4_twitter(text)
     ret = auto_link(text)
-    title = text.gsub(/[^\w]/, ' ').strip
     regex = /(^|\s)#(\S+)/
     text.scan(regex) do |m|
       match = '#' + m[1]
