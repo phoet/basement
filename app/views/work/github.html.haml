@@ -28,26 +28,14 @@
             ="Derzeit #{@repos.count} öffentliche Projekte"
         .clearer &nbsp;
 
-  .accordion
+  %ul
     - @repos.each do |repo|
-      %h3
-        %a{:href => "#", :title=>repo.name}
-          =repo.name
-          %span.smaller.gitimages.forks
-            =repo.forks
-          %span.smaller.gitimages.watchers
-            =repo.watchers
-      %div
-        %strong
-          %a{:href=>repo.url, :title=>repo.description}=repo.description
-
-        %ul
-          - if commit = @commit_hash[repo.name]
-            %li
-              %a{:href=>"http://github.com#{commit.url}", :title=>commit.message}= commit.message.truncate(65)
-              %span.smaller
-                %a{:href => "http://github.com/#{commit.author.name}", :title => commit.author.name}=commit.author.name
-                =l(commit.committed_date)
+      %li
+        %div
+          = link_to repo.name, repo.html_url, :title => repo.description
+          %span.gitimages.forks= repo.forks
+          %span.gitimages.watchers= repo.watchers
+        = repo.description
 
   .post
     .comment_list
@@ -62,14 +50,6 @@
             ="Derzeit #{@gists.count} öffentliche Code-Schnipsel"
         .clearer &nbsp;
 
-  .accordion
+  %ul
     - @gists.each do |gist|
-      %h3
-        %a{:href => "#", :title=>gist.description}=gist.description
-      %div
-        - if @gist_files_hash[gist.id]
-          - @gist_files_hash[gist.id].each_with_index do |file, k|
-            %strong
-              %a{:href=>"http://gist.github.com/#{gist.id}"}=gist.files[k]
-            %div
-              %pre.code=CodeRay.scan(file, file_extension(gist.files[k])).div.html_safe
+      %li= link_to gist.description, gist.html_url

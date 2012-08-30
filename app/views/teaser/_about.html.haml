@@ -1,15 +1,15 @@
 .box#about
-  .box_title=link_to('Über Mich', {:controller=>'interest', :action=>'curriculum'}, {:title=>'Über Mich'})
+  .box_title= link_to('Über Mich', {:controller=>'interest', :action=>'curriculum'}, {:title=>'Über Mich'})
   .box_content
     .thumbnails
       = link_to({:controller=>'interest', :action=>'curriculum'}, {:class=>'thumb'}) do
         %img{:src=>"http://www.gravatar.com/avatar/056c32203f8017f075ac060069823b66.png", :alt=>"Peter Schröder", :title=>"Peter Schröder"}
-      %p 
-        Ich bin 
-        =age
+      %p
+        Ich bin
+        = age
         Jahre alt, wohne in
-        =link_to 'Hamburg', "http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A", :title=>'Hamburg, Schanze'
-        und bin
-        =link_to("arbeite", :controller=>'interest', :action=>'employer')
-        am liebsten mit 
-        ="#{link_to("Ruby und Rails", "http://workingwithrails.com/person/17645-peter-schr-der")}.".html_safe
+        = link_to 'Hamburg', "http://www.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=hamburg+schanzenstra%C3%9Fe&sll=53.564834,9.970222&sspn=0.012005,0.038581&ie=UTF8&ll=53.563865,9.968505&spn=0.012005,0.038581&t=h&z=15&iwloc=A", :title=>'Hamburg, Schanze'
+        und
+        = link_to("arbeite", :controller=>'interest', :action=>'employer')
+        am liebsten in agilen Teams mit
+        = link_to("Ruby", "http://workingwithrails.com/person/17645-peter-schr-der")

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   helper :all
 
   before_filter :prepare_cache
-  
+
   helper_method :my_helper
 
   # prepare all the caching and loading-stuff for each request

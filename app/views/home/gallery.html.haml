@@ -23,10 +23,9 @@
               %img{:src => f.thumbnail, :alt => f.title, :class => "alignleft mini"}
         .clearer &nbsp;
         .post_meta
-          Fotos:
-          %a{:href => t.url, :title => t.title}=t.photo_count
-          ="| Datum: #{t.published} | Author: "
-          %a{:href =>t.author_url}= t.author_name.truncate(8)
+          = link_to "#{t.photo_count} Fotos", t.url, :title => t.title
+          = "vom #{t.published} von "
+          = link_to t.author_name, t.author_url, :title => t.title
         %div &nbsp;
       %div{:class=>"images images_#{t.album_id}"}
         -@picture_hash[t.album_id].each do |image|

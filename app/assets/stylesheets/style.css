@@ -589,9 +589,9 @@ div.comment_list {
 
 .gitimages{
   float: right;
-  padding: 7px 10px 0px 20px;
+  padding: 3px 10px 0px 20px;
   width: 10px;
-  font-weight: bold;
+  font-size: smaller;
 }
 .gitimages.forks{
   background: url(/assets/forks.png) no-repeat;

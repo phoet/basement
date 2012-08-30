@@ -45,13 +45,6 @@ class Helper
       nil
     end
 
-    def commit(repo)
-      commits = get "https://api.github.com/repos/phoet/#{repo}/commits/master"
-      commits.map(&:commit)
-    rescue
-      nil
-    end
-
     def gist_files(gist)
       gist.files.map do |file|
         get file.second.raw_url, :raw
