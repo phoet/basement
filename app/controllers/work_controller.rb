@@ -1,7 +1,6 @@
 class WorkController < ApplicationController
-
   def index; end
-
+  def github; end
   def bookshelf
     more_stuff(@books.size) do |count|
       @books[0..count].map do |book|
@@ -9,6 +8,4 @@ class WorkController < ApplicationController
       end
     end
   end
-
-  def github; end
 end

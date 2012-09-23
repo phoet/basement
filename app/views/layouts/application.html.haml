@@ -49,9 +49,9 @@
                 #sidebar
                   = render :partial => 'teaser/about'
                   = render :partial => 'teaser/blog', :locals => {:posts => @posts} if @teaser.include? :blog
-                  =# render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
+                  = render :partial => 'teaser/bookshelf', :locals => {:books => @books} if @teaser.include? :bookshelf
                   = render :partial => 'teaser/gallery', :locals => {:images => @fotos} if @teaser.include? :gallery
-                  = render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @teaser.include? :twitter
+                  = render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @tweets.present? && @teaser.include?(:twitter)
                   = render :partial => 'teaser/github_repos', :locals => {:repos => @repos} if @teaser.include? :repos
                   = render :partial => 'teaser/github_gists', :locals => {:gists => @gists} if @teaser.include? :gists
               .clearer &nbsp;

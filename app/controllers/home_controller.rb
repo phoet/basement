@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
     @cite = @cites[rand(@cites.size)]
     more_stuff(@friends.size) do |count|
@@ -21,5 +20,4 @@ class HomeController < ApplicationController
       @posts[0..count]
     end
   end
-
 end

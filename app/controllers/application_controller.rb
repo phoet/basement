@@ -2,16 +2,11 @@ require 'google_data'
 require 'blogger'
 require 'picasa'
 require 'helper'
-require 'hashie/rash'
 
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
   helper :all
-
   before_filter :prepare_cache
-
-  helper_method :my_helper
 
   # prepare all the caching and loading-stuff for each request
   def prepare_cache
@@ -37,7 +32,7 @@ class ApplicationController < ActionController::Base
     super
   end
 
-  private()
+  private
 
   # generic helper for adding more results to view
   def more_stuff(size, initial_count=3)

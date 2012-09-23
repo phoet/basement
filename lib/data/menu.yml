@@ -23,10 +23,10 @@
     id: index
     name: Weiterbildung
     subitems: 
-  # - 
-  #   id: bookshelf
-  #   name: "Bücherregal"
-  #   subitems: 
+  - 
+    id: bookshelf
+    name: "Bücherregal"
+    subitems: 
   - 
     id: github
     name: Github
