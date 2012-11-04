@@ -5,179 +5,141 @@
       Nur durch die stetige Erweiterung seines Wissens kann man dauerhaft qualitativ hochwertige Software kann. Deshalb versuche ich fortwährend meine eigenen Fähigkeiten zu reflektieren, Schwächen zu erkennen und diese auszumerzen.
     %p
       Aus diesem Grund lese ich regelmäßig
-      =link_to('Fachbücher', :action => 'bookshelf') + ", "
+      = link_to('Fachbücher', :action => 'bookshelf') + ", "
       halte mich mit News-Feeds auf dem Laufenden oder besuche
-      %a{:href=>"#roundtable", :title=>"Stammtische"} Stammtische,
-      %a{:href=>"#conference", :title=>"Konferenzen"} Konferenzen
-      und nehme an
-      %a{:href=>"#course", :title=>"Online-Kurse"} Online-Kursen
-      teil.
-
-.post
-  %a{:id=>"conference"}
-  .div{:class=>"post_title"}
-    %h2 Konferenzen
-  .post_date
-  
-  .archive_post
-
-    .comment_gravatar.left
-      %img{:title=>"Eurucamp", :alt=>"Eurucamp", :src=>"/assets/eurucamp.png", :height=>"32", :width=>"32"}
-    .archive_post_title
-      %h3
-        %a{:href=>"http://eurucamp.org", :title=>"Eurucamp"} Eurucamp Berlin
-      .post_date 28.-29. Mai 2011
-    .clearer &nbsp;
-    %p
-      Beim Eurucamp in Berlin bin ich dieses Jahr als "Screwdriver" Sponsor eingesprungen.
-      Ich unterstütze das Camp, weil es als Spin-Off der
-      =link_to "Euruko 2011", "http://euruko2011.org/"
-      in Berlin ensteht. Das große "Problem" der Euruko in diese Jahr war, dass die Karten dafür binnen Sekunden ausverkauft waren.
-      Das Eurucamp wurde dann als Ersatzveranstaltung ins Leben gerufen und soll im Stile eines Barcamp stattfinden.
-      
-    .comment_gravatar.left
-      %img{:title=>"Railscamp Hamburg", :alt=>"Railscamp Hamburg", :src=>"/assets/railscamp-hamburg.png", :height=>"32", :width=>"32"}
-    .archive_post_title
-      %h3
-        %a{:href=>"http://railscamp-hamburg.de/", :title=>"Railscamp Hamburg"} Railscamp Hamburg
-      .post_date 23.-24. Oktober 2010
-    .clearer &nbsp;
-    %p
-      Das Railscamp Hamburg ist ein Barcamp. Das Programm wird jeweils morgens ad hoc von allen gemeinsam zusammengestellt. Ein ganzes Wochenende mit Vorträgen zu Rails Trends und Technologien, Rails Hackatons, Competitions, Networking und eine Menge Spass. WLAN, Steckdosen, Kaffee, Croissants, Lunch Snacks, Drinks ... Galore! Abends Party!
-
-    .comment_gravatar.left
-      %img{:title=>"Arrrr Camp", :alt=>"Arrrr Camp", :src=>"/assets/arrrrcamp.png", :height=>"32", :width=>"32"}
-    .archive_post_title
-      %h3
-        %a{:href=>"http://arrrrcamp.be/", :title=>"Arrrr Camp"} Arrrr Camp
-      .post_date 29. Oktober 2010
-    .clearer &nbsp;
-    %p
-      Um Ruby, Rails, 
-      %a{:href=>"http://radiantcms.org/", :title=>"Radiant"}Radiant
-      und Rum geht es auf dem Arrr Camp im Belgischen Ghent.
-      Hoffentlich gibt es dort auch wieder viele nette Leute zu treffen,
-      denn der private Austausch ist meistens das interessanteste bei diesen Events.
-
-    .comment_gravatar.left
-      %img{:title=>"RailsWayCon", :alt=>"RailsWayCon", :src=>"/assets/railswaycon.png", :height=>"32", :width=>"32"}
-    .archive_post_title
-      %h3
-        %a{:href=>"http://it-republik.de/conferences/railswaycon2010/", :title=>"RailsWayCon"} RailsWayCon
-      .post_date 31. Mai - 2. Juni 2010
-    .clearer &nbsp;
-    %p
-      Die diesjährigen RailsWayCon in Berlin war 
-      %a{:href=>"http://www.blaulabs.de/2010/06/railswaycon-2010/"} die erste Entwickler-Konferenz, an der ich teilgenommen habe.
-      Neben vielen interessanten Vorträgen zu Rails gab es nebenan auf der
-      %a{:href=>"http://createordie.de/webinale2010/", :title=>"Webinale"} Webinale
-      auch noch viel Stoff in Sachen Web 2.0, Social Media etc zu erlauschen.
+      = link_to("Stammtische", "#roundtable", :title=>"Stammtische")
+      und
+      = link_to("Konferenzen", "#conference", :title=>"Konferenzen") + "."
 
 .post
   %a{:id=>"roundtable"}
   .div{:class=>"post_title"}
     %h2 Stammtische
   .post_date
-  
   .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Ruby und Rails Usergroup", :alt=>"Ruby und Rails Usergroup", :src=>"/assets/hamburg_on_ruby.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://hamburg.onruby.de", :title=>"Hamburg on Ruby"} Ruby Usergroup Hamburg
+      .post_date Jeden 2. Mittwoch des Monats um 19:00
 
+  .archive_post
     .comment_gravatar.left
       %img{:title=>"CocoaHeads", :alt=>"CocoaHeads", :src=>"/assets/cocoaheads.jpg", :height=>"32", :width=>"32"}
     .archive_post_title
       %h3
         %a{:href=>"http://groups.google.com/group/cocoaheads-hh/", :title=>"CocoaHeads"} CocoaHeads Hamburg
       .post_date Jeden 1. Donnerstag des Monats um 19:00
-    .clearer &nbsp;
-    %p
-      Auf den Treffen der 
-      %a{:href=>"http://groups.google.com/group/cocoaheads-hh/", :title=>"CocoaHeads Hamburg"} CocoaHeads Hamburg
-      geht es um Cocoa- / Mac-Programmierung.
-      In letzter Zeit ist die Gruppe durch den Hype des iPhones wiederbelebt worden
-      und erfreut sich seither wieder großer Beliebtheit.
-    %p
-      Die Treffen finden häufig bei 
-      %a{:href => "http://cellular.de", :title => "Cellular"} Cellular
-      und
-      %a{:href => "http://mindmatters.de", :title => "Mindmatters"} Mindmatters
-      oder in einer Kneipe auf der Schanze statt.
 
-    .comment_gravatar.left
-      %img{:title=>"Rails Usergroup", :alt=>"Rails Usergroup", :src=>"/assets/rug.png", :height=>"32", :width=>"32"}
-    .archive_post_title
-      %h3
-        %a{:href=>"http://www.rubyonrails-ug.de/wiki/hamburgsync", :title=>"hamburgsync"} Rails User Group Hamburg
-      .post_date Jeden 2. Mittwoch des Monats um 19:00
-    .clearer &nbsp;
-    %p
-      %a{:href=>"http://mindmatters.de/", :title=>"Mindmatters"} Jan Krutisch
-      organisiert die Treffen häufig bei
-      %a{:href=>"http://mindmatters.de/", :title=>"Mindmatters"} Mindmatters
-      oder in den frisch renovierten Räumlichkeiten von
-      %a{:href=>"http://xing.de/", :title=>"Xing"} Xing.
-    %p
-      Das März-Treffen wurde bei
-      %a{:href=>'http://blaumobilfunk.de', :title=>'blau Mobilfunk GmbH'} blau
-      gehostet und wir freuen uns schon darauf es erneut auszurichten.
-
+  .archive_post
     .comment_gravatar.left
       %img{:title=>"Extreme Programming Usergroup", :alt=>"Extreme Programming Usergroup", :src=>"/assets/xpug.gif", :height=>"32", :width=>"32"}
     .archive_post_title
       %h3
         %a{:href=>"http://de.dir.groups.yahoo.com/group/xpug-hh/", :title=>"Extreme Programming Usergroup"} Extreme Programming Usergroup Hamburg
       .post_date Treffen in regelmäßigen Abständen
-    .clearer &nbsp;
-    %p
-      Im letzten Jahr konnten wir bereits ein Treffen der Gruppe in unseren Räumlichkeiten bei 
-      %a{:href=>'http://blaumobilfunk.de', :title=>'blau Mobilfunk GmbH'} blau
-      veranstalten. 
-      Wir hatten einen wirklich produktiven Abend mit vielen Teilnehmern und konnten diesen bei ein paar Bierchen 
-      aus unserem IT-Bierkühlschrank auf unserer Büro-Couch gemütlich ausklingen lassen.
 
+  .archive_post
     .comment_gravatar.left
       %img{:title=>"Scrum Usergroup", :alt=>"Scrum Usergroup", :src=>"/assets/sug.png", :height=>"32", :width=>"32"}
     .archive_post_title
       %h3
         %a{:href=>"https://www.xing.com/net/sug-hh", :title=>"Scrum User Group Hamburg"} Scrum User Group Hamburg
       .post_date Treffen in regelmäßigen Abständen
-    .clearer &nbsp;
-    %p Beim letzten Treffen des "Scrumtisch" sind wir netter Weise mit einer Barkasse durch den Hamburger Hafen geschippert und konnten wir uns bei Bier und Schnittchen angeregt über Scrum und agile Software-Entwicklung unterhalten.
 
 .post
-  %a{:id=>"course"}
-  .post_title
-    %h2 Online-Kurse
+  %a{:id=>"conference"}
+  .div{:class=>"post_title"}
+    %h2 Konferenzen 2012
   .post_date
-  
+
   .archive_post
     .comment_gravatar.left
-      %img{:title=>"Rubylearning", :alt=>"Rubylearning", :src=>"/assets/rubylearning.png", :height=>"32", :width=>"32"}
-
+      %img{:title=>"Arrrr Camp", :alt=>"Arrrr Camp", :src=>"/assets/arrrrcamp.png", :height=>"32", :width=>"32"}
     .archive_post_title
       %h3
-        %a{:href=>"http://www.rubylearning.org", :title=>"Rubylearning"} Rubylearning
-      .post_date Regelmäßige Kurse in unterschiedlichen Bereichen
+        %a{:href=>"http://arrrrcamp.be/", :title=>"Arrrr Camp"} Arrrr Camp
+      .post_date 04.-05. Oktober 2012
 
-    .clearer &nbsp;
-    
-    %p
-      Rubylearning wird von 
-      %a{:href=>"http://twitter.com/RubyLearning", :title=>"Satish Talim"} Satish Talim,
-      einem indischen Software-Guru, betreut. Dort gibt es sehr schön kurze Online-Kurse im Ruby-Umfeld.
-    %p
-      Ich habe dort bis jetzt Kurse über
-      %ul
-        %li
-          %a{:href=>"http://www.sinatrarb.com/", :title=>"Sinatra"} Sinatra
-        %li
-          %a{:href=>"http://merbivore.org/", :title=>"Merb"} Merb
-        %li
-          %a{:href=>"http://github.com/", :title=>"Git und GitHub"} Git und GitHub
-        %li
-          %a{:href=>"http://de.wikipedia.org/wiki/Metaprogrammierung", :title=>"Metaprogrammierung"} Metaprogrammierung
-        %li
-          %a{:href=>"http://shoooes.net/", :title=>"Shoes"} Shoes
-      besucht und war bis jetzt immer sehr zufrieden mit den kompakten und gut aufbereiteten Inhalten.
-    
-    %p
-      Die Kurse kosten immer um die 10$ und dauern ca. 1 bis 2 Wochen.
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"BaRuCo", :alt=>"BaRuCo", :src=>"/assets/baruco.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://baruco.org/", :title=>"Arrrr Camp"} Barcelona Ruby Conference
+      .post_date 08.-09. September 2012
 
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Scottish Ruby Conf", :alt=>"Scottish Ruby Conf", :src=>"/assets/scottishrubyconf.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://scottishrubyconference.com/", :title=>"Scottish Ruby Conf"} Scottish Ruby Conf Edinburgh
+      .post_date 29.-30. Juni 2011
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Euruko", :alt=>"Euruko", :src=>"/assets/euruko.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://www.euruko2012.org/", :title=>"Euruko"} Euruko Amsterdam
+      .post_date 01.-02. Juni 2011
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Railsberry", :alt=>"Railsberry", :src=>"/assets/railsberry.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://railsberry.com/2012", :title=>"Railsberry"} Railsberry Krakau
+      .post_date 18.-20. April 2012
+
+.post
+  .div{:class=>"post_title"}
+    %h2 Konferenzen 2011
+  .post_date
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Railscamp Hamburg", :alt=>"Railscamp Hamburg", :src=>"/assets/railscamp-hamburg.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://railscamp-hamburg.de/", :title=>"Railscamp Hamburg"} Railscamp Hamburg
+      .post_date 29.-30. Oktober 2011
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Arrrr Camp", :alt=>"Arrrr Camp", :src=>"/assets/arrrrcamp.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://arrrrcamp.be/", :title=>"Arrrr Camp"} Arrrr Camp
+      .post_date 07. Oktober 2010
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Eurucamp", :alt=>"Eurucamp", :src=>"/assets/eurucamp.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://eurucamp.org", :title=>"Eurucamp"} Eurucamp Berlin
+      .post_date 28.-29. Mai 2011
+
+.post
+  .div{:class=>"post_title"}
+    %h2 Konferenzen 2010
+  .post_date
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"Railscamp Hamburg", :alt=>"Railscamp Hamburg", :src=>"/assets/railscamp-hamburg.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://railscamp-hamburg.de/", :title=>"Railscamp Hamburg"} Railscamp Hamburg
+      .post_date 23.-24. Oktober 2010
+
+  .archive_post
+    .comment_gravatar.left
+      %img{:title=>"RailsWayCon", :alt=>"RailsWayCon", :src=>"/assets/railswaycon.png", :height=>"32", :width=>"32"}
+    .archive_post_title
+      %h3
+        %a{:href=>"http://it-republik.de/conferences/railswaycon2010/", :title=>"RailsWayCon"} RailsWayCon
+      .post_date 31. Mai - 2. Juni 2010
