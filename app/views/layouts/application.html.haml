@@ -53,7 +53,7 @@
                   = render :partial => 'teaser/gallery', :locals => {:images => @fotos} if @teaser.include? :gallery
                   = render :partial => 'teaser/twitter', :locals => {:tweets => @tweets} if @tweets.present? && @teaser.include?(:twitter)
                   = render :partial => 'teaser/github_repos', :locals => {:repos => @repos} if @teaser.include? :repos
-                  = render :partial => 'teaser/github_gists', :locals => {:gists => @gists} if @teaser.include? :gists
+                  / = render :partial => 'teaser/github_gists', :locals => {:gists => @gists} if @teaser.include? :gists
               .clearer &nbsp;
 
             #dashboard
