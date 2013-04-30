@@ -1,5 +1,5 @@
-source :rubygems
-ruby "1.9.3"
+source "http://rubygems.org"
+ruby   "1.9.3-p392"
 
 gem "rails",              "3.2.8"
 gem "redis-rails",        "3.2.3"
@@ -7,7 +7,7 @@ gem "rack",               "1.4.1"
 gem "haml",               "3.1.7"
 gem "asin",               "1.1.0"
 gem "twitter",            "4.2.0"
-gem "httpclient",         "2.3.0.1"
+gem "httpclient",         "2.3.3"
 gem "thin",               "1.5.0"
 gem "foreman",            "0.60.2"
 gem "jquery-rails",       "2.1.3"
