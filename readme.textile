@@ -10,7 +10,6 @@ connects to several external apis:
 
 * amazon (using "asin":http://rubygems.org/gems/asin gem)
 * twitter
-* seitwert
 * blogger
 * picasa
 * github

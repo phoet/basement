@@ -20,7 +20,7 @@ class Helper
 
     def get(url, format=:json)
       logger.info "fetching #{url} with format #{format}"
-      content = HTTPClient.get(url, :follow_redirect => true).content
+      content = HTTPClient.new(agent_name: 'phoet.de').get(url, follow_redirect: true).content
       case format
       when :json
         resp = JSON.parse(content)
@@ -87,14 +87,6 @@ class Helper
       Twitter.follower_ids("phoet").ids.shuffle[0..4].map { |id| Twitter.user(id) }
     rescue
       logger.error "error calling twitter friends: #{$!}"
-      nil
-    end
-
-    def seitwert
-      logger.info 'calling seitwert'
-      xml = get('http://www.seitwert.de/api/getseitwert.php?url=www.phoet.de&api=bfe1534821649e71c2694d0ace86fab0', :xml)
-      xml.urlinfo
-    rescue Timeout::Error
       nil
     end
   end

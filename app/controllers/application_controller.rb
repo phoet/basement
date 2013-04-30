@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
     cache_and_set(:fotos)     { Helper::picasa_fotos }
     cache_and_set(:posts)     { Helper::blogger_posts }
     cache_and_set(:books)     { Helper::load_data(:books).shuffle }
-    cache_and_set(:seitwert)  { Hashie::Mash.new(JSON.parse(Helper::seitwert.to_json)) } # fix some wired serialization bug
     cache_and_set(:repos)     { Helper::repos }
     cache_and_set(:gists)     { Helper::gists }
 
