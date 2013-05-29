@@ -1,8 +1,13 @@
 Basement::Application.routes.draw do
-  root to: "home#index"
   get '/sitemap.xml' => 'admin#sitemap', defaults: {format: :xml}
+  get '/admin/reset_cache' => 'admin#reset_cache'
 
-  match '/sitemap.xml' => 'admin#sitemap'
+  Helper::menu.each do |item|
+    get "/#{item.id}"  => "#{item.id}#index"
+    item.subitems.each do |subitem|
+      get "/#{item.id}/#{subitem.id}"  => "#{item.id}##{subitem.id}"
+    end
+  end
 
-  match ':controller(/:action(/:id(.:format)))'
+  root to: 'home#index'
 end
