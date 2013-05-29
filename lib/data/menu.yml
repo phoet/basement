@@ -27,10 +27,10 @@
     id: bookshelf
     name: "Bücherregal"
     subitems: 
-  # - 
-  #   id: github
-  #   name: Github
-  #   subitems: 
+  - 
+    id: github
+    name: Github
+    subitems: 
 - 
   id: interest
   name: Interessantes
