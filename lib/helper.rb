@@ -35,11 +35,11 @@ class Helper
     end
 
     def gists
-      get "https://api.github.com/users/phoet/gists"
+      get "https://api.github.com/users/phoet/gists?sort=pushed"
     end
 
     def repos
-      repos = get "https://api.github.com/users/phoet/repos"
+      repos = get "https://api.github.com/users/phoet/repos?sort=pushed"
       repos.sort{|a, b| b.forks + b.watchers <=> a.forks + a.watchers}
     rescue
       nil
