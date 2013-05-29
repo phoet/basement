@@ -53,3 +53,8 @@ module Basement
     config.cache_store = :redis_store, ENV['REDISTOGO_URL']
   end
 end
+
+require 'google_data'
+require 'blogger'
+require 'picasa'
+require 'helper'

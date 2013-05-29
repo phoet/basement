@@ -1,8 +1,3 @@
-require 'google_data'
-require 'blogger'
-require 'picasa'
-require 'helper'
-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper :all
