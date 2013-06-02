@@ -20,7 +20,9 @@ class Helper
 
     def get(url, format=:json)
       logger.info "fetching #{url} with format #{format}"
-      content = HTTPClient.new(agent_name: 'phoet.de').get(url, follow_redirect: true).content
+      resp = HTTPClient.new(agent_name: 'phoet.de').get(url, follow_redirect: true)
+      return nil unless resp.status == 200
+      content = resp.content
       case format
       when :json
         resp = JSON.parse(content)
