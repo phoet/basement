@@ -72,8 +72,11 @@ class Helper
     def picasa_fotos(urls=["#{BASE_URL}phoet6/?alt=json","#{BASE_URL}heddahh/?alt=json"])
       urls = [] << urls
       urls.flatten.map do |url|
-        parsed = get(url, :json)
-        parsed['feed']['entry'].map { |e| Picasa.new(e) }
+        if parsed = get(url, :json)
+          parsed['feed']['entry'].map { |e| Picasa.new(e) }
+        else
+          []
+        end
       end.flatten.shuffle
     end
 
