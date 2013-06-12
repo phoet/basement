@@ -34,6 +34,9 @@ class Helper
       else
         raise "unsupported format #{format}"
       end
+    rescue
+      logger.info "serious fuckup #{$!}"
+      nil
     end
 
     def gists
