@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     cache_and_set(:friends)   { Helper::twitter_friends }
     cache_and_set(:fotos)     { Helper::picasa_fotos }
     cache_and_set(:posts)     { Helper::blogger_posts }
-    cache_and_set(:books)     { Helper::load_data(:books).shuffle }
+    cache_and_set(:books)     { Helper::load_data(:books).shuffle.first(10) }
     cache_and_set(:repos)     { Helper::repos }
     cache_and_set(:gists)     { Helper::gists }
 
