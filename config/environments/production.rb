@@ -39,6 +39,12 @@ Basement::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"], {:username => ENV["MEMCACHIER_USERNAME"], :password => ENV["MEMCACHIER_PASSWORD"]}
+  config.action_dispatch.rack_cache = {
+    :metastore    => Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], {:username => ENV["MEMCACHIER_USERNAME"], :password => ENV["MEMCACHIER_PASSWORD"]}),
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
