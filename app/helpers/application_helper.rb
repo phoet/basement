@@ -24,6 +24,10 @@ module ApplicationHelper
     Helper::menu.map{|m|m.subitems.map{|s|"#{m.id}/#{s.id}"}}.flatten
   end
 
+  def app_info
+    "<!-- Running on Rails #{Rails.version} and rendering took #{Time.new - @rendering_start} seconds -->".html_safe
+  end
+
   def title(controller)
     Helper::menu.each do |m|
       cname = controller.controller_name
