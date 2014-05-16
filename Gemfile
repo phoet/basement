@@ -1,7 +1,7 @@
 source "http://rubygems.org"
-ruby   "2.0.0"
+ruby   "2.1.1"
 
-gem "rails",                  "3.2.13"
+gem "rails",                  "3.2.18"
 gem "haml",                   "3.1.7"
 gem "asin",                   "1.1.2"
 gem "twitter",                "4.2.0"
@@ -18,10 +18,7 @@ group :assets do
   gem "uglifier",     "1.3.0"
 end
 
-group :development do
+group :development, :test do
   gem "pry-remote"
-end
-
-group :test do
-  gem "rspec-rails",  "2.11.4"
+  gem "rspec-rails"
 end
