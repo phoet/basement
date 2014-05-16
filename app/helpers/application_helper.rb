@@ -9,11 +9,11 @@ module ApplicationHelper
   end
 
   def names
-    'Peter Schröder, Phoet, Uschi, Onkel Klaus'
+    'Peter Schröder, Phoet, Señor Developer'
   end
 
   def keywords
-    'Privates, Fachliches und Interessantes'
+    "#{names}, Ruby, Rails, Ruby on Rails, Software Development"
   end
 
   def website_url
