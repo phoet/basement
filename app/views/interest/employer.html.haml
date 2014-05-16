@@ -17,6 +17,8 @@
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
       %li
+        %a{:href => "#shopify"} Shopify Inc.
+      %li
         %a{:href => "#wlw"} Wer liefert was? GmbH
       %li
         %a{:href => "#qype"} Qype GmbH
@@ -29,23 +31,43 @@
       %li
         %a{:href => "#bigpoint"} Bigpoint GmbH
 
+/ shopify
+.post
+  .post_title
+    %h2
+      = link_to "Ruby Entwickler bei Shopify", "http://www.shopify.com/", :id => "shopify", :title => "Shopify Inc."
+
+  .post_date Seit Januar 2014
+  .post_body
+    = link_to "http://www.shopify.com/", :title => "Shopify Inc." do
+      = image_tag "shopify.jpg", :class => "alignleft", :alt => "Shopify Inc.", :title => "Shopify Inc."
+    .clearer &nbsp;
+    %p
+      Seit diesem Jahr arbeite ich als Ruby-Entwickler in Ottawa Kanada!
+
+    .clearer &nbsp;
+
+    .post_meta
+      Links:
+      = link_to "Shopify", "http://www.shopify.com/", :title => "Shopify Inc."
+
 / wlw
 .post
   .post_title
     %h2
       = link_to "Ruby Entwickler bei Wer liefert was?", "http://www.wlw.de/", :id => "wlw", :title => "Wer liefert was? GmbH"
 
-  .post_date Bis Ende des Jahres
+  .post_date September 2011 bis Mai 2013
   .post_body
     = link_to "http://www.wlw.de/", :title => "Wer liefert was? GmbH" do
       = image_tag "wlw.png", :class => "alignleft", :alt => "Wer liefert was? GmbH", :title => "Wer liefert was? GmbH"
     .clearer &nbsp;
     %p
-      Seit September 2011 arbeite ich für den IT-Dienstleister
+      In dieser Zeit habe ich für den IT-Dienstleister
       = link_to 'AKRA', 'http://akra.de', :title => 'AKRA GmbH'
       beim Betreiber der Lieferanten-Suchmaschine
       = link_to "'Wer liefert was?'", "http://www.wlw.de/", :title => "Wer liefert was? GmbH"
-      in Hamburg.
+      in Hamburg gearbeitet.
     %p
       In einem kleinen, interdisziplinären Team arbeiten dort
       Festangestellte und Freelancer an der Ablösung der
