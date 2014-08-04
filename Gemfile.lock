@@ -105,7 +105,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.3.1)
+    rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.14.8)
@@ -151,23 +151,25 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    vpim (13.11.11)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  asin (= 1.1.2)
-  dalli (= 2.6.4)
-  exception_notification (= 3.0.1)
-  foreman (= 0.63.0)
-  haml (= 3.1.7)
-  httpclient (= 2.3.4.1)
-  jquery-rails (= 2.1.3)
+  asin
+  dalli
+  exception_notification
+  foreman
+  haml
+  httpclient
+  jquery-rails
   pry-remote
-  rails (= 3.2.18)
-  rails_autolink (= 1.0.9)
+  rails
+  rails_autolink
   rspec-rails
   sass-rails (= 3.2.5)
-  thin (= 1.5.0)
-  twitter (= 4.2.0)
+  thin
+  twitter
   uglifier (= 1.3.0)
+  vpim

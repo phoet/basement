@@ -2,7 +2,9 @@
   .post_body
     = render :partial => "shared/quote", :locals => { :author =>'Peter Schröder', :text => 'Ich bin nicht neugierig, ich will nur alles wissen!' }
 
-    %h3 So bin ich zu erreichen:
+    %span(style="float:right;font-size:smaller;")= link_to "⬇︎ vCard", vcard_url
+    %h3
+      So bin ich zu erreichen:
 
     %dl
       %dt Anschrift

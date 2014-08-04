@@ -1,6 +1,7 @@
 Basement::Application.routes.draw do
   get '/sitemap.xml' => 'admin#sitemap', defaults: {format: :xml}
   get '/admin/reset_cache' => 'admin#reset_cache'
+  get '/me.vcard' => 'interest#vcard', as: :vcard
 
   Helper::menu.each do |item|
     get "/#{item.id}"  => "#{item.id}#index"
