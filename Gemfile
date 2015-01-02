@@ -1,12 +1,12 @@
 source "http://rubygems.org"
 ruby   "2.1.1"
 
-gem "rails"
+gem "rails", "3.2.21"
 gem "haml"
 gem "asin"
 gem "twitter"
 gem "httpclient"
-gem "thin"
+gem "thin", "1.6.3"
 gem "foreman"
 gem "jquery-rails"
 gem "rails_autolink"
@@ -21,5 +21,6 @@ end
 
 group :development, :test do
   gem "pry-remote"
-  gem "rspec-rails"
+  gem "test-unit"
+  gem "rspec-rails", "~> 2.14"
 end
