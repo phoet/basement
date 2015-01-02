@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-ruby   "2.1.1"
+ruby   File.read('.ruby-version').chomp
 
 gem "rails", "3.2.21"
 gem "haml"
