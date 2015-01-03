@@ -18,26 +18,26 @@
       .comment_list
         - @more_array.each do |item|
           .comment.alt
-            - if item.raw.SmallImage
-              .comment_gravatar.left{:style => "width: #{item.raw.SmallImage.Width.to_i + 10}px;"}
-                %a{:href => item.raw.DetailPageURL, :title => item.title}
-                  %img{:alt => item.title, :title => item.title, :src => item.raw.SmallImage.URL}
+            - if item.small_image
+              .comment_gravatar.left{:style => "width: #{item.small_image.width.to_i + 10}px;"}
+                %a{:href => item.detail_page_url, :title => item.item_attributes.title}
+                  %img{:alt => item.item_attributes.title, :title => item.item_attributes.title, :src => item.small_image.url}
             - else
               .comment_gravatar.left
-                %a{:href => item.raw.DetailPageURL, :title => item.title}
-                  %img{:alt => item.title, :title => item.title, :src => '/assets/sample-gravatar.jpg'}
+                %a{:href => item.detail_page_url, :title => item.item_attributes.title}
+                  %img{:alt => item.item_attributes.title, :title => item.item_attributes.title, :src => '/assets/sample-gravatar.jpg'}
             
             .comment_author.left
               %strong
-                %a{:href => item.raw.DetailPageURL, :title => item.title}= item.title.truncate(70)
+                %a{:href => item.detail_page_url, :title => item.item_attributes.title}= item.item_attributes.title.truncate(80)
             
-              .comment_date= "von #{item.raw.ItemAttributes.Author.respond_to?(:join) ? item.raw.ItemAttributes.Author.join(', ') : item.raw.ItemAttributes.Author}"
-              .comment_date="#{(item.raw.ItemAttributes.ListPrice.FormattedPrice rescue '')} mit #{item.raw.ItemAttributes.NumberOfPages} Seiten"
-              .comment_date="aufgelegt #{item.raw.ItemAttributes.Label} #{item.raw.ItemAttributes.PublicationDate} mit ISBN #{item.raw.ItemAttributes.EAN}"
+              .comment_date= "von #{item.item_attributes.author.respond_to?(:join) ? item.item_attributes.Author.join(', ') : item.item_attributes.author}"
+              .comment_date="#{(item.item_attributes.list_price.formatted_price rescue '')} mit #{item.item_attributes.number_of_pages} Seiten"
+              .comment_date="aufgelegt #{item.item_attributes.label} #{item.item_attributes.publication_date} mit ISBN #{item.item_attributes.ean}"
             
             .clearer &nbsp;
             
             .comment_body
-              %p= ([] << item.raw.EditorialReviews.EditorialReview).flatten.last.Content.html_safe rescue ""
+              %p= ([] << item.editorial_reviews.editorial_review).flatten.last.content.html_safe rescue ""
                 
     = render :partial => 'shared/more', :locals => {:name => 'Bücher'}
