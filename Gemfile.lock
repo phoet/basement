@@ -43,7 +43,6 @@ GEM
     daemons (1.1.9)
     dalli (2.7.2)
     diff-lcs (1.2.5)
-    dotenv (1.0.2)
     erubis (2.7.0)
     eventmachine (1.0.4)
     exception_notification (3.0.1)
@@ -51,14 +50,11 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    foreman (0.77.0)
-      dotenv (~> 1.0.2)
-      thor (~> 0.19.1)
     haml (4.0.6)
       tilt
     hashie (2.0.5)
     hike (1.2.3)
-    httpclient (2.5.3.3)
+    httpclient (2.6.0.1)
     httpi (2.3.0)
       rack
     i18n (0.7.0)
@@ -165,12 +161,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  asin
+  asin (= 2.0.1)
   dalli
   exception_notification
-  foreman
   haml
-  httpclient
+  httpclient (~> 2.6)
   jquery-rails
   pry-remote
   rails (= 3.2.21)
