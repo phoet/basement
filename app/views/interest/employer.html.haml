@@ -17,6 +17,8 @@
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
       %li
+        %a{:href => "#jimdo"} Jimdo GmbH
+      %li
         %a{:href => "#shopify"} Shopify Inc.
       %li
         %a{:href => "#wlw"} Wer liefert was? GmbH
@@ -31,19 +33,43 @@
       %li
         %a{:href => "#bigpoint"} Bigpoint GmbH
 
+/ jimdo
+.post
+  .post_title
+    %h2
+      = link_to "Entwickler bei Jimdo", "http://www.jimdo.com/", :id => "jimdo", :title => "Jimdo GmbH"
+
+  .post_date Seit Februar 2015
+  .post_body
+    = link_to "http://www.jimdo.com/", :title => "Jimdo GmbH" do
+      = image_tag "jimdo.png", :class => "alignleft", :alt => "Jimdo GmbH", :title => "Jimdo GmbH"
+    .clearer &nbsp;
+    %p
+      Seit diesem Jahr arbeite ich als
+      = link_to 'Hyperpolyglot', "http://hyperpolyglot.org/"
+      bei Jimdo und helfe dort bei der Migration der monolitischen Plattform in eine Service orientierte Infrastruktur.
+
+    .clearer &nbsp;
+
+    .post_meta
+      Links:
+      = link_to "Shopify", "http://www.shopify.com/", :title => "Shopify Inc."
+
 / shopify
 .post
   .post_title
     %h2
-      = link_to "Ruby Entwickler bei Shopify", "http://www.shopify.com/", :id => "shopify", :title => "Shopify Inc."
+      = link_to "Dev und Ops bei Shopify", "http://www.shopify.com/", :id => "shopify", :title => "Shopify Inc."
 
-  .post_date Seit Januar 2014
+  .post_date Januar 2014 bis Februar 2015
   .post_body
     = link_to "http://www.shopify.com/", :title => "Shopify Inc." do
       = image_tag "shopify.jpg", :class => "alignleft", :alt => "Shopify Inc.", :title => "Shopify Inc."
     .clearer &nbsp;
     %p
-      Seit diesem Jahr arbeite ich als Ruby-Entwickler in Ottawa Kanada!
+      Für ein halbes jahr habe ich als Ruby-Entwickler in Ottawa Kanada bei Shopify gelebt und gearbeitet.
+    %p
+      Anschliessend bin ich wieder nach Hamburg zurückgekehrt und habe hier vor Ort remote mit dem Operations Team an der Shopify Platform gearbeitet.
 
     .clearer &nbsp;
 
