@@ -1,10 +1,10 @@
 source "http://rubygems.org"
 ruby   File.read('.ruby-version').chomp
 
-gem "rails", "3.2.21"
+gem "rails", "3.2.22"
 gem "haml"
 gem "asin", "2.0.1"
-gem "twitter"
+gem "twitter", "4.8.1"
 gem "httpclient", "~> 2.6"
 gem "thin", "1.6.3"
 gem "jquery-rails"
