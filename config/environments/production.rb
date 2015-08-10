@@ -64,7 +64,7 @@ Basement::Application.configure do
     :domain         => 'heroku.com'
   }
 
-  config.middleware.use "ExceptionNotifier", {
+  config.middleware.use "ExceptionNotification::Rack", email: {
     :email_prefix         => "[ERROR] ",
     :sender_address       => %{"error-notifier" <phoetmail@googlemail.com>},
     :exception_recipients => %w{phoetmail@googlemail.com},
