@@ -5,4 +5,6 @@
 require File.expand_path('../config/application', __FILE__)
 require "rake"
 
+load 'tasks/emoji.rake'
+
 Basement::Application.load_tasks

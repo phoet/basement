@@ -12,6 +12,7 @@ gem "rails_autolink"
 gem "dalli"
 gem "exception_notification"
 gem "vpim"
+gem 'gemoji'
 
 group :production do
   gem "rails_log_stdout"

@@ -36,7 +36,7 @@
             = link_to repo.name, repo.html_url, :title => repo.description
             %span.gitimages.forks= repo.forks
             %span.gitimages.watchers= repo.watchers
-          = repo.description
+          = emojify(repo.description)
 
   - if @gists.present?
     .post
