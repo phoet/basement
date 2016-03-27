@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
       session[action_name] = params[:id].to_i
       session[action_name] = (size - 1) if session[action_name] >= size
     end
-    @more_array = yield session[action_name] ||= initial_count
+    count = session[action_name] ||= initial_count
+    @more_array = yield(count).compact
   end
 
   def cache_and_set(key, &to_cache)
