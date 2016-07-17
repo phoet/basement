@@ -22,6 +22,5 @@ end
 
 group :development, :test do
   gem "byebug"
-  gem "test-unit"
-  gem "rspec-rails", "~> 2.14"
+  gem "rspec-rails", "~> 3.5"
 end
