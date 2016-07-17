@@ -1,4 +1,4 @@
-/*  
+/*
 Template name: Cerulean Elegance
 Template URI: http://templates.arcsin.se/cerulean-elegance-website-template/
 Release date: 2009-04-01
@@ -11,21 +11,21 @@ http://templates.arcsin.se/license/
 */
 
 
-/* 
+/*
    Reset (http://meyerweb.com/eric/tools/css/reset/)
 ------------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, 
-img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, b, u, i, 
-center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
-tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; 
-font-size: 100%; vertical-align: baseline; background: transparent; } body { 
-line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0;
+font-size: 100%; vertical-align: baseline; background: transparent; } body {
+line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: '' } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; }
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* 
+/*
    Fixes for blogger css
 ------------------------------------------------------------------- */
 
@@ -33,14 +33,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 	padding-top:15px;
 }
 
-/* 
+/*
    Fixes for feed content
 ------------------------------------------------------------------- */
 #feed img {
 	max-width:600px;
 }
-/* 
-   General 
+/*
+   General
 ------------------------------------------------------------------- */
 
 html {
@@ -49,14 +49,14 @@ html {
 }
 
 body {
-	background: #202020 url('/assets/body.gif') repeat-x left top;
+	background: #202020 image-url('body.gif') repeat-x left top;
 	color: #5A5A50;
 	font: normal 0.8em sans-serif;
-	line-height: 1.5em;	
+	line-height: 1.5em;
 }
 
-/* 
-   Typography 
+/*
+   Typography
 ------------------------------------------------------------------- */
 
 p {padding: 0.2em 0 1em;}
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6 {
 
 
 blockquote {
-	background: #F6F6F6 url('/assets/quote.gif') no-repeat;
+	background: #F6F6F6 image-url('quote.gif') no-repeat;
 	border-bottom: 1px solid #DDD;
 	border-top: 1px solid #DDD;
 	color: #332;
@@ -92,7 +92,7 @@ blockquote.box {
 	font-size: smaller;
 }
 
-/* 
+/*
    Tables
 ------------------------------------------------------------------- */
 
@@ -115,7 +115,7 @@ table.data_table td {
 }
 
 
-/* 
+/*
    Lists
 ------------------------------------------------------------------- */
 
@@ -134,8 +134,8 @@ dd {
 }
 
 
-/* 
-   Links 
+/*
+   Links
 ------------------------------------------------------------------- */
 
 a {color: #456;}
@@ -145,13 +145,13 @@ a:hover {
 }
 
 
-/* 
-   Forms 
+/*
+   Forms
 ------------------------------------------------------------------- */
 
 fieldset {
 	border: 1px solid #CCC;
-	border-bottom: none;	
+	border-bottom: none;
 	font-size: 0.9em;
 	margin: 1em 0 1.2em;
 }
@@ -214,8 +214,8 @@ input.image {
 .form_row_submit .form_value {padding-left: 132px;}
 
 
-/* 
-   Images 
+/*
+   Images
 ------------------------------------------------------------------- */
 
 img.bordered,img.alignleft,img.alignright,img.aligncenter {
@@ -229,7 +229,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 #twitter img {margin-left:30px;}
 
-/* 
+/*
    Floats
 ------------------------------------------------------------------- */
 
@@ -241,12 +241,12 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 .clearer {
 	display: block;
 	font-size: 0;
-	line-height: 0;	
+	line-height: 0;
 }
 
 
-/* 
-   Misc 
+/*
+   Misc
 ------------------------------------------------------------------- */
 
 .content_separator, .archive_separator {
@@ -262,12 +262,12 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 .archive_separator {margin: 0 0 14px;}
 
 
-/* 
-   Layout 
+/*
+   Layout
 ------------------------------------------------------------------- */
 
 /* General */
-#layout_wrapper_outer {background: url('/assets/layout_wrapper_outer.jpg') no-repeat center top;}
+#layout_wrapper_outer {background: image-url('layout_wrapper_outer.jpg') no-repeat center top;}
 #layout_wrapper {
 	color: #FFF;
 	margin: 0 auto;
@@ -276,9 +276,9 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 #layout_top {height: 114px;}
 
-#layout_body_outer {background: #373737 url('/assets/layout_body_outer.jpg') repeat-x;}
+#layout_body_outer {background: #373737 image-url('layout_body_outer.jpg') repeat-x;}
 #layout_body {
-	background: url('/assets/layout_body.gif') no-repeat;
+	background: image-url('layout_body.gif') no-repeat;
 	padding: 8px 8px 0;
 }
 
@@ -302,7 +302,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Navigation */
 #navigation {
-	background: #3A3A3A url('/assets/navigation.gif') no-repeat;
+	background: #3A3A3A image-url('navigation.gif') no-repeat;
 	font: bold 1.3em sans-serif;
 	padding: 0 8px;
 }
@@ -321,8 +321,8 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 }
 #nav1 a:hover {color: #EEE;}
 #nav1 li.current_page_item a,#nav1 li.current_page_parent a {
-	background: url('/assets/nav1_arrow.gif') no-repeat center bottom;
-	color: #ADE7F6;	
+	background: image-url('nav1_arrow.gif') no-repeat center bottom;
+	color: #ADE7F6;
 }
 
 #nav2 a {
@@ -330,7 +330,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	padding: 10px;
 }
 #nav2 {
-	background: #5090AE url('/assets/nav2.gif') repeat-x;
+	background: #5090AE image-url('nav2.gif') repeat-x;
 	margin: 0 -8px;
 	padding: 0 8px;
 }
@@ -340,7 +340,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Main */
 #main {
-	background: url('/assets/main.gif') repeat-y;
+	background: image-url('main.gif') repeat-y;
 	border-bottom: 1px solid #C5C5C5;
 }
 #main ol, #main ul {margin: 0 0 1.2em 1.6em;}
@@ -352,7 +352,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	border-top: 1px solid #FFF;
 	width: 629px;
 }
-#content {	
+#content {
 	color: #444;
 	padding: 16px;
 }
@@ -367,7 +367,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 }
 #sidebar {
 	color: #555;
-	padding: 16px 12px;	
+	padding: 16px 12px;
 }
 #sidebar a {color: #555;}
 #sidebar a:hover {color: #000;}
@@ -412,7 +412,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 
 /* Footer links */
 #footer {
-	background: url('/assets/footer.gif') no-repeat;
+	background: image-url('footer.gif') no-repeat;
 	color: #777;
 	font-size: 0.9em;
 	padding: 22px 8px 10px;
@@ -425,8 +425,8 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 #footer a:hover {color: #999;}
 
 
-/* 
-   Posts 
+/*
+   Posts
 ------------------------------------------------------------------- */
 
 .post {margin-bottom: 24px;}
@@ -476,12 +476,12 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	font-size: larger;
 }
 
-/* 
+/*
    Thumbnails
 ------------------------------------------------------------------- */
 
 .thumbnails {margin: 0 -0 2em -8px;}
-.thumbnails a.thumb {	
+.thumbnails a.thumb {
 	background: #D5D5D5;
 	display: block;
 	float: left;
@@ -499,7 +499,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	margin-right: 5px;
 }
 
-/* 
+/*
    Box
 ------------------------------------------------------------------- */
 
@@ -515,7 +515,7 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 .box_content {padding: 8px 0 8px;}
 .box li:first-child {border-top: none;}
 
-/* 
+/*
    Gallery
 ------------------------------------------------------------------- */
 
@@ -540,12 +540,12 @@ img.right,img.alignright {margin: 0 0 15px 12px;}
 	display:none;
 }
 
-/* 
-   Comments 
+/*
+   Comments
 ------------------------------------------------------------------- */
 
 div.comment_list {
-	border-top: 1px solid #D6D6D6; 
+	border-top: 1px solid #D6D6D6;
 	margin: 1em 0 2em;
 }
 
@@ -594,13 +594,13 @@ div.comment_list {
   font-size: smaller;
 }
 .gitimages.forks{
-  background: url(/assets/forks.png) no-repeat;
+  background: image-url('forks.png') no-repeat;
 }
 .gitimages.watchers{
-  background: url(/assets/watchers.png) no-repeat;
+  background: image-url('watchers.png') no-repeat;
 }
 
 .code {
-  width: auto; 
+  width: auto;
   overflow: auto;
 }

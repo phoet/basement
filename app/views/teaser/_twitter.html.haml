@@ -1,14 +1,13 @@
 - if tweets.present?
   .box#twitter
     .box_title
-      %a{:href=>"http://twitter.com/phoet", :title=>'twitter'}
-        %img{:src=>"/assets/twitter_icon.png", :alt=>"twitter", :title=>'twitter'}
+      <a href="https://twitter.com/intent/tweet?screen_name=phoet" class="twitter-mention-button" data-show-count="false">Tweet to @phoet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     .box_content
-      -tweets[0..4].each() do |tweet|
-        %blockquote{:class=>"box"} 
+      -tweets.each do |tweet|
+        %blockquote{:class=>"box"}
           =links_4_twitter(tweet.text)
           .sub
-            von 
-            %a{:href=>"http://twitter.com/#{tweet.from_user}", :title=>tweet.from_user}=tweet.from_user
+            von
+            %a{:href=>"http://twitter.com/#{tweet.user.name}", :title=>tweet.user.name}=tweet.user.name
             vor
-            %a{:href=>"http://twitter.com/#{tweet.from_user}/status/#{tweet.id}", :title=>tweet.from_user}=calc_difference(tweet.created_at)
+            %a{:href=>"http://twitter.com/#{tweet.user.name}/status/#{tweet.id}", :title=>tweet.user.name}=calc_difference(tweet.created_at)

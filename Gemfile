@@ -1,10 +1,10 @@
 source "http://rubygems.org"
-ruby   File.read('.ruby-version').chomp
+ruby   File.read(".ruby-version").chomp
 
-gem "rails", "3.2.22"
+gem "rails", "4.2.6"
 gem "haml"
-gem "asin", "2.0.1"
-gem "twitter", "4.8.1"
+gem "asin", "2.0.2"
+gem "twitter", "~> 5.16"
 gem "httpclient", "~> 2.6"
 gem "thin", "1.6.3"
 gem "jquery-rails"
@@ -12,20 +12,16 @@ gem "rails_autolink"
 gem "dalli"
 gem "exception_notification"
 gem "vpim"
-gem 'gemoji'
+gem "gemoji"
+gem "sass-rails"
+gem "uglifier"
 
 group :production do
-  gem "rails_log_stdout"
-  gem "rails_12factor"
-end
-
-group :assets do
-  gem "sass-rails",   "3.2.5"
-  gem "uglifier",     "1.3.0"
+  gem "rack-cache"
 end
 
 group :development, :test do
-  gem "pry-remote"
+  gem "byebug"
   gem "test-unit"
   gem "rspec-rails", "~> 2.14"
 end

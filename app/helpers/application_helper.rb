@@ -65,7 +65,7 @@ module ApplicationHelper
   end
 
   def calc_difference(time_string)
-    distance_of_time_in_words_to_now(Time.parse(time_string))
+    distance_of_time_in_words_to_now(time_string)
   end
 
   def links_4_twitter(text)

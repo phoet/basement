@@ -15,7 +15,7 @@ class Helper
     end
 
     def load_data(structure)
-      YAML::load_file("lib/data/#{structure}.yml").map{ |item| Hashie::Mash.new(item) }
+      YAML::load_file(Rails.root.join("config/data/#{structure}.yml")).map{ |item| Hashie::Mash.new(item) }
     end
 
     def get(url, format=:json)
@@ -83,16 +83,27 @@ class Helper
       end.flatten.shuffle
     end
 
+    def twitter_client
+      @client ||= begin
+        Twitter::REST::Client.new do |config|
+          config.consumer_key       = ENV['TWITTER_CONSUMER_KEY']
+          config.consumer_secret    = ENV['TWITTER_CONSUMER_SECRET']
+          config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+          config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
+        end
+      end
+    end
+
     def twitter_posts
       logger.info "calling twitter posts"
-      Twitter::Search.new.q("@phoet").fetch
+      twitter_client.search("@phoet").take(10)
     rescue
       nil
     end
 
     def twitter_friends
       logger.info 'calling twitter friends'
-      Twitter.follower_ids("phoet").ids.shuffle[0..4].map { |id| Twitter.user(id) }
+      twitter_client.friends.take(10)
     rescue
       logger.error "error calling twitter friends: #{$!}"
       nil
