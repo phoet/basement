@@ -1,22 +1,19 @@
 .post
   .post_body= render :partial => "shared/quote", :locals => { :author =>'Werbebranche', :text => 'Ein Bild sagt mehr als tausend Worte.' }
-
   -unless @gallery_images.nil?
     %div
       .post_body
         -@gallery_images.each do |image|
           %a{:href => image.picture}
             %img{:src => image.thumbnail, :class => "alignleft"}
-    
   .clearer &nbsp;
-    
   #gallery
     -@more_array.each do |t|
       .gallery
         .post_title
           %a{:href=>t.url, :title=>t.title}
             %h2= t.title.truncate(18)
-        .post_body
+        .post_body.gallery-slideshow-container
           %a{:href=>t.url, :title=>t.title, :class=>'slideshow', :name=>t.album_id}
             %img{:src => t.thumbnail, :alt => t.title, :class => "alignleft", :style => "width:160px;height:160px;"}
             -@picture_hash[t.album_id][0..2].each do |f|
