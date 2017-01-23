@@ -10,6 +10,8 @@
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
       %li
+        %a{:href => "#xing"} 2016 - XING AG
+      %li
         %a{:href => "#jimdo"} 2015 - Jimdo GmbH
       %li
         %a{:href => "#shopify"} 2014 - Shopify Inc.
@@ -26,27 +28,47 @@
       %li
         %a{:href => "#bigpoint"} 2006 - Bigpoint GmbH
 
+/ xing
+.post
+  .post_title
+    %h2
+      = link_to "Entwickler bei XING", "http://www.xing.com/", :id => "xing", :title => "XING AG"
+
+  .post_date Seit Dezember 2016
+  .post_body
+    = link_to "http://www.xing.com/", :title => "XING AG" do
+      = image_tag "xing.png", :class => "alignleft", :alt => "XING AG", :title => "XING AG"
+    .clearer &nbsp;
+    %p
+      Endlich mal wieder Ruby on Rails machen, ja das kann man bei XING!
+    .clearer &nbsp;
+    .post_meta
+      Links:
+      = link_to "XING", "http://www.xing.com/", :title => "XING AG"
+
 / jimdo
 .post
   .post_title
     %h2
-      = link_to "Entwickler bei Jimdo", "http://www.jimdo.com/", :id => "jimdo", :title => "Jimdo GmbH"
+      = link_to "Entwickler / Head of Backend Engineering bei Jimdo", "http://www.jimdo.com/", :id => "jimdo", :title => "Jimdo GmbH"
 
-  .post_date Seit Februar 2015
+  .post_date Februar 2015 bis Oktober 2016
   .post_body
     = link_to "http://www.jimdo.com/", :title => "Jimdo GmbH" do
       = image_tag "jimdo.png", :class => "alignleft", :alt => "Jimdo GmbH", :title => "Jimdo GmbH"
     .clearer &nbsp;
     %p
-      Seit diesem Jahr arbeite ich als
+      In 2015 habe ich als
       = link_to 'Hyperpolyglot', "http://hyperpolyglot.org/"
-      bei Jimdo und helfe dort bei der Migration der monolitischen Plattform in eine Service orientierte Infrastruktur.
-
+      bei Jimdo gearbeitet und dort bei der Migration der monolitischen Plattform in eine Service orientierte Infrastruktur unterstützt.
+    %p
+      In 2016 habe ich mich weitestgehend aus der Programmierung zurückgezogen und versucht Jimdo
+      in meiner Rolle als "Head of Backend Engineering" weiter zu professionalisieren.
     .clearer &nbsp;
 
     .post_meta
       Links:
-      = link_to "Shopify", "http://www.shopify.com/", :title => "Shopify Inc."
+      = link_to "Jimdo", "http://www.jimdo.com/", :title => "Jimdo GmbH"
 
 / shopify
 .post
