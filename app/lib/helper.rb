@@ -61,6 +61,9 @@ class Helper
     def amazon_book(asin)
       logger.info "fetching book for asin #{asin}"
       ASIN::Client.instance.lookup(asin, :ResponseGroup => :Medium).first
+      # TODO
+      # 1) check all books and look for deprecations
+      # 2) add retry with sleep
     rescue
       raise "could not load book for #{asin} (#{$!})"
     end
