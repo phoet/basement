@@ -1,3 +1,9 @@
+GIT
+  remote: https://gist.github.com/92767354f7d78a9f8e2985bc29df88c4.git
+  revision: 01de264acc3f6bd90a3e7d78f3330862af45c010
+  specs:
+    retry (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -219,6 +225,7 @@ DEPENDENCIES
   rack-cache
   rails (= 5.0.0)
   rails_autolink
+  retry!
   rspec-rails (~> 3.5)
   sass-rails
   twitter (~> 5.16)
