@@ -7,8 +7,14 @@
     %p
       Im Februar 2011 habe ich den Schritt in die Selbständigkeit gewagt und bin seither als freiberuflicher Software-Entwickler tätig.
     %p
+      Im März 2017 dann den nächsten Schritt als Unternehmer, Mitgründer und Software-Entwickler bei der
+      = link_to 'Penseo GmbH', 'https://www.penseo.de'
+      in Hamburg.
+    %p
       An dieser Stelle möchte ich ein paar beispielhafte Stationen des bisher beschrittenen Weg aufzeigen:
     %ul
+      %li
+        %a{:href => "#penseo"} 2017 - Penseo GmbH
       %li
         %a{:href => "#xing"} 2016 - XING AG
       %li
@@ -28,13 +34,37 @@
       %li
         %a{:href => "#bigpoint"} 2006 - Bigpoint GmbH
 
+/ penseo
+.post
+  .post_title
+    %h2
+      = link_to "Mitgründer, Unternehmer und Interims-CTO bei der Penseo GmbH", "https://www.penseo.de/", :id => "penseo", :title => "Penseo GmbH"
+
+  .post_date Seit März 2017
+  .post_body
+    = link_to "https://www.penseo.de/", :title => "Penseo GmbH" do
+      = image_tag "penseo.png", :class => "alignleft", :alt => "Penseo GmbH", :title => "Penseo GmbH"
+    .clearer &nbsp;
+    %p
+      In einem jungen Startup muss man alles machen. Drucker einrichten, CMS-Lösungen evaluieren, Infrastruktur automatisieren, APIs bauen...
+      Was heutzutage nicht fehlen darf ist die obligatorische Single-Page-App!
+      Dementsprechend mache ich gerade einen Ausflug in die sich ständig neu erfindende Browser-Welt und spiele Frontend-Entwickler.
+    %p
+      Mit
+      = link_to "Vue.js", "https://vuejs.org/", :title => "Vue.js"
+      bringt mir das allerdings erstmals so richtig Spass!
+    .clearer &nbsp;
+    .post_meta
+      Links:
+      = link_to "Penseo", "https://www.penseo.de/", :title => "Penseo GmbH"
+
 / xing
 .post
   .post_title
     %h2
       = link_to "Entwickler bei XING", "http://www.xing.com/", :id => "xing", :title => "XING AG"
 
-  .post_date Seit Dezember 2016
+  .post_date Dezember 2016 bis Februar 2017
   .post_body
     = link_to "http://www.xing.com/", :title => "XING AG" do
       = image_tag "xing.png", :class => "alignleft", :alt => "XING AG", :title => "XING AG"
