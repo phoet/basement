@@ -73,7 +73,7 @@ Rails.application.configure do
     :domain         => 'heroku.com'
   }
 
-  config.middleware.use "ExceptionNotification::Rack", email: {
+  config.middleware.use ExceptionNotification::Rack, email: {
     :email_prefix         => "[ERROR] ",
     :sender_address       => %{"error-notifier" <phoetmail@googlemail.com>},
     :exception_recipients => %w{phoetmail@googlemail.com},
