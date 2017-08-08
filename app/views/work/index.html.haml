@@ -2,7 +2,8 @@
   .post_body= render :partial=>"shared/quote", :locals=>{ :author=>'Johann Wolfgang von Goethe', :text=>'Mit dem Wissen wächst der Zweifel' }
   .post_body
     %p
-      Nur durch die stetige Erweiterung seines Wissens kann man dauerhaft qualitativ hochwertige Software kann. Deshalb versuche ich fortwährend meine eigenen Fähigkeiten zu reflektieren, Schwächen zu erkennen und diese auszumerzen.
+      Nur durch die stetige Erweiterung seines Wissens kann man dauerhaft qualitativ hochwertige Software erstellen.
+      Deshalb versuche ich fortwährend meine eigenen Fähigkeiten zu reflektieren, Schwächen zu erkennen und daran zu arbeiten.
     %p
       Aus diesem Grund lese ich regelmäßig
       = link_to('Fachbücher', :action => 'bookshelf') + ", "
@@ -51,7 +52,7 @@
 .post
   %a{:id=>"conference"}
   .div{:class=>"post_title"}
-    %h2 Konferenzen 2012
+    %h2 Konferenzen
   .post_date
 
   .archive_post
@@ -94,11 +95,6 @@
         %a{:href=>"http://railsberry.com/2012", :title=>"Railsberry"} Railsberry Krakau
       .post_date 18.-20. April 2012
 
-.post
-  .div{:class=>"post_title"}
-    %h2 Konferenzen 2011
-  .post_date
-
   .archive_post
     .comment_gravatar.left
       = image_tag "railscamp-hamburg.png", :title=>"Railscamp Hamburg", :alt=>"Railscamp Hamburg", :height=>"32", :width=>"32"
@@ -122,11 +118,6 @@
       %h3
         %a{:href=>"http://eurucamp.org", :title=>"Eurucamp"} Eurucamp Berlin
       .post_date 28.-29. Mai 2011
-
-.post
-  .div{:class=>"post_title"}
-    %h2 Konferenzen 2010
-  .post_date
 
   .archive_post
     .comment_gravatar.left
