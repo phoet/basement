@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  skip_before_filter :prepare_cache
+  skip_before_action :prepare_cache
 
   def sitemap
     response.headers["Content-Type"] = 'text/xml'

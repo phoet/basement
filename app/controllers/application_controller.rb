@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper :all
-  before_filter :prepare_cache
+  before_action :prepare_cache
 
   # prepare all the caching and loading-stuff for each request
   def prepare_cache
