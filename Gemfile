@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 ruby   File.read(".ruby-version").chomp
 
-gem "rails", "5.1.3"
+gem "rails", "5.1.4"
 gem "puma"
 gem "haml"
 gem "asin", "2.0.2"
