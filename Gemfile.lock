@@ -55,7 +55,7 @@ GEM
       snake_case_hash (>= 1.0.2)
     buftok (0.2.0)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     concurrent-ruby (1.0.5)
     confiture (0.1.4)
     crack (0.4.3)
