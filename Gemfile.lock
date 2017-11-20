@@ -120,7 +120,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     public_suffix (2.0.5)
-    puma (3.10.0)
+    puma (3.11.0)
     rack (2.0.3)
     rack-cache (1.7.1)
       rack (>= 0.4)
