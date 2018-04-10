@@ -22,6 +22,7 @@ group :production do
 end
 
 group :development, :test do
+  gem "listen"
   gem "byebug"
   gem "rspec-rails", "~> 3.5"
 end
