@@ -12,8 +12,8 @@ class InterestController < ApplicationController
         name.family = 'Schröder'
       end
       maker.add_addr do |addr|
-        addr.street = 'Schanzenstr. 85'
-        addr.postalcode = '20357'
+        addr.street = 'Tigerstr. 32'
+        addr.postalcode = '22525'
         addr.locality = 'Hamburg'
         addr.country = 'Deutschland'
       end
