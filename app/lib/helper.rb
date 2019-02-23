@@ -69,6 +69,13 @@ class Helper
       raise "could not load book for #{asin} (#{$!})"
     end
 
+    def amazon_books(asins)
+      logger.info "fetching books for asins #{asins}"
+      ASIN::Client.instance.lookup(asins, :ResponseGroup => :Medium)
+    rescue
+      raise "could not load books for #{asins} (#{$!})"
+    end
+
     def blogger_posts
       parsed = get('http://uschisblogg.blogspot.com/feeds/posts/default?alt=json', :json)
       parsed['feed']['entry'].map { |e| Blogger.new(e) }

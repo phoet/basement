@@ -3,9 +3,8 @@ class WorkController < ApplicationController
   def github; end
   def bookshelf
     more_stuff(@books.size) do |count|
-      @books[0..count].map do |book|
-        cache(:"book_#{book.asin}"){ Helper::amazon_book(book.asin) }
-      end
+      asins = @books[0..count].map(&:asin)
+      cache(:"books_#{asins.join}"){ Helper::amazon_book(asins) }
     end
   end
 end
