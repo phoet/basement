@@ -1,43 +1,27 @@
 .post
   .post_body
     = render :partial => "shared/quote", :locals => { :author =>'Loriot', :text => 'Plötzliche Regenfälle können zum Betreten einer Buchhandlung zwingen.' }
-  
+
   .post_body
     %p
       In meiner Freizeit lese ich bevorzugt Fachbücher.
       Dabei sind die Themengebiete breit verstreut,
-      neuerdings fokussiere ich mich jedoch hauptsächlich auf 
+      neuerdings fokussiere ich mich jedoch hauptsächlich auf
       %a{:href=>'http://developer.apple.com/mac/library/', :title=>'Objective-C Cocoa'} Objective-C/Cocoa
       und
       %a{:href=>'http://www.ruby-lang.org/', :title=>'Ruby'} Ruby-Bücher.
-      
+
     %h4 Hier eine kleine zufällige Auswahl:
 
   #bookshelf
     #book
       .comment_list
-        - @more_array.each do |item|
+        - @more_array.each do |book|
           .comment.alt
-            - if item.small_image
-              .comment_gravatar.left{:style => "width: #{item.small_image.width.to_i + 10}px;"}
-                %a{:href => item.detail_page_url, :title => item.item_attributes.title}
-                  %img{:alt => item.item_attributes.title, :title => item.item_attributes.title, :src => item.small_image.url}
-            - else
-              .comment_gravatar.left
-                %a{:href => item.detail_page_url, :title => item.item_attributes.title}
-                  %img{:alt => item.item_attributes.title, :title => item.item_attributes.title, :src => 'sample-gravatar.jpg'}
-            
             .comment_author.left
               %strong
-                %a{:href => item.detail_page_url, :title => item.item_attributes.title}= item.item_attributes.title.truncate(80)
-            
-              .comment_date= "von #{item.item_attributes.author.respond_to?(:join) ? item.item_attributes.Author.join(', ') : item.item_attributes.author}"
-              .comment_date="#{(item.item_attributes.list_price.formatted_price rescue '')} mit #{item.item_attributes.number_of_pages} Seiten"
-              .comment_date="aufgelegt #{item.item_attributes.label} #{item.item_attributes.publication_date} mit ISBN #{item.item_attributes.ean}"
-            
+                %a{:title=>book.title, :href=>"http://www.amazon.de/gp/product/#{book.asin}?ie=UTF8&amp;tag=kartoffelspal-21&amp;linkCode=as2&amp;camp=1638&amp;creative=19454&amp;creativeASIN=#{book.asin}"}= book.title.truncate(80)
+
             .clearer &nbsp;
-            
-            .comment_body
-              %p= ([] << item.editorial_reviews.editorial_review).flatten.last.content.html_safe rescue ""
-                
+
     = render :partial => 'shared/more', :locals => {:name => 'Bücher'}
