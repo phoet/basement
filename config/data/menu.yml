@@ -1,49 +1,45 @@
---- 
-- 
+---
+-
   id: home
   name: Privates
-  subitems: 
-  - 
+  subitems:
+  -
     id: index
     name: Willkommen
-    subitems: 
-  - 
+    subitems:
+  -
     id: blog
     name: Tagebuch
-    subitems: 
-  - 
-    id: gallery
-    name: Fotoalbum
-    subitems: 
+    subitems:
 - 
   id: work
   name: Fachliches
-  subitems: 
-  - 
+  subitems:
+  -
     id: index
     name: Weiterbildung
-    subitems: 
-  - 
+    subitems:
+  -
     id: bookshelf
     name: "Bücherregal"
-    subitems: 
-  - 
+    subitems:
+  -
     id: github
     name: Github
-    subitems: 
-- 
+    subitems:
+-
   id: interest
   name: Interessantes
-  subitems: 
-  - 
+  subitems:
+  -
     id: index
     name: Kontakt
-    subitems: 
-  - 
+    subitems:
+  -
     id: curriculum
     name: Lebenslauf
-    subitems: 
-  - 
+    subitems:
+  -
     id: employer
     name: Projekte
-    subitems: 
+    subitems:

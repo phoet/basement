@@ -49,7 +49,6 @@
                   = render 'teaser/about'
                   = render 'teaser/blog',         posts: @posts   if @teaser.include? :blog
                   = render 'teaser/bookshelf',    books: @books   if @teaser.include? :bookshelf
-                  = render 'teaser/gallery',      images: @fotos  if @teaser.include? :gallery
                   = render 'teaser/twitter',      tweets: @tweets if @teaser.include? :twitter
                   = render 'teaser/github_repos', repos: @repos   if @teaser.include? :repos
                   = render 'teaser/github_gists', gists: @gists   if @teaser.include? :gists
@@ -77,10 +76,9 @@
         #footer
           .left
             &copy;
+            &reg;
             =Time.new.year
             %a{:href=>"http://#{website_url}", :title=>"phoet"}=website_url
-            &reg;
-            %a{:href=>"http://www.peter-schröder.info", :title=>"peter schröder"} www.peter-schröder.info
             see some code on
             %a{:href=>"http://github.com/phoet/basement/", :title=>"github phoet"} github
           .right
