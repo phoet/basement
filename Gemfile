@@ -24,5 +24,5 @@ end
 group :development, :test do
   gem "listen"
   gem "byebug"
-  gem "rspec-rails", "~> 3.5"
+  gem "rspec-rails", "~> 4.0.0.beta2"
 end
