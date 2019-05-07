@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 ruby   File.read(".ruby-version").chomp
 
-gem "rails", "5.2.1"
+gem "rails", "6.0.0.rc1"
 gem "puma"
 gem "haml"
 gem "asin", "2.0.2"
@@ -24,5 +24,5 @@ end
 group :development, :test do
   gem "listen"
   gem "byebug"
-  gem "rspec-rails", "~> 3.5"
+  gem "rspec-rails", "~> 4.0.0.beta2"
 end
