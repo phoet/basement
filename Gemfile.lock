@@ -269,12 +269,10 @@ DEPENDENCIES
   retry!
   rspec-rails (~> 4.0.0.beta2)
   sass-rails
+  sprockets (~> 3.7.2)
   twitter (~> 5.16)
   uglifier
   vpim
 
 RUBY VERSION
-   ruby 2.6.2p47
-
-BUNDLED WITH
-   1.17.2
+   ruby 2.6.4p104
