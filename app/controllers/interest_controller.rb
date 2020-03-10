@@ -20,7 +20,6 @@ class InterestController < ApplicationController
       maker.nickname = "phoet"
       maker.birthday = Date.new(1980, 8, 27)
       maker.add_photo { |photo| photo.link = 'http://www.gravatar.com/avatar/056c32203f8017f075ac060069823b66.png' }
-      maker.add_tel('+491781391035')
       maker.add_email('ps@nofail.de')
     end
 
