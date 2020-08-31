@@ -71,13 +71,6 @@ Rails.application.configure do
     :domain         => 'heroku.com'
   }
 
-  config.middleware.use ExceptionNotification::Rack, email: {
-    :email_prefix         => "[ERROR] ",
-    :sender_address       => %{"error-notifier" <phoetmail@googlemail.com>},
-    :exception_recipients => %w{phoetmail@googlemail.com},
-    :smtp_settings        => config.action_mailer.smtp_settings
-  }
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
