@@ -1,11 +1,11 @@
 source "http://rubygems.org"
 ruby   File.read(".ruby-version").chomp
 
-gem "rails", "~> 6.1"
+gem "rails", "~> 7.0"
 gem "puma"
 gem "haml"
-gem "asin", "2.0.2"
-gem "twitter", "~> 5.16"
+gem "asin", "~> 3.0"
+gem "twitter", "~> 7.0"
 gem "httpclient", "~> 2.6"
 gem "sprockets", "~> 3.7.2"
 gem "jquery-rails"
