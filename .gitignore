@@ -4,3 +4,5 @@ log/*.log
 tmp/
 .sass-cache/
 dump.rdb
+node_modules/
+public/assets/
