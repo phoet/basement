@@ -7,6 +7,6 @@ class AdminController < ApplicationController
   end
 
   def reset_cache
-    render text: "reset redis cache: #{Rails.cache.clear}"
+    render plain: "reset redis cache: #{Rails.cache.clear}"
   end
 end
