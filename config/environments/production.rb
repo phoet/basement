@@ -49,8 +49,15 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
-  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"], {:username => ENV["MEMCACHIER_USERNAME"], :password => ENV["MEMCACHIER_PASSWORD"]}
+  config.cache_store = :mem_cache_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     :down_retry_delay => 60
+                    }
   config.action_dispatch.rack_cache = {
     :metastore    => Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], {:username => ENV["MEMCACHIER_USERNAME"], :password => ENV["MEMCACHIER_PASSWORD"]}),
     :entitystore  => 'file:tmp/cache/rack/body',
