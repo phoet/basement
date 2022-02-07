@@ -17,7 +17,7 @@ class Helper
     end
 
     def load_data(structure)
-      YAML::load_file(Rails.root.join("config/data/#{structure}.yml")).map{ |item| Hashie::Mash.quiet.new(item) }
+      YAML::load_file(Rails.root.join("config/data/#{structure}.yml")).map{ |item| Hashie::Mash.new(item) }
     end
 
     def get(url, format=:json)
@@ -28,9 +28,9 @@ class Helper
       case format
       when :json
         resp = JSON.parse(content)
-        resp.is_a?(Array) ? resp.map{|r| Hashie::Mash.quiet.new(r)} : Hashie::Mash.quiet.new(resp)
+        resp.is_a?(Array) ? resp.map{|r| Hashie::Mash.new(r)} : Hashie::Mash.new(resp)
       when :xml
-        Hashie::Mash.quiet.new(Crack::XML.parse(content))
+        Hashie::Mash.new(Crack::XML.parse(content))
       when :raw
         content
       else
