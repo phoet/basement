@@ -296,7 +296,7 @@ DEPENDENCIES
   vpim
 
 RUBY VERSION
-   ruby 2.7.8
+   ruby 3.2.6p234
 
 BUNDLED WITH
-   2.1.4
+   2.6.2
