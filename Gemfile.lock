@@ -146,7 +146,7 @@ GEM
     minitest (5.23.1)
     multipart-post (2.3.0)
     naught (1.1.0)
-    net-imap (0.4.19)
+    net-imap (0.4.20)
       date
       net-protocol
     net-pop (0.1.2)
