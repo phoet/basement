@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 ruby   File.read(".ruby-version").chomp
 
-gem "rails", "~> 7.0"
+gem "rails", "~> 8.0"
 gem "puma"
 gem "haml"
 gem "asin", "~> 3.0"
