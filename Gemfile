@@ -1,13 +1,13 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 ruby   File.read(".ruby-version").chomp
 
-gem "rails", "~> 7.0"
+gem "rails", "~> 8.1.0"
 gem "puma"
 gem "haml"
 gem "asin", "~> 3.0"
 gem "twitter", "~> 7.0"
 gem "httpclient", "~> 2.6"
-gem "sprockets", "~> 3.7.2"
+gem "sprockets", "~> 4.2"
 gem "jquery-rails"
 gem "rails_autolink"
 gem "dalli"
@@ -24,5 +24,5 @@ end
 group :development, :test do
   gem "listen"
   gem "byebug"
-  gem "rspec-rails", "~> 4.0.0.beta2"
+  gem "rspec-rails", "~> 8.0"
 end
